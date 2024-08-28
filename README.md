@@ -1,9 +1,13 @@
-# 👋 Hey! New here? I’m Jay!  ![aaww3](https://github.com/user-attachments/assets/4db0df30-c0b1-4ca8-951f-6f5879424607)
+# 👋 Hey! New here? I’m Jay! ![aaww43](https://github.com/user-attachments/assets/5b3a704b-a517-4850-9358-a81a50fd5135)
+
+
+I'm a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health. 
 
 
 
-I'm a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health.
-
+### 🔗 **Explore My Work:**
+- **GitHub Portfolio:** [lacomaofficial](https://github.com/lacomaofficial)
+- **Master’s Thesis Project on ADHD Prediction:** [ADHD-Prediction-rsfMRI](https://github.com/lacomaofficial/ADHD-Prediction-rsfMRI)
 
 
 ## 🎛️ **Computational Neuroscience Portfolio** 
@@ -66,14 +70,4 @@ A comprehensive tool for analyzing stock market data, generating trading signals
 This project analyzes reaction times in a neuroscience/psychology flanker experiment, aiming to understand the effects of visual and cognitive interference on reaction times.
 
 - **Skills:** Cognitive Neuroscience, Reaction Time Analysis, Experimental Psychology
-
-## 🌟 **My Vision and Expertise**
-
-I see immense potential in using existing data to develop new experiments and models with Machine Learning, a passion that drove my master’s thesis. My journey combines a strong foundation in statistics with advanced coding skills, allowing me to tackle complex problems in neuroscience.
-
-I am proficient in key Data Science libraries in Python (NumPy, Pandas, Scikit-Learn, Nilearn) and am currently expanding my deep learning skills using transformers within the PyTorch ecosystem. My ultimate goal is to become a leading computational neuroscientist, and I am committed to pushing the boundaries of what’s possible in this exciting field.
-
-### 🔗 **Explore My Work:**
-- **GitHub Portfolio:** [lacomaofficial](https://github.com/lacomaofficial)
-- **Master’s Thesis Project on ADHD Prediction:** [ADHD-Prediction-rsfMRI](https://github.com/lacomaofficial/ADHD-Prediction-rsfMRI)
 
