@@ -20,8 +20,8 @@ Our model analyzed fMRI data and revealed key findings:
 3. **Inferior Occipital Gyrus - Superior Parietal Lobule:** Differences in visual-spatial abilities.
 4. **Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus:** Gender-specific spatial orientation and visual processing.
 
-![features1](https://github.com/user-attachments/assets/cbdb2527-8c1c-4104-9ab5-88cccf487f27)
 
+![features](https://github.com/user-attachments/assets/165eb532-c652-4b94-972b-2eb30c1c84e8)
 
 
 
