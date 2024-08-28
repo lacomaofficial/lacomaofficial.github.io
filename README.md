@@ -1,5 +1,6 @@
-# 👋 Hey! New here? I’m Jay
-![aaa1](https://github.com/user-attachments/assets/6bb4db91-e2c5-4c8a-af8a-7504009758ad)
+# 👋 Hey! New here? I’m Jay ![Uploading aa3.png…]()
+
+
 
 
 I'm a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health.
