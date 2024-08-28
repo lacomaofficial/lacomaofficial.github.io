@@ -8,7 +8,7 @@ I'm a future computational neuroscientist focused on predicting and optimizing t
 &emsp;
 
 
-## 🚀 Deep Learning with PyTorch Uncovers Gender Differences in Brain Connectivity 🧠 
+## Deep Learning with PyTorch Uncovers Gender Differences in Brain Connectivity 
 [Link Proyect](https://github.com/lacomaofficial/Pytorch-Classifier-fMRI)
 
 ![image](https://github.com/user-attachments/assets/5f6c93e1-10be-45ca-b032-32ff359d4b19)
