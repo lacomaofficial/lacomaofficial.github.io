@@ -9,10 +9,10 @@ I'm a future computational neuroscientist focused on predicting and optimizing t
 [Proyects]([https://github.com/lacomaofficial](https://github.com/lacomaofficial/Pytorch-Classifier-fMRI))
 
 Our model analyzed fMRI data and revealed key findings:
-**1. Superior Frontal Gyrus Medial - Caudate:** Decision-making and reward processing differences.
-**2. Superior Temporal Sulcus - Angular Gyrus:** Variations in social cognition and language processing.
-**3. Inferior Occipital Gyrus - Superior Parietal Lobule:** Differences in visual-spatial abilities.
-**4. Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus:** Gender-specific spatial orientation and visual processing.
+1. Superior Frontal Gyrus Medial - Caudate: Decision-making and reward processing differences.
+2. Superior Temporal Sulcus - Angular Gyrus: Variations in social cognition and language processing.
+3. Inferior Occipital Gyrus - Superior Parietal Lobule: Differences in visual-spatial abilities.
+4. Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus: Gender-specific spatial orientation and visual processing.
 
 ![image](https://github.com/user-attachments/assets/5f6c93e1-10be-45ca-b032-32ff359d4b19)
 
