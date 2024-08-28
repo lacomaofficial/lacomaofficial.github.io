@@ -11,7 +11,8 @@ I'm a future computational neuroscientist focused on predicting and optimizing t
 ## Deep Learning with PyTorch Uncovers Gender Differences in Brain Connectivity 
 [Link Proyect](https://github.com/lacomaofficial/Pytorch-Classifier-fMRI)
 
-![image](https://github.com/user-attachments/assets/5f6c93e1-10be-45ca-b032-32ff359d4b19)
+![roiss](https://github.com/user-attachments/assets/0f873979-caa7-472c-91f6-fa3305269b95)
+
 
 Our model analyzed fMRI data and revealed key findings:
 1. **Superior Frontal Gyrus Medial - Caudate:** Decision-making and reward processing differences.
@@ -19,8 +20,9 @@ Our model analyzed fMRI data and revealed key findings:
 3. **Inferior Occipital Gyrus - Superior Parietal Lobule:** Differences in visual-spatial abilities.
 4. **Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus:** Gender-specific spatial orientation and visual processing.
 
+![aa](https://github.com/user-attachments/assets/7a34571f-212b-48b9-beba-5d1f74c7c988)
 
-![image](https://github.com/user-attachments/assets/b9e5f582-ed05-4470-a04e-4fd948d63196)
+
 
 
 &nbsp;
