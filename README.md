@@ -1,4 +1,5 @@
-# 👋 Hey! New here? I’m Jay ![Uploading aa3.png…]()
+# 👋 Hey! New here? I’m Jay!  [aa3](https://github.com/user-attachments/assets/c5e04d2b-15e8-4b0b-b2b2-bf7523ae5204)
+
 
 
 
