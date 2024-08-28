@@ -7,7 +7,7 @@ I'm a future computational neuroscientist focused on predicting and optimizing t
 
 ### 🔗 **Explore My Work:**
 - **GitHub Portfolio:** [Proyects](https://github.com/lacomaofficial)
-- **Linkedin:** [Profilel](https://github.com/lacomaofficial)
+- **Linkedin:**  [Profile]([https://github.com/lacomaofficial](https://www.linkedin.com/in/jlacoma/))
 - **Master’s Thesis Project on ADHD Prediction:** [ADHD-Prediction-rsfMRI](https://github.com/lacomaofficial/ADHD-Prediction-rsfMRI)
 
 
