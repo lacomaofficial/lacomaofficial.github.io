@@ -24,6 +24,7 @@
     footer {
       border-top: none;
       text-align: center;
+      padding: 10px;
     }
     .container {
       width: 90%;
@@ -52,6 +53,14 @@
       text-align: center;
       padding: 60px 0;
       background-color: #fff;
+      position: relative;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #007bff;
+      margin-bottom: 20px;
     }
     .hero h1 {
       font-size: 2.5rem;
@@ -61,8 +70,30 @@
       font-size: 1.2rem;
       color: #666;
     }
-    .section {
-      padding: 40px 0;
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #007bff;
+      color: #fff;
+    }
+    .tab-button {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+      border: 1px solid #007bff;
+      border-bottom: none;
+      background: #0056b3;
+    }
+    .tab-button.active {
+      background: #fff;
+      color: #007bff;
+      border-bottom: 1px solid #007bff;
+    }
+    .tab-content {
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
     }
     .section h2 {
       font-size: 2rem;
@@ -76,22 +107,29 @@
       color: #666;
       margin-bottom: 20px;
     }
-    .hero-info p {
-      font-size: 1rem;
-      color: #666;
-    }
-    .hero-info a {
-      color: #007bff;
-      text-decoration: none;
-    }
-    .hero-info a:hover {
-      text-decoration: underline;
-    }
     .footer p {
       font-size: 0.9rem;
       margin: 0;
     }
   </style>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementsByClassName("tab-button")[0].click(); // Open first tab by default
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -111,20 +149,20 @@
 
   <section class="hero">
     <div class="container">
+      <img src="assets/images/jay-lacoma.jpg" alt="Jay Lacoma">
       <h1>Jay Lacoma</h1>
       <p>Future Computational Neuroscientist | Data Science & Machine Learning Enthusiast</p>
     </div>
   </section>
 
-  <section class="hero-info">
-    <div class="container">
-      <p>👋 Hey! New here? I’m Jay</p>
-      <p>I'm a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health.</p>
-      <p><a href="https://linktr.ee/j.lacoma">LinkTree Profile</a> | <a href="https://github.com/lacomaofficial">GitHub Portfolio</a> | <a href="https://github.com/lacomaofficial/ADHD-Prediction-rsfMRI">Master’s Thesis Project on ADHD Prediction</a></p>
-    </div>
-  </section>
+  <div class="tabs">
+    <div class="tab-button" onclick="openTab(event, 'portfolio')">Computational Neuroscience Portfolio</div>
+    <div class="tab-button" onclick="openTab(event, 'projects')">Data Science & Machine Learning Projects</div>
+    <div class="tab-button" onclick="openTab(event, 'psychology')">Cognitive Psychology</div>
+    <div class="tab-button" onclick="openTab(event, 'vision')">My Vision and Expertise</div>
+  </div>
 
-  <section class="section">
+  <div id="portfolio" class="tab-content">
     <div class="container">
       <h2>🎛️ Computational Neuroscience Portfolio</h2>
       <p><strong>N400 ERP in Picture-Word Semantic Integration:</strong> An examination of brain processing of semantic integration through EEG data analysis, focusing on the N400 ERP component during picture-word mismatch trials.</p>
@@ -136,30 +174,30 @@
       <p><strong>Neuro-Decoding with LightGBM Classifier:</strong> Utilizes LightGBM to decode brain signals, focusing on cognitive pattern recognition within the Haxby dataset.</p>
       <p><strong>Comp-Neuro-Toolbox:</strong> A toolbox designed to facilitate machine learning analyses with neuroimaging data using the Nilearn Python library, useful for creating classifiers and regressors from fMRI scans.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
+  <div id="projects" class="tab-content">
     <div class="container">
       <h2>📊 Data Science and Machine Learning Projects</h2>
       <p><strong>Employee Satisfaction Analysis at SF Motors:</strong> An analysis of employee satisfaction and retention by constructing a predictive XGBoost model to identify factors influencing employee turnover.</p>
       <p><strong>Taxi Fare Estimation for NYC:</strong> A robust regression XGBoost model developed to accurately predict taxi fares in NYC, evaluated using Mean Squared Error and R-squared.</p>
       <p><strong>Stock Market Analysis:</strong> A tool for analyzing stock market data, generating trading signals through technical analysis, and forecasting stock prices using sentiment analysis and time series techniques.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
+  <div id="psychology" class="tab-content">
     <div class="container">
       <h2>🧠 Cognitive Psychology</h2>
       <p><strong>Flanker Experiment Analysis:</strong> Analyzes reaction times in a flanker experiment to understand the effects of visual and cognitive interference on reaction times.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
+  <div id="vision" class="tab-content">
     <div class="container">
       <h2>🌟 My Vision and Expertise</h2>
       <p>I see immense potential in using existing data to develop new experiments and models with Machine Learning. My journey combines a strong foundation in statistics with advanced coding skills, allowing me to tackle complex problems in neuroscience.</p>
     </div>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; Jay Lacoma</p>
