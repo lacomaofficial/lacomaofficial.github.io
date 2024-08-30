@@ -3,31 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jay's Computational Neuroscience Projects">
+    <meta name="description" content="Jay Lacoma - Computational Neuroscientist and Data Scientist. Explore projects at the intersection of neuroscience, data science, and machine learning.">
     <meta name="author" content="Jay Lacoma">
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Jay Lacoma - Computational Neuroscientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>👋 Hey! New here? I’m Jay!</h1>
-        <img src="https://github.com/user-attachments/assets/5b3a704b-a517-4850-9358-a81a50fd5135" alt="Jay's Profile Image" class="profile-img">
+        <div class="container">
+            <h1>👋 Hey! New here? I’m Jay</h1>
+            <img src="path/to/profile-image.jpg" alt="Jay's Profile Image" class="profile-img">
+            <p>I'm a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health.</p>
+        </div>
     </header>
-    
+
     <nav>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <div class="container">
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
-        <section id="portfolio">
+        <section id="portfolio" class="container">
             <h2>🎛️ Computational Neuroscience Portfolio</h2>
-
             <div class="project">
                 <h3><a href="https://github.com/lacomaofficial/Pytorch-Classifier-fMRI" target="_blank">Deep Learning with PyTorch Uncovers Gender Differences in Brain Connectivity</a></h3>
-                <img src="https://github.com/user-attachments/assets/0f873979-caa7-472c-91f6-fa3305269b95" alt="Deep Learning Project" class="project-img">
+                <img src="path/to/project-image1.jpg" alt="Deep Learning Project" class="project-img">
                 <p>Our model analyzed fMRI data and revealed key findings:</p>
                 <ul>
                     <li><strong>Superior Frontal Gyrus Medial - Caudate:</strong> Decision-making and reward processing differences.</li>
@@ -36,29 +50,37 @@
                     <li><strong>Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus:</strong> Gender-specific spatial orientation and visual processing.</li>
                 </ul>
             </div>
-
             <!-- Add other portfolio projects similarly -->
         </section>
 
-        <section id="projects">
+        <section id="projects" class="container">
             <h2>📊 Data Science and Machine Learning Projects</h2>
-
             <div class="project">
                 <h3>Employee Satisfaction Analysis at SF Motors</h3>
                 <p>An analysis of employee satisfaction and retention at SF Motors by constructing a predictive XGBoost model to identify factors influencing employee turnover.</p>
             </div>
-            
+            <div class="project">
+                <h3>Taxi Fare Estimation for NYC</h3>
+                <p>A robust regression XGBoost model developed to accurately predict taxi fares in NYC, with performance evaluated using metrics like Mean Squared Error and R-squared.</p>
+            </div>
+            <div class="project">
+                <h3>Stock Market Analysis</h3>
+                <p>A comprehensive tool for analyzing stock market data, generating trading signals through technical analysis, and forecasting stock prices using sentiment analysis and time series techniques.</p>
+            </div>
             <!-- Add other projects similarly -->
         </section>
 
-        <section id="contact">
+        <section id="contact" class="container">
             <h2>Contact</h2>
             <p>Feel free to connect with me on <a href="https://www.linkedin.com/in/jlacoma" target="_blank">LinkedIn</a> or check out my <a href="https://linktr.ee/j.lacoma" target="_blank">LinkTree</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Jay Lacoma</p>
+        <div class="container">
+            <p>&copy; 2024 Jay Lacoma</p>
+            <img src="path/to/footer-image.jpg" alt="Footer Image" class="footer-img">
+        </div>
     </footer>
 
     <script src="script.js" defer></script>
