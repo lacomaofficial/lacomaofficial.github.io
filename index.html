@@ -1,275 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Lacoma - Computational Neuroscientist & Game Designer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        .navbar {
-            background-color: transparent;
-            transition: background-color 0.5s;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar.scrolled {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #333;
-        }
-
-        .navbar-nav .nav-link {
-            color: #333;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #007bff;
-        }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1605733290665-28d508ab7b52?fit=crop&w=1600&h=600') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-top: 10px;
-        }
-
-        .section-title {
-            margin: 50px 0;
-            text-align: center;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .section-title p {
-            color: #777;
-        }
-
-        .portfolio-item {
-            margin-bottom: 30px;
-        }
-
-        .portfolio-item .card {
-            border: none;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-item .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-item .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .portfolio-item .card-body {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #007bff;
-            transition: color 0.3s;
-        }
-
-        .footer a:hover {
-            color: #00ffff;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-            padding: 10px;
-        }
-
-        .contact-form button {
-            border-radius: 4px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Jay Lacoma - Computational Neuroscientist</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <header>
         <div class="container">
-            <a class="navbar-brand" href="#">Jay Lacoma</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <img src="https://github.com/user-attachments/assets/5b3a704b-a517-4850-9358-a81a50fd5135" alt="Jay Lacoma" class="profile-img">
+            <h1>👋 Hey! New here? I’m Jay!</h1>
+            <p>I’m a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and machine learning, and I'm driven by the potential of these fields to unlock new insights into brain function and health.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="portfolio">
+            <h2>🎛️ Computational Neuroscience Portfolio</h2>
+            <article>
+                <h3>Deep Learning with PyTorch Uncovers Gender Differences in Brain Connectivity</h3>
+                <a href="https://github.com/lacomaofficial/Pytorch-Classifier-fMRI" target="_blank">Link to Project</a>
+                <img src="https://github.com/user-attachments/assets/0f873979-caa7-472c-91f6-fa3305269b95" alt="Deep Learning Project">
+                <p>Our model analyzed fMRI data and revealed key findings:</p>
+                <ul>
+                    <li><strong>Superior Frontal Gyrus Medial - Caudate:</strong> Decision-making and reward processing differences.</li>
+                    <li><strong>Superior Temporal Sulcus - Angular Gyrus:</strong> Variations in social cognition and language processing.</li>
+                    <li><strong>Inferior Occipital Gyrus - Superior Parietal Lobule:</strong> Differences in visual-spatial abilities.</li>
+                    <li><strong>Superior Parietal Lobule Anterior - Parieto-Occipital Sulcus:</strong> Gender-specific spatial orientation and visual processing.</li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+                <img src="https://github.com/user-attachments/assets/165eb532-c652-4b94-972b-2eb30c1c84e8" alt="Project Features">
+            </article>
 
-    <!-- Hero Section -->
-    <section class="hero">
+            <!-- Additional Projects -->
+            <!-- Repeat the format below for each project -->
+            <article>
+                <h3>N400 ERP in Picture-Word Semantic Integration</h3>
+                <p>An examination of brain processing of semantic integration through EEG data analysis, focusing on the N400 ERP component during picture-word mismatch trials.</p>
+            </article>
+
+            <!-- Continue with other projects similarly -->
+        </section>
+
+        <section id="data-science">
+            <h2>📊 Data Science and Machine Learning Projects</h2>
+            <!-- List of data science projects -->
+        </section>
+
+        <section id="cognitive-psychology">
+            <h2>🧠 Cognitive Psychology</h2>
+            <!-- Cognitive Psychology project details -->
+        </section>
+
+        <section id="vision">
+            <h2>🌟 My Vision and Expertise</h2>
+            <p>I see immense potential in using existing data to develop new experiments and models with Machine Learning. My journey combines a strong foundation in statistics with advanced coding skills, allowing me to tackle complex problems in neuroscience.</p>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h1 class="display-4">Jay Lacoma</h1>
-            <p class="lead">Computational Neuroscientist & Game Designer</p>
-            <p>Exploring innovative solutions in neuroscience and game design.</p>
+            <h2>🔗 Explore My Work:</h2>
+            <ul>
+                <li><a href="https://github.com/lacomaofficial" target="_blank">GitHub Portfolio</a></li>
+                <li><a href="https://github.com/lacomaofficial/ADHD-Prediction-rsfMRI" target="_blank">Master’s Thesis Project on ADHD Prediction</a></li>
+            </ul>
+            <p>Connect with me:</p>
+            <ul>
+                <li><a href="https://linktr.ee/j.lacoma" target="_blank">Linktree</a></li>
+                <li><a href="https://www.linkedin.com/in/jlacoma" target="_blank">LinkedIn</a></li>
+            </ul>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container py-5">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>Driven by the potential of neuroscience, data science, and game design to unlock new insights into brain function and health.</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="https://github.com/user-attachments/assets/5b3a704b-a517-4850-9358-a81a50fd5135" class="img-fluid rounded-circle" alt="Jay Lacoma">
-            </div>
-            <div class="col-md-6">
-                <p>I am a future computational neuroscientist focused on predicting and optimizing treatments for mental health conditions using advanced data analysis techniques. My work lies at the intersection of neuroscience, data science, and game design. I’m driven by the potential of these fields to unlock new insights into brain function and health.</p>
-                <a href="#portfolio" class="btn btn-primary">Explore My Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-light py-5">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Portfolio</h2>
-                <p>A selection of my recent projects in computational neuroscience, data science, and game design.</p>
-            </div>
-            <div class="row">
-                <!-- Portfolio Item -->
-                <div class="col-md-4 portfolio-item">
-                    <div class="card">
-                        <img src="https://github.com/user-attachments/assets/0f873979-caa7-472c-91f6-fa3305269b95" class="card-img-top" alt="Deep Learning with PyTorch">
-                        <div class="card-body">
-                            <h5 class="card-title">Deep Learning with PyTorch</h5>
-                            <p class="card-text">Uncovered gender differences in brain connectivity through fMRI data analysis.</p>
-                            <a href="https://github.com/lacomaofficial/Pytorch-Classifier-fMRI" class="btn btn-outline-dark btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more portfolio items here following the same structure -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container py-5">
-        <div class="section-title">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to discuss my work, potential collaborations, or just to say hello!</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <h5>Connect with Me:</h5>
-                <ul class="list-unstyled">
-                    <li><a href="https://github.com/lacomaofficial" class="btn btn-outline-dark btn-sm"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li><a href="https://linkedin.com/in/jlacoma" class="btn btn-outline-dark btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="mailto:jay.lacoma@example.com" class="btn btn-outline-dark btn-sm"><i class="fas fa-envelope"></i> Email</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Jay Lacoma. All rights reserved. <a href="#privacy-policy">Privacy Policy</a></p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Add scroll effect for navbar
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
-
 </html>
