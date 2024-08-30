@@ -1,3 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Document loaded');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
 });
