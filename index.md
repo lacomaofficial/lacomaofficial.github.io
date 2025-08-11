@@ -1,101 +1,128 @@
+---
+theme: jekyll-theme-dinky
+---
 
+<div align="center" style="margin-bottom: 1.5em;">
 
-<div align="center">
-  
-# LACOMA iFUND
+# <span style="letter-spacing: -1px;">LACOMA iFUND</span>
 
-**INDI HEDGE FUND**
+### <span style="color: #666; font-weight: 500;">INDEPENDENT QUANTITATIVE HEDGE FUND</span>
 
-Building open-source AI tools for finance
+> AI-Driven Market Intelligence & Financial Modeling
 
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Spaces-ff9900)](https://huggingface.co/spaces/JayLacoma)
-[![GitHub](https://img.shields.io/badge/GitHub-lacomaofficial-181717?logo=github)](https://github.com/lacomaofficial)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-jlacoma-0A66C2?logo=linkedin)](https://www.linkedin.com/in/jlacoma/)
+[![Hugging Face](https://img.shields.io/badge/Spaces-Live%20AI%20Models-ff9900?logo=huggingface&logoColor=white)](https://huggingface.co/spaces/JayLacoma)
+[![GitHub](https://img.shields.io/badge/Code-Open%20Source-181717?logo=github)](https://github.com/lacomaofficial)
+[![LinkedIn](https://img.shields.io/badge/Connect-Professional-0A66C2?logo=linkedin)](https://www.linkedin.com/in/jlacoma/)
 
 </div>
 
 ---
 
-## 🧠 Who I Am
+## 🧩 MISSION
 
-I develop **AI-powered financial analysis tools** using machine learning, time series forecasting, and sentiment modeling. My work sits at the intersection of:
+LACOMA iFUND is an independent research-driven hedge fund developing proprietary AI systems for:
 
-- 📈 Quantitative finance (hedge fund-style analysis)
-- 🤖 Machine learning (Hugging Face, NLP, forecasting)
-- 🧬 Computational neuroscience (future: AI for mental health treatment optimization)
+- 📊 Quantitative market forecasting  
+- 📉 Technical & macroeconomic signal generation  
+- 📈 Fundamental valuation modeling  
+- 🌐 Global asset allocation frameworks  
 
-> "I want to use data to predict stock movements today — and recovery trajectories tomorrow."
+All tools are open-source, auditable, and built for performance.
+
+> "We do not speculate. We model, test, and execute."
 
 ---
 
-## 🚀 My AI Apps (Hugging Face Spaces)
+## 🔬 CORE AI SYSTEMS
 
-### 💻 Trader Lite
+### 💼 Trader Lite  
 *Time Series Forecasting & Technical Indicators*  
-AI-powered stock predictions with moving averages, RSI, MACD, and LSTM models.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators)
+LSTM + ensemble models for short-to-medium horizon price prediction.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators)
 
 ---
 
-### 🐢 Fundamental Financial Analysis
-*Company comparison using financial data*  
-Analyze P/E, ROE, debt ratios, and more to find undervalued stocks.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis)
+### 🏦 Fundamental Financial Analysis  
+*Cross-Company Valuation Engine*  
+P/E, ROE, debt/equity, free cash flow screening with anomaly detection.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis)
 
 ---
 
-### 🏢 Economic Cycle Analysis
-*Ray Dalio-inspired framework*  
-Determine where the economy is in the debt cycle using macro indicators.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Economic_Cycle_Analysis)
+### 🌐 Global Market Analysis  
+*Multi-Asset, Cross-Border Correlation Engine*  
+S&P 500 vs. DAX, Nikkei, FTSE, and emerging markets.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis)
 
 ---
 
-### 🌍 Global Market Analysis
-*US vs. international markets*  
-Compare S&P 500, DAX, Nikkei, and more with correlation & trend analysis.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis)
+### 📊 Economic Cycle Analysis  
+*Ray Dalio-Inspired Debt Cycle Framework*  
+AI classification of current phase: Early Expansion → Stagflation → Recession → Recovery.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/Economic_Cycle_Analysis)
 
 ---
 
-### 📉 Technical Analysis
-*Chart patterns & trading signals*  
-Deep dive into candlestick patterns, volume, and indicator combinations.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Technical-Analysis)
+### 📉 Technical Analysis  
+*Pattern Recognition & Signal Aggregation*  
+Candlestick patterns, volume divergence, RSI/MACD crossovers.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/Technical-Analysis)
 
 ---
 
-### 📣 News Sentiment Analysis
-*Market mood from headlines & social media*  
-NLP-powered sentiment scoring to detect bullish/bearish trends.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/News_Market_Sentiment_Analysis)
+### 📣 News Sentiment Analysis  
+*Market Mood from Global Headlines*  
+BERT-based NLP scoring across 10K+ daily financial articles.  
+[▶️ RUN MODEL](https://huggingface.co/spaces/JayLacoma/News_Market_Sentiment_Analysis)
 
 ---
 
-### 🧩 Five Factor Model Test
-*Personality assessment (Big 5)*  
-A psychology tool to measure openness, conscientiousness, and more.  
-[👉 Open App](https://huggingface.co/spaces/JayLacoma/Five-Factor-Model-Test)
+### 🧠 Five Factor Model Test  
+*Behavioral Risk Profiling (Internal Tool)*  
+Personality-driven decision bias modeling for portfolio psychology.  
+[▶️ ACCESS TOOL](https://huggingface.co/spaces/JayLacoma/Five-Factor-Model-Test)
 
 ---
 
-## 🔮 Vision
+## 🏢 STRUCTURE
 
-I'm working toward **computational neuroscience** — using AI to model brain dynamics and personalize mental health treatments.
-
-But today? I'm building **transparent, open financial AI** — because powerful tools shouldn’t be locked behind hedge fund walls.
+- **Founder & CIO**: Jay Lacoma  
+- **Research Focus**: AI for financial forecasting & behavioral modeling  
+- **Tech Stack**: Python, PyTorch, Transformers, Streamlit, GitHub, Hugging Face  
+- **Deployment**: Cloud-hosted AI agents, real-time signal pipelines  
+- **Status**: Independent (Pre-Seed R&D Phase)  
+- **Vision**: Institutional-grade quant fund powered by open science
 
 ---
 
-## 🔗 Connect With Me
+## 🔐 PHILOSOPHY
 
-- 🐙 **GitHub**: [@lacomaofficial](https://github.com/lacomaofficial)
-- 🤗 **Hugging Face**: [@JayLacoma](https://huggingface.co/spaces/JayLacoma)
-- 💼 **LinkedIn**: [@jlacoma](https://www.linkedin.com/in/jlacoma/)
-- ✉️ **Email**: jay@lacoma.dev *(or use a Gmail like jay.lacoma@gmail.com)*
+> "Transparency is the new alpha."
+
+We believe:
+- Models should be **auditable**
+- Signals must be **reproducible**
+- Risk systems require **explainability**
+- The future of finance is **open, not closed**
+
+No black boxes. No hype. Just code, data, and edge.
+
+---
+
+## 📮 CONTACT
+
+For research collaboration, institutional access, or due diligence:
+
+- 🧑‍💼 **Jay Lacoma**, Founder & CIO  
+- 📧 jay@lacoma.dev *(professional domain)*  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/jlacoma/)  
+- 💾 [GitHub](https://github.com/lacomaofficial)  
+- 🤖 [Hugging Face Spaces](https://huggingface.co/spaces/JayLacoma)
 
 <br>
 
 <div align="center">
-  <small>✨ Built with <a href="https://pages.github.com">GitHub Pages</a> • Open Source • No BS</small>
+  <small style="color: #999;">
+    &copy; 2025 LACOMA iFUND • Independent Quantitative Research • <a href="https://github.com/lacomaofficial/lacomaofficial.github.io">Open Source</a>
+  </small>
 </div>
