@@ -23,16 +23,14 @@
             background-color: var(--bg-dark);
             color: var(--text-primary);
         }
-        
-        /* HERO BACKGROUND: Replace with your hf1.jpg URL */
+
         .hero-bg {
-            background-image: url('https://raw.githubusercontent.com/lacomaofficial/lacomaofficial.github.io/main/hf1.jpg'); /* <-- REPLACE THIS URL */
+            background-image: url('/pics/hf1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        /* SECTION BACKGROUNDS */
         .section-bg {
             background-size: cover;
             background-position: center;
@@ -53,16 +51,13 @@
             z-index: 2;
         }
 
-        /* RESEARCH BACKGROUND: Replace with your hf5.jpg URL */
         .research-bg {
-            background-image: url('https://raw.githubusercontent.com/lacomaofficial/lacomaofficial.github.io/main/hf5.jpg'); /* <-- REPLACE THIS URL */
+            background-image: url('/pics/hf5.jpg');
         }
 
-        /* PHILOSOPHY BACKGROUND: Replace with your hf4.jpg URL */
         .philosophy-bg {
-             background-image: url('https://raw.githubusercontent.com/lacomaofficial/lacomaofficial.github.io/main/hf4.jpg'); /* <-- REPLACE THIS URL */
+            background-image: url('/pics/hf4.jpg');
         }
-
 
         .glass-card {
             background: rgba(10, 10, 10, 0.4);
@@ -85,7 +80,7 @@
         .btn-primary:hover {
             @apply bg-green-400 text-black shadow-lg shadow-green-500/20;
         }
-        
+
         .section-title {
             @apply text-4xl md:text-5xl font-bold text-center mb-4 tracking-tighter;
         }
@@ -115,7 +110,6 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
-        /* Ticker styles */
         .ticker-wrap {
             width: 100%;
             overflow: hidden;
@@ -144,7 +138,7 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        
+
         #hero-canvas {
             position: absolute;
             top: 0;
@@ -154,6 +148,19 @@
             z-index: 1;
         }
 
+        /* Market Table */
+        .market-table {
+            @apply glass-card rounded-xl p-6 w-full text-sm font-mono;
+        }
+        .market-table th {
+            @apply text-left text-slate-400 pb-2;
+        }
+        .market-table td {
+            @apply py-2 border-b border-gray-800;
+        }
+        .market-table tr:last-child td {
+            @apply border-0;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -181,25 +188,24 @@
     <header class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
         <canvas id="hero-canvas"></canvas>
         <div class="absolute inset-0 bg-black/70 z-10"></div>
-        
         <div class="relative z-20 text-center px-4">
             <h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-4 animate-text-focus-in">YC HEDGE FUND</h1>
             <p class="text-lg md:text-xl text-slate-300 font-light mb-8">INDEPENDENT QUANTITATIVE RESEARCH & AI-DRIVEN INVESTING</p>
             <div class="flex justify-center items-center space-x-6 mt-12">
                 <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="Hugging Face">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM8.25 15.375C8.25 15.8284 7.87842 16.2001 7.425 16.2001C6.97157 16.2001 6.6 15.8284 6.6 15.375C6.6 14.9216 6.97157 14.55 7.425 14.55C7.87842 14.55 8.25 14.9216 8.25 15.375ZM17.4 15.375C17.4 15.8284 17.0284 16.2001 16.575 16.2001C16.1216 16.2001 15.75 15.8284 15.75 15.375C15.75 14.9216 16.1216 14.55 16.575 14.55C17.0284 14.55 17.4 14.9216 17.4 15.375ZM8.25 9.375C8.25 8.92157 7.87842 8.55 7.425 8.55C6.97157 8.55 6.6 8.92157 6.6 9.375C6.6 9.82843 6.97157 10.2 7.425 10.2C7.87842 10.2 8.25 9.82843 8.25 9.375ZM17.4 9.375C17.4 8.92157 17.0284 8.55 16.575 8.55C16.1216 8.55 15.75 8.92157 15.75 9.375C15.75 9.82843 16.1216 10.2 16.575 10.2C17.0284 10.2 17.4 9.82843 17.4 9.375ZM13.875 12.375C13.875 13.4105 13.0355 14.25 12 14.25C10.9645 14.25 10.125 13.4105 10.125 12.375C10.125 11.3395 10.9645 10.5 12 10.5C13.0355 10.5 13.875 11.3395 13.875 12.375Z"/></svg>
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM8.25 15.375C8.25 15.8284 7.87842 16.2001 7.425 16.2001C6.97157 16.2001 6.6 15.8284 6.6 15.375C6.6 14.9216 6.97157 14.55 7.425 14.55C7.87842 14.55 8.25 14.9216 8.25 15.375ZM17.4 15.375C17.4 15.8284 17.0284 16.2001 16.575 16.2001C16.1216 16.2001 15.75 15.8284 15.75 15.375C15.75 14.9216 16.1216 14.55 16.575 14.55C17.0284 14.55 17.4 14.9216 17.4 15.375ZM8.25 9.375C8.25 8.92157 7.87842 8.55 7.425 8.55C6.97157 8.55 6.6 8.92157 6.6 9.375C6.6 9.82843 6.97157 10.2 7.425 10.2C7.87842 10.2 8.25 9.82843 8.25 9.375ZM17.4 9.375C17.4 8.92157 17.0284 8.55 16.575 8.55C16.1216 8.55 15.75 8.92157 15.75 9.375C15.75 9.82843 16.1216 10.2 16.575 10.2C17.0284 10.2 17.4 9.82843 17.4 9.375ZM13.875 12.375C13.875 13.4105 13.0355 14.25 12 14.25C10.9645 14.25 10.125 13.4105 10.125 12.375C10.125 11.3395 10.9645 10.5 12 10.5C13.0355 10.5 13.875 11.3395 13.875 12.375Z"/></svg>
                 </a>
-                 <a href="https://github.com/lacomaofficial" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="GitHub">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                <a href="https://github.com/lacomaofficial" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="GitHub">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="LinkedIn">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Stock Ticker Section -->
+    <!-- Stock Ticker -->
     <div class="ticker-wrap">
         <div class="ticker-move">
             <div class="ticker-item">NIO <span class="text-gain">+1.25 (+8.15%)</span></div>
@@ -210,7 +216,6 @@
             <div class="ticker-item">AAPL <span class="text-loss">-1.10 (-0.75%)</span></div>
             <div class="ticker-item">MSFT <span class="text-gain">+3.45 (+1.23%)</span></div>
             <div class="ticker-item">SPY <span class="text-gain">+2.11 (+0.45%)</span></div>
-            <!-- Duplicate for seamless scroll -->
             <div class="ticker-item">NIO <span class="text-gain">+1.25 (+8.15%)</span></div>
             <div class="ticker-item">TSLA <span class="text-gain">+10.42 (+4.50%)</span></div>
             <div class="ticker-item">AMC <span class="text-loss">-0.50 (-3.20%)</span></div>
@@ -229,9 +234,53 @@
                 <p class="section-subtitle">
                     YC Hedge Fund is an independent research firm developing AI-powered systems for quantitative finance. We build, test, and deploy open-source, reproducible models designed for a real-world edge.
                 </p>
-                 <blockquote class="mt-16 text-3xl font-semibold italic text-slate-300 font-mono">
+                <blockquote class="mt-16 text-3xl font-semibold italic text-slate-300 font-mono">
                     "We do not trade noise. We model signal."
                 </blockquote>
+            </div>
+        </section>
+
+        <!-- Market Table Section -->
+        <section class="px-4 mb-20 fade-in">
+            <div class="container mx-auto flex justify-end">
+                <div class="market-table max-w-md">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Ticker</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VIX</td>
+                                <td class="text-right">17.25</td>
+                                <td class="text-right text-gain">+0.32</td>
+                            </tr>
+                            <tr>
+                                <td>GOLD</td>
+                                <td class="text-right">2347.80</td>
+                                <td class="text-right text-loss">-2.10</td>
+                            </tr>
+                            <tr>
+                                <td>SPY</td>
+                                <td class="text-right">512.45</td>
+                                <td class="text-right text-gain">+1.20</td>
+                            </tr>
+                            <tr>
+                                <td>QQQ</td>
+                                <td class="text-right">420.10</td>
+                                <td class="text-right text-gain">+2.15</td>
+                            </tr>
+                            <tr>
+                                <td>TLT</td>
+                                <td class="text-right">98.30</td>
+                                <td class="text-right text-loss">-0.45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -276,12 +325,12 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="philosophy" class="py-20 md:py-32 px-4 fade-in section-bg philosophy-bg">
             <div class="overlay"></div>
             <div class="content-wrapper container mx-auto text-center">
                 <h2 class="section-title text-white">Investment Philosophy</h2>
-                 <blockquote class="mt-4 mb-16 text-3xl font-semibold italic text-green-400 font-mono">
+                <blockquote class="mt-4 mb-16 text-3xl font-semibold italic text-green-400 font-mono">
                     "Transparency is the new alpha."
                 </blockquote>
                 <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -305,6 +354,16 @@
             </div>
         </section>
 
+        <!-- Spotify Playlist -->
+        <section class="py-20 px-4 fade-in">
+            <div class="container mx-auto">
+                <h2 class="section-title text-white mb-12 text-center">Research Soundtrack</h2>
+                <div class="max-w-3xl mx-auto glass-card rounded-xl p-6">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0EJ5EjLn4bM9Nxfy7VzEsp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="py-20 md:py-32 px-4 fade-in">
             <div class="container mx-auto text-center max-w-2xl">
                 <h2 class="section-title text-white">Contact</h2>
@@ -313,8 +372,8 @@
                 </p>
                 <div class="glass-card rounded-xl p-10">
                     <p class="text-xl font-semibold text-white">Jay Lacoma, Founder & CIO</p>
-                    <a href="mailto:jay@ychedgefund.ai" class="block my-6 text-green-400 hover:text-green-300 text-2xl transition-colors font-mono">
-                        jay@ychedgefund.ai
+                    <a href="mailto:lacomaofficial@gmail.com" class="block my-6 text-green-400 hover:text-green-300 text-2xl transition-colors font-mono">
+                        lacomaofficial@gmail.com
                     </a>
                 </div>
             </div>
@@ -357,7 +416,7 @@
             document.querySelectorAll('.fade-in').forEach((el) => {
                 observer.observe(el);
             });
-            
+
             // Hero Canvas Animation
             const canvas = document.getElementById('hero-canvas');
             const ctx = canvas.getContext('2d');
@@ -379,7 +438,6 @@
                 update() {
                     this.x += this.speedX;
                     this.y += this.speedY;
-
                     if (this.size > 0.2) this.size -= 0.01;
                     if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                     if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
@@ -418,6 +476,5 @@
             });
         });
     </script>
-
 </body>
 </html>
