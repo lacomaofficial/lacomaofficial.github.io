@@ -147,20 +147,6 @@
             height: 100%;
             z-index: 1;
         }
-
-        /* Market Table */
-        .market-table {
-            @apply glass-card rounded-xl p-6 w-full text-sm font-mono;
-        }
-        .market-table th {
-            @apply text-left text-slate-400 pb-2;
-        }
-        .market-table td {
-            @apply py-2 border-b border-gray-800;
-        }
-        .market-table tr:last-child td {
-            @apply border-0;
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -240,49 +226,12 @@
             </div>
         </section>
 
-        <!-- Market Table Section -->
-        <section class="px-4 mb-20 fade-in">
-            <div class="container mx-auto flex justify-end">
-                <div class="market-table max-w-md">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>Ticker</th>
-                                <th class="text-right">Price</th>
-                                <th class="text-right">Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>VIX</td>
-                                <td class="text-right">17.25</td>
-                                <td class="text-right text-gain">+0.32</td>
-                            </tr>
-                            <tr>
-                                <td>GOLD</td>
-                                <td class="text-right">2347.80</td>
-                                <td class="text-right text-loss">-2.10</td>
-                            </tr>
-                            <tr>
-                                <td>SPY</td>
-                                <td class="text-right">512.45</td>
-                                <td class="text-right text-gain">+1.20</td>
-                            </tr>
-                            <tr>
-                                <td>QQQ</td>
-                                <td class="text-right">420.10</td>
-                                <td class="text-right text-gain">+2.15</td>
-                            </tr>
-                            <tr>
-                                <td>TLT</td>
-                                <td class="text-right">98.30</td>
-                                <td class="text-right text-loss">-0.45</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-xs text-slate-500 mt-2 text-right">
-                        * VIX data from CBOE. For real-time charts, visit <a href="https://finance.yahoo.com/chart/%5EVIX" target="_blank" class="text-green-400 hover:underline">Yahoo Finance</a>.
-                    </div>
+        <!-- Global Market Analysis Embed -->
+        <section class="py-20 px-4 fade-in">
+            <div class="container mx-auto">
+                <h2 class="section-title text-white mb-12 text-center">Global Market Analysis</h2>
+                <div class="max-w-4xl mx-auto glass-card rounded-xl p-6">
+                    <iframe src="https://jaylacoma-global-market-analysis.hf.space" frameborder="0" width="100%" height="450"></iframe>
                 </div>
             </div>
         </section>
