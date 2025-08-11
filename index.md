@@ -1,6 +1,4 @@
----
-theme: jekyll-theme-minimal
----
+
 
 <div align="center">
   
