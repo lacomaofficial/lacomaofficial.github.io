@@ -1,7 +1,7 @@
 
 <div align="center" style="margin-bottom: 1.5em;">
 
-# <span style="letter-spacing: -1px;">LACOMA iFUND</span>
+# <span style="letter-spacing: -1px;">LCM INDI HEDGE FUND</span>
 
 ### <span style="color: #666; font-weight: 500;">INDEPENDENT QUANTITATIVE HEDGE FUND</span>
 
