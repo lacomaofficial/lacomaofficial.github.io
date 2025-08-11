@@ -2,11 +2,11 @@
 
 <div align="center">
   
-# Hi, I'm Jay Lacoma 🌱
+# LACOMA iFUND
 
-**Data Scientist • AI Builder • Future Computational Neuroscientist**
+**INDI HEDGE FUND**
 
-Building open-source AI tools for finance & mental health.
+Building open-source AI tools for finance
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Spaces-ff9900)](https://huggingface.co/spaces/JayLacoma)
 [![GitHub](https://img.shields.io/badge/GitHub-lacomaofficial-181717?logo=github)](https://github.com/lacomaofficial)
