@@ -1,6 +1,3 @@
----
-theme: jekyll-theme-dinky
----
 
 <div align="center" style="margin-bottom: 1.5em;">
 
