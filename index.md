@@ -1,23 +1,32 @@
 ---
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 ---
 
 <div align="center">
-  <h1>Hi, I'm Jay 🌱</h1>
-  <p><strong>Data Scientist • AI Builder • Future Computational Neuroscientist</strong></p>
-  <p>Building AI tools for finance & mental health. Open source. No gatekeeping.</p>
+  
+# Hi, I'm Jay Lacoma 🌱
+
+**Data Scientist • AI Builder • Future Computational Neuroscientist**
+
+Building open-source AI tools for finance & mental health.
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Spaces-ff9900)](https://huggingface.co/spaces/JayLacoma)
+[![GitHub](https://img.shields.io/badge/GitHub-lacomaofficial-181717?logo=github)](https://github.com/lacomaofficial)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jlacoma-0A66C2?logo=linkedin)](https://www.linkedin.com/in/jlacoma/)
+
 </div>
 
 ---
 
 ## 🧠 Who I Am
 
-I develop **AI-powered financial analysis tools** using machine learning, time series forecasting, and sentiment modeling. My long-term mission? To apply data science to both markets — and minds.
+I develop **AI-powered financial analysis tools** using machine learning, time series forecasting, and sentiment modeling. My work sits at the intersection of:
 
-Currently focused on:
-- 📈 Quant-style stock analysis
-- 🤖 Hugging Face AI apps (forecasting, NLP, trading signals)
-- 🧬 Future: computational neuroscience for mental health
+- 📈 Quantitative finance (hedge fund-style analysis)
+- 🤖 Machine learning (Hugging Face, NLP, forecasting)
+- 🧬 Computational neuroscience (future: AI for mental health treatment optimization)
+
+> "I want to use data to predict stock movements today — and recovery trajectories tomorrow."
 
 ---
 
@@ -25,44 +34,70 @@ Currently focused on:
 
 ### 💻 Trader Lite
 *Time Series Forecasting & Technical Indicators*  
-[→ Open App](https://huggingface.co/spaces/lacomaofficial/Trader-Lite)
+AI-powered stock predictions with moving averages, RSI, MACD, and LSTM models.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators)
 
-### 🌍 Global Market Analysis
-*US vs. international markets*  
-[→ Open App](https://huggingface.co/spaces/lacomaofficial/Global-Market-Analysis)
+---
+
+### 🐢 Fundamental Financial Analysis
+*Company comparison using financial data*  
+Analyze P/E, ROE, debt ratios, and more to find undervalued stocks.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis)
+
+---
 
 ### 🏢 Economic Cycle Analysis
 *Ray Dalio-inspired framework*  
-[→ Open App](https://huggingface.co/spaces/lacomaofficial/Economic_Cycle_Analysis)
+Determine where the economy is in the debt cycle using macro indicators.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Economic_Cycle_Analysis)
 
-### 📊 News Sentiment Analysis
-*Market mood from headlines*  
-[→ Open App](https://huggingface.co/spaces/lacomaofficial/News-Sentiment-Analysis)
+---
 
-### 🐢 Fundamental Financial Analysis
-*Compare companies using financial data*  
-[→ Open App](https://huggingface.co/spaces/lacomaofficial/Fundamental-Financial-Analysis)
+### 🌍 Global Market Analysis
+*US vs. international markets*  
+Compare S&P 500, DAX, Nikkei, and more with correlation & trend analysis.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis)
+
+---
+
+### 📉 Technical Analysis
+*Chart patterns & trading signals*  
+Deep dive into candlestick patterns, volume, and indicator combinations.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Technical-Analysis)
+
+---
+
+### 📣 News Sentiment Analysis
+*Market mood from headlines & social media*  
+NLP-powered sentiment scoring to detect bullish/bearish trends.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/News_Market_Sentiment_Analysis)
+
+---
+
+### 🧩 Five Factor Model Test
+*Personality assessment (Big 5)*  
+A psychology tool to measure openness, conscientiousness, and more.  
+[👉 Open App](https://huggingface.co/spaces/JayLacoma/Five-Factor-Model-Test)
 
 ---
 
 ## 🔮 Vision
 
-> "I want to use AI to predict stock movements today — and treatment outcomes tomorrow."
+I'm working toward **computational neuroscience** — using AI to model brain dynamics and personalize mental health treatments.
 
-Short-term: Build powerful, transparent financial AI.  
-Long-term: Use computational neuroscience to personalize mental health care.
+But today? I'm building **transparent, open financial AI** — because powerful tools shouldn’t be locked behind hedge fund walls.
 
 ---
 
-## 🔗 Connect
+## 🔗 Connect With Me
 
-- 🐙 [GitHub](https://github.com/lacomaofficial)
-- 🤗 [Hugging Face](https://huggingface.co/lacomaofficial)
-- 📧 contact@lacoma.dev *(or use a Gmail for now)*
-- 💼 [LinkedIn](https://linkedin.com/in/yourprofile) *(add later)*
+- 🐙 **GitHub**: [@lacomaofficial](https://github.com/lacomaofficial)
+- 🤗 **Hugging Face**: [@JayLacoma](https://huggingface.co/spaces/JayLacoma)
+- 💼 **LinkedIn**: [@jlacoma](https://www.linkedin.com/in/jlacoma/)
+- ✉️ **Email**: jay@lacoma.dev *(or use a Gmail like jay.lacoma@gmail.com)*
 
 <br>
 
 <div align="center">
-  <small>✨ Built with GitHub Pages • <a href="https://github.com/lacomaofficial/lacomaofficial.github.io">Open Source</a></small>
+  <small>✨ Built with <a href="https://pages.github.com">GitHub Pages</a> • Open Source • No BS</small>
 </div>
