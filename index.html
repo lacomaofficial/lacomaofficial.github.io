@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YC HEDGE FUND - Quantitative Research & AI-Driven Investing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-primary {
+            @apply bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out;
+        }
+        .btn-primary:hover {
+            @apply bg-indigo-500 shadow-xl transform -translate-y-1;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center mb-4 tracking-tighter;
+        }
+        .section-subtitle {
+            @apply text-center text-slate-400 max-w-2xl mx-auto mb-12;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+             <div class="absolute top-0 left-0 w-full h-full bg-[url('https://placehold.co/1920x1080/0a0a0a/1f2937?text=.')] bg-cover bg-center animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-20 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white mb-4">YC HEDGE FUND</h1>
+            <p class="text-lg md:text-xl text-slate-300 font-medium mb-8">INDEPENDENT QUANTITATIVE RESEARCH & AI-DRIVEN INVESTING</p>
+            <blockquote class="text-indigo-300 italic text-md md:text-lg max-w-2xl mx-auto mb-10">
+                Proprietary Models for Market Forecasting, Risk Analysis, and Signal Generation
+            </blockquote>
+            <div class="flex justify-center items-center space-x-4">
+                <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" class="text-slate-300 hover:text-white transition-colors duration-300" title="Hugging Face">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM8.25 15.375C8.25 15.8284 7.87842 16.2001 7.425 16.2001C6.97157 16.2001 6.6 15.8284 6.6 15.375C6.6 14.9216 6.97157 14.55 7.425 14.55C7.87842 14.55 8.25 14.9216 8.25 15.375ZM17.4 15.375C17.4 15.8284 17.0284 16.2001 16.575 16.2001C16.1216 16.2001 15.75 15.8284 15.75 15.375C15.75 14.9216 16.1216 14.55 16.575 14.55C17.0284 14.55 17.4 14.9216 17.4 15.375ZM8.25 9.375C8.25 8.92157 7.87842 8.55 7.425 8.55C6.97157 8.55 6.6 8.92157 6.6 9.375C6.6 9.82843 6.97157 10.2 7.425 10.2C7.87842 10.2 8.25 9.82843 8.25 9.375ZM17.4 9.375C17.4 8.92157 17.0284 8.55 16.575 8.55C16.1216 8.55 15.75 8.92157 15.75 9.375C15.75 9.82843 16.1216 10.2 16.575 10.2C17.0284 10.2 17.4 9.82843 17.4 9.375ZM13.875 12.375C13.875 13.4105 13.0355 14.25 12 14.25C10.9645 14.25 10.125 13.4105 10.125 12.375C10.125 11.3395 10.9645 10.5 12 10.5C13.0355 10.5 13.875 11.3395 13.875 12.375Z"/></svg>
+                </a>
+                <a href="https://github.com/lacomaofficial" target="_blank" class="text-slate-300 hover:text-white transition-colors duration-300" title="GitHub">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" class="text-slate-300 hover:text-white transition-colors duration-300" title="LinkedIn">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+            <a href="#mission" class="animate-bounce">
+                <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Mission Section -->
+        <section id="mission" class="py-20 md:py-32 px-4 fade-in">
+            <div class="container mx-auto text-center">
+                <h2 class="section-title text-white">Our Mission</h2>
+                <p class="section-subtitle">
+                    YC HEDGE FUND is an independent research-driven investment firm developing <strong>AI-powered systems</strong> for quantitative finance. We build, test, and deploy open-source, reproducible models designed for real-world edge.
+                </p>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="glass-card p-6 rounded-xl">📊 Time series forecasting (LSTM, Transformers)</div>
+                    <div class="glass-card p-6 rounded-xl">📉 Technical signal generation (RSI, MACD)</div>
+                    <div class="glass-card p-6 rounded-xl">📈 Fundamental valuation & screening</div>
+                    <div class="glass-card p-6 rounded-xl">🌐 Global macro correlation analysis</div>
+                    <div class="glass-card p-6 rounded-xl">📣 News sentiment modeling using NLP</div>
+                    <div class="glass-card p-6 rounded-xl">🤖 Explainable AI (XAI) for finance</div>
+                </div>
+                 <blockquote class="mt-12 text-2xl font-semibold italic text-slate-300">
+                    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-indigo-700 relative inline-block">
+                        <span class="relative text-white">"We do not trade noise. We model signal."</span>
+                    </span>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Core Research Systems Section -->
+        <section id="research" class="py-20 md:py-32 px-4 bg-gray-900/50 fade-in">
+            <div class="container mx-auto">
+                <h2 class="section-title text-white">Core Research Systems</h2>
+                <p class="section-subtitle">
+                    Explore our suite of proprietary AI models. Each system is open-source, reproducible, and designed for a specific financial domain.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">💼 Trader Lite</h3>
+                            <p class="text-slate-400 text-sm mb-4">Time Series Forecasting & Technical Indicators</p>
+                            <p class="text-slate-300">LSTM + ensemble models for short-to-medium horizon price prediction.</p>
+                        </div>
+                        <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">🏦 Fundamental Financial Analysis</h3>
+                            <p class="text-slate-400 text-sm mb-4">Cross-Company Valuation Engine</p>
+                            <p class="text-slate-300">P/E, ROE, debt/equity, free cash flow screening with anomaly detection.</p>
+                        </div>
+                         <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">🌐 Global Market Analysis</h3>
+                            <p class="text-slate-400 text-sm mb-4">Multi-Asset, Cross-Border Correlation</p>
+                            <p class="text-slate-300">S&P 500 vs. DAX, Nikkei, FTSE, and emerging markets correlation engine.</p>
+                        </div>
+                         <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">📊 Economic Cycle Analysis</h3>
+                            <p class="text-slate-400 text-sm mb-4">Ray Dalio-Inspired Debt Cycle Framework</p>
+                            <p class="text-slate-300">AI classification of current phase: Expansion, Stagflation, Recession, Recovery.</p>
+                        </div>
+                         <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/Economic_Cycle_Analysis" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">📉 Technical Analysis</h3>
+                            <p class="text-slate-400 text-sm mb-4">Pattern Recognition & Signal Aggregation</p>
+                            <p class="text-slate-300">Candlestick patterns, volume divergence, RSI/MACD crossovers.</p>
+                        </div>
+                         <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/Technical-Analysis" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="glass-card rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">📣 News Sentiment Analysis</h3>
+                            <p class="text-slate-400 text-sm mb-4">Market Mood from Global Headlines</p>
+                            <p class="text-slate-300">BERT-based NLP scoring across 10K+ daily financial articles.</p>
+                        </div>
+                         <div class="p-6 bg-gray-900/50">
+                            <a href="https://huggingface.co/spaces/JayLacoma/News_Market_Sentiment_Analysis" target="_blank" class="btn-primary w-full text-center block">▶️ Run Model</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="py-20 md:py-32 px-4 fade-in">
+            <div class="container mx-auto text-center">
+                <h2 class="section-title text-white">Investment Philosophy</h2>
+                 <blockquote class="mt-4 mb-12 text-2xl font-semibold italic text-indigo-300">
+                    "Transparency is the new alpha."
+                </blockquote>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg text-white mb-2">1. Auditable Models</h4>
+                        <p class="text-slate-400">All logic is open and inspectable. No black boxes.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg text-white mb-2">2. Reproducible Signals</h4>
+                        <p class="text-slate-400">Our results can be independently verified and reproduced.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg text-white mb-2">3. Explainable Risk</h4>
+                        <p class="text-slate-400">Every position and decision must be algorithmically justifiable.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg text-white mb-2">4. Open Science</h4>
+                        <p class="text-slate-400">We believe progress in quantitative finance comes from shared knowledge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organization Section -->
+        <section id="organization" class="py-20 md:py-32 px-4 bg-gray-900/50 fade-in">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="section-title text-white">Organization</h2>
+                <p class="section-subtitle">
+                    We are a research-first investment entity, not a startup. Our focus is on building a fully automated, auditable, AI-driven hedge fund.
+                </p>
+                <div class="glass-card rounded-xl p-8">
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start"><span class="text-indigo-400 mr-3"> Founder & CIO:</span> Jay Lacoma</li>
+                        <li class="flex items-start"><span class="text-indigo-400 mr-3"> Tech Stack:</span> Python, PyTorch, Hugging Face, Streamlit, GitHub</li>
+                        <li class="flex items-start"><span class="text-indigo-400 mr-3"> Deployment:</span> Cloud-hosted AI agents, batch signal pipelines</li>
+                        <li class="flex items-start"><span class="text-indigo-400 mr-3"> Status:</span> Independent R&D Phase (Pre-Institutional)</li>
+                        <li class="flex items-start"><span class="text-indigo-400 mr-3"> Vision:</span> Build a fully automated, auditable, AI-driven hedge fund</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 px-4 fade-in">
+            <div class="container mx-auto text-center max-w-2xl">
+                <h2 class="section-title text-white">Contact</h2>
+                <p class="section-subtitle">
+                    For research collaboration, due diligence, or institutional inquiry.
+                </p>
+                <div class="glass-card rounded-xl p-8">
+                    <p class="text-lg font-semibold text-white">Jay Lacoma, Founder & CIO</p>
+                    <a href="mailto:jay@ychedgefund.ai" class="block my-4 text-indigo-400 hover:text-indigo-300 text-lg transition-colors">
+                        jay@ychedgefund.ai
+                    </a>
+                    <div class="flex justify-center items-center space-x-6 mt-6">
+                        <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" class="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://github.com/lacomaofficial" target="_blank" class="text-slate-400 hover:text-white transition-colors">GitHub</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" class="text-slate-400 hover:text-white transition-colors">Hugging Face</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-8 px-4">
+        <div class="container mx-auto text-center text-slate-500 text-sm">
+            <p>&copy; 2025 YC HEDGE FUND • Independent Quantitative Research</p>
+            <p class="mt-2">
+                <a href="https://github.com/lacomaofficial/lacomaofficial.github.io" target="_blank" class="hover:text-indigo-400 transition-colors">Open Source Infrastructure</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
