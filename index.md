@@ -1,36 +1,40 @@
+---
+theme: jekyll-theme-dinky
+---
 
 <div align="center" style="margin-bottom: 1.5em;">
 
-# <span style="letter-spacing: -1px;">LCM INDI HEDGE FUND</span>
+# YC HEDGE FUND
 
-### <span style="color: #666; font-weight: 500;">INDEPENDENT QUANTITATIVE HEDGE FUND</span>
+### <span style="color: #555; font-weight: 500;">INDEPENDENT QUANTITATIVE RESEARCH & AI-DRIVEN INVESTING</span>
 
-> AI-Driven Market Intelligence & Financial Modeling
+> Proprietary Models for Market Forecasting, Risk Analysis, and Signal Generation
 
 [![Hugging Face](https://img.shields.io/badge/Spaces-Live%20AI%20Models-ff9900?logo=huggingface&logoColor=white)](https://huggingface.co/spaces/JayLacoma)
 [![GitHub](https://img.shields.io/badge/Code-Open%20Source-181717?logo=github)](https://github.com/lacomaofficial)
-[![LinkedIn](https://img.shields.io/badge/Connect-Professional-0A66C2?logo=linkedin)](https://www.linkedin.com/in/jlacoma/)
+[![LinkedIn](https://img.shields.io/badge/Connect-Jay%20Lacoma-0A66C2?logo=linkedin)](https://www.linkedin.com/in/jlacoma/)
 
 </div>
 
 ---
 
-## 🧩 MISSION
+## 🧭 MISSION
 
-LACOMA iFUND is an independent research-driven hedge fund developing proprietary AI systems for:
+YC HEDGE FUND is an independent research-driven investment firm developing **AI-powered systems** for quantitative finance. We build, test, and deploy models in the following domains:
 
-- 📊 Quantitative market forecasting  
-- 📉 Technical & macroeconomic signal generation  
-- 📈 Fundamental valuation modeling  
-- 🌐 Global asset allocation frameworks  
+- 📊 Time series forecasting (LSTM, Transformers)  
+- 📉 Technical signal generation (RSI, MACD, candlestick pattern recognition)  
+- 📈 Fundamental valuation & cross-company screening  
+- 🌐 Global macro correlation and cycle analysis  
+- 📣 News sentiment modeling using NLP  
 
-All tools are open-source, auditable, and built for performance.
+All systems are open-source, reproducible, and designed for real-world edge.
 
-> "We do not speculate. We model, test, and execute."
+> "We do not trade noise. We model signal."
 
 ---
 
-## 🔬 CORE AI SYSTEMS
+## 🔬 CORE RESEARCH SYSTEMS
 
 ### 💼 Trader Lite  
 *Time Series Forecasting & Technical Indicators*  
@@ -81,37 +85,37 @@ Personality-driven decision bias modeling for portfolio psychology.
 
 ---
 
-## 🏢 STRUCTURE
+## 🏢 ORGANIZATION
 
 - **Founder & CIO**: Jay Lacoma  
-- **Research Focus**: AI for financial forecasting & behavioral modeling  
-- **Tech Stack**: Python, PyTorch, Transformers, Streamlit, GitHub, Hugging Face  
-- **Deployment**: Cloud-hosted AI agents, real-time signal pipelines  
-- **Status**: Independent (Pre-Seed R&D Phase)  
-- **Vision**: Institutional-grade quant fund powered by open science
+- **Research Division**: AI for Financial Modeling  
+- **Tech Stack**: Python, PyTorch, Hugging Face, Streamlit, GitHub  
+- **Deployment**: Cloud-hosted AI agents, batch signal pipelines  
+- **Status**: Independent R&D Phase (Pre-Institutional)  
+- **Vision**: Build a fully automated, auditable, AI-driven hedge fund
 
 ---
 
-## 🔐 PHILOSOPHY
+## 🔐 INVESTMENT PHILOSOPHY
 
 > "Transparency is the new alpha."
 
-We believe:
-- Models should be **auditable**
-- Signals must be **reproducible**
-- Risk systems require **explainability**
-- The future of finance is **open, not closed**
+We operate on four principles:
+1. **Auditable Models** — All logic is open and inspectable  
+2. **Reproducible Signals** — No black boxes  
+3. **Explainable Risk** — Every position must be justifiable  
+4. **Open Science** — Progress comes from shared knowledge  
 
-No black boxes. No hype. Just code, data, and edge.
+We are not a startup. We are a **research-first investment entity**.
 
 ---
 
 ## 📮 CONTACT
 
-For research collaboration, institutional access, or due diligence:
+For research collaboration, due diligence, or institutional inquiry:
 
-- 🧑‍💼 **Jay Lacoma**, Founder & CIO  
-- 📧 jay@lacoma.dev *(professional domain)*  
+- **Jay Lacoma**, Founder & CIO  
+- 📧 jay@ychedgefund.ai *(recommended domain)*  
 - 🔗 [LinkedIn](https://www.linkedin.com/in/jlacoma/)  
 - 💾 [GitHub](https://github.com/lacomaofficial)  
 - 🤖 [Hugging Face Spaces](https://huggingface.co/spaces/JayLacoma)
@@ -120,6 +124,6 @@ For research collaboration, institutional access, or due diligence:
 
 <div align="center">
   <small style="color: #999;">
-    &copy; 2025 LACOMA iFUND • Independent Quantitative Research • <a href="https://github.com/lacomaofficial/lacomaofficial.github.io">Open Source</a>
+    &copy; 2025 YC HEDGE FUND • Independent Quantitative Research • <a href="https://github.com/lacomaofficial/lacomaofficial.github.io">Open Source Infrastructure</a>
   </small>
 </div>
