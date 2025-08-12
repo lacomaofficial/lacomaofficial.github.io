@@ -223,6 +223,36 @@
                 <blockquote class="mt-16 text-3xl font-semibold italic text-slate-300 font-mono">
                     "From chaos to order."
                 </blockquote>
+
+                <!-- Simplified Live Signals Section (No Title) -->
+                <section class="py-6 px-2 fade-in">
+                  <div class="container mx-auto">
+                    <!-- Removed the <h2> title here -->
+                    <div class="overflow-x-auto max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
+                      <table class="w-full min-w-max" id="signals-table">
+                        <thead>
+                          <tr class="text-green-400 border-b border-gray-700">
+                            <th class="text-left py-2 px-1">Ticker</th>
+                            <th class="text-right py-2 px-1">Probability</th>
+                            <th class="text-right py-2 px-1">Hype</th>
+                            <th class="text-right py-2 px-1">Acc</th>
+                            <th class="text-right py-2 px-1">Prec</th>
+                            <th class="text-right py-2 px-1">Rec</th>
+                            <th class="text-right py-2 px-1">AUC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Rows will be inserted here by JS -->
+                        </tbody>
+                      </table>
+                      <div class="text-xs text-gray-500 mt-2 text-right">
+                        Model: Trader Lite • <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" class="text-green-400 hover:underline">Run Full Analysis</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!-- End Simplified Live Signals Section -->
+
             </div>
         </section>
 
@@ -331,6 +361,84 @@
             </p>
         </div>
     </footer>
+
+    <!-- Script to Load Signals from CSV -->
+    <script>
+      // Function to load and display the CSV data
+      function loadSignals() {
+        fetch('/signals.csv')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('signals.csv not found or network error');
+            }
+            return response.text();
+          })
+          .then(data => {
+            const lines = data.trim().split('\n');
+            if (lines.length < 2) {
+                throw new Error('CSV file is empty or missing header');
+            }
+            const rows = lines.slice(1); // Get all rows except the header
+
+            const tbody = document.querySelector('#signals-table tbody');
+            tbody.innerHTML = ''; // Clear existing rows
+
+            rows.forEach(line => {
+                // Simple split by comma.
+                const cols = line.split(',');
+                if (cols.length >= 7) { // Ensure we have the 7 columns we need
+                    const tr = document.createElement('tr');
+                    tr.className = 'border-b border-gray-800 hover:bg-gray-800';
+                    // Sanitize content
+                    const ticker = cols[0].trim();
+                    const probability = cols[1].trim();
+                    const hype = cols[2].trim();
+                    const acc = cols[3].trim();
+                    const prec = cols[4].trim();
+                    const rec = cols[5].trim();
+                    const auc = cols[6].trim();
+
+                    // Determine text color for probability (assuming UP/BULL direction if > 50%)
+                    let probColorClass = "text-white";
+                    const probValue = parseFloat(probability);
+                    if (!isNaN(probValue)) {
+                      if (probValue > 50) {
+                        probColorClass = "text-green-400";
+                      } else if (probValue < 50) {
+                        probColorClass = "text-red-400";
+                      }
+                    }
+
+                    tr.innerHTML = `
+                      <td class="py-2 px-1">${ticker}</td>
+                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td>
+                      <td class="text-right py-2 px-1">${hype}</td>
+                      <td class="text-right py-2 px-1">${acc}</td>
+                      <td class="text-right py-2 px-1">${prec}</td>
+                      <td class="text-right py-2 px-1">${rec}</td>
+                      <td class="text-right py-2 px-1">${auc}</td>
+                    `;
+                    tbody.appendChild(tr);
+                } else if (cols.length > 1) {
+                     // Handle rows that don't match the expected format but aren't empty
+                     console.warn('Skipping malformed row:', line);
+                }
+            });
+          })
+          .catch(error => {
+            console.warn('Could not load live signals:', error);
+            // Display an error message in the table area
+            const tbody = document.querySelector('#signals-table tbody');
+            tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-gray-500">Signals data unavailable.</td></tr>`; // Update colspan to 7
+          });
+      }
+
+      // Call the function when the page loads
+      document.addEventListener('DOMContentLoaded', loadSignals);
+
+      // Optional: Reload the signals every 60 seconds
+      // setInterval(loadSignals, 60000);
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
