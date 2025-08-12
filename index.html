@@ -1,48 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YC HEDGE FUND - Quantitative Research & AI-Driven Investing</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
-        /* Base styles and CSS Variables - ONLY DARK THEME */
         :root {
-            /* Enforce Dark Theme Colors */
             --bg-dark: #050505;
-            --text-dark-primary: #e2e8f0;
-            --text-dark-secondary: #94a3b8;
-            --border-dark-color: rgba(255, 255, 255, 0.1);
-            --card-bg-dark: rgba(10, 10, 10, 0.4); /* Dark glass */
             --primary-green: #00ff9b;
-            --secondary-glow: rgba(0, 255, 155, 0.4);
+            --secondary-glow: rgba(0, 255, 155, 0.2);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
         }
 
-        /* Apply dark theme styles globally */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-dark-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-primary);
         }
 
-        /* Hero background handled by JS for mobile */
         .hero-bg {
             background-image: url('/pics/hf1.jpg');
             background-size: cover;
             background-position: center;
-            position: relative; /* Needed for the pseudo-element overlay */
+            background-attachment: fixed;
         }
 
-        /* Section backgrounds handled by JS for mobile */
         .section-bg {
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
         .section-bg > .overlay {
@@ -67,13 +59,12 @@
             background-image: url('/pics/hf4.jpg');
         }
 
-        /* Glass card styles for dark theme */
         .glass-card {
-            background: var(--card-bg-dark);
-            border: 1px solid var(--border-dark-color);
-            transition: all 0.3s ease-in-out;
+            background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease-in-out;
         }
 
         .glass-card:hover {
@@ -83,50 +74,19 @@
         }
 
         .btn-primary {
-            font-family: 'Roboto Mono', monospace;
-            background-color: transparent;
-            color: var(--primary-green);
-            text-align: center;
-            border: 2px solid var(--primary-green);
-            font-weight: 700;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease-in-out;
+            @apply font-mono bg-transparent text-center border-2 border-green-400 text-green-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 ease-in-out;
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-green);
-            color: #000;
-            box-shadow: 0 10px 15px -3px var(--secondary-glow), 0 4px 6px -4px var(--secondary-glow);
-            transform: translateY(-0.125rem);
+            @apply bg-green-400 text-black shadow-lg shadow-green-500/20;
         }
 
         .section-title {
-            font-size: 2.25rem; /* text-4xl */
-            line-height: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em; /* tracking-tighter */
-        }
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 3rem; /* md:text-5xl */
-                line-height: 1;
-            }
+            @apply text-4xl md:text-5xl font-bold text-center mb-4 tracking-tighter;
         }
 
         .section-subtitle {
-            text-align: center;
-            color: var(--text-dark-secondary);
-            max-width: 42rem; /* max-w-2xl */
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 3rem; /* mb-12 */
-            font-weight: 300; /* font-light */
+            @apply text-center text-slate-400 max-w-2xl mx-auto mb-12 font-light;
         }
 
         .fade-in {
@@ -142,7 +102,6 @@
 
         .navbar {
             transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-            border-color: var(--border-dark-color);
         }
 
         .navbar-scrolled {
@@ -156,10 +115,9 @@
             overflow: hidden;
             background-color: #000;
             padding: 15px 0;
-            border-top: 1px solid var(--border-dark-color);
-            border-bottom: 1px solid var(--border-dark-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
-
         .ticker-move {
             display: inline-block;
             white-space: nowrap;
@@ -173,8 +131,8 @@
         .ticker-item span {
             margin-left: 10px;
         }
-        .text-gain { color: #22c55e; } /* text-green-500 */
-        .text-loss { color: #ef4444; } /* text-red-500 */
+        .text-gain { color: #22c55e; }
+        .text-loss { color: #ef4444; }
 
         @keyframes ticker {
             0% { transform: translateX(0); }
@@ -189,123 +147,25 @@
             height: 100%;
             z-index: 1;
         }
-
-        /* Purely Visual Toggle Switch Styles (Always shows dark mode) */
-        .theme-toggle-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .theme-toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* Always show dark mode slider (green) */
-            background-color: var(--primary-green);
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            /* Moon icon position (initial) */
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        /* Checked state: Sun icon equivalent (visually "on") */
-        input:checked + .slider:before {
-            transform: translateX(26px);
-            /* Optional: Add a sun emoji here if desired */
-            /* content: "☀️"; */
-        }
-
-        /* Mobile menu styles - ONLY DARK THEME */
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: var(--bg-dark);
-            border: 1px solid var(--border-dark-color);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            z-index: 100;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 border-b">
+    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#" class="text-2xl font-black tracking-tighter">YC.HF</a>
                 </div>
-                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Mission</a>
-                        <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
-                        <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Philosophy</a>
-                        <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                        <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mission</a>
+                        <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                        <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Philosophy</a>
+                        <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
-                <!-- Theme Toggle & Mobile Menu Button -->
-                <div class="flex items-center space-x-4">
-                    <div class="theme-toggle-container">
-                        <label class="theme-toggle">
-                            <input type="checkbox" id="theme-toggle" checked disabled> <!-- Checked and disabled for always dark -->
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <!-- Mobile menu button -->
-                    <div class="md:hidden flex items-center">
-                        <button id="mobile-menu-button" class="text-slate-400 hover:text-white focus:outline-none">
-                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="mobile-menu md:hidden">
-            <div class="flex flex-col space-y-2">
-                <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mission</a>
-                <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Research</a>
-                <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Philosophy</a>
-                <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
             </div>
         </div>
     </nav>
@@ -356,7 +216,7 @@
     <main>
         <section id="mission" class="py-20 md:py-32 px-4 fade-in">
             <div class="container mx-auto text-center">
-                <h2 class="section-title">Mission</h2>
+                <h2 class="section-title text-white">Mission</h2>
                 <p class="section-subtitle">
                     YC Hedge Fund is an independent research firm developing AI-powered systems for quantitative finance. We build, test, and deploy open-source, reproducible models designed for a real-world edge.
                 </p>
@@ -364,11 +224,12 @@
                     "From chaos to order"
                 </blockquote>
 
-                <!-- Simplified Live Signals Section (As Requested) -->
+                <!-- Simplified Live Signals Section (No Title) -->
                 <section class="py-6 px-2 fade-in">
                   <div class="container mx-auto">
-                    <div class="max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
-                      <table class="w-full" id="signals-table">
+                    <!-- Removed the <h2> title here -->
+                    <div class="overflow-x-auto max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
+                      <table class="w-full min-w-max" id="signals-table">
                         <thead>
                           <tr class="text-green-400 border-b border-gray-700">
                             <th class="text-left py-2 px-1">Ticker</th>
@@ -377,13 +238,15 @@
                             <th class="text-right py-2 px-1">Prec</th>
                             <th class="text-right py-2 px-1">Rec</th>
                             <th class="text-right py-2 px-1">AUC</th>
-                            <th class="text-right py-2 px-1">Probability</th>
+                            <th class="text-right py-2 px-1">Probability</th> <!-- Moved to the end -->
                           </tr>
                         </thead>
                         <tbody>
                           <!-- Rows will be inserted here by JS -->
                         </tbody>
                       </table>
+                      <div class="text-xs text-gray-500 mt-2 text-right">
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -489,7 +352,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 px-4 border-t" style="border-color: var(--border-dark-color);">
+    <footer class="py-12 px-4">
         <div class="container mx-auto text-center text-slate-500 text-sm">
             <p>&copy; 2025 YC HEDGE FUND • A RESEARCH-FIRST INVESTMENT ENTITY</p>
             <p class="mt-2">
@@ -575,40 +438,14 @@
 
       // Call the function when the page loads
       document.addEventListener('DOMContentLoaded', loadSignals);
+
+      // Optional: Reload the signals every 60 seconds
+      // setInterval(loadSignals, 60000);
     </script>
 
     <script>
-        // --- Theme Switching Logic (Simplified for Always Dark) ---
         document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.getElementById('theme-toggle');
-            const htmlElement = document.documentElement;
-
-            // Force dark mode class on html element
-            htmlElement.classList.add('dark');
-
-            // Set toggle to "checked" visually (moon icon)
-            if (toggleButton) {
-                toggleButton.checked = true;
-                // Disable the toggle functionality to prevent switching
-                toggleButton.disabled = true;
-            }
-
-            // --- Mobile Menu Logic ---
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                });
-            });
-
-            // --- Navbar scroll effect ---
+            // Navbar scroll effect
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -618,7 +455,7 @@
                 }
             });
 
-            // --- Fade-in animation on scroll ---
+            // Fade-in animation on scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -633,24 +470,7 @@
                 observer.observe(el);
             });
 
-            // --- Parallax Background Handling for Mobile ---
-            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-            const heroBg = document.querySelector('.hero-bg');
-            const sectionBgElements = document.querySelectorAll('.section-bg');
-
-            if (isMobile) {
-                // On mobile, remove the fixed background attachment and use a simpler approach
-                // The background will scroll normally, which is more performant and less buggy.
-                console.log("Mobile device detected. Parallax background disabled for performance.");
-                 // We can add a slight dark overlay by default for mobile if needed, or rely on the existing one.
-                 // The key fix is not using `background-attachment: fixed`.
-            } else {
-                // On desktop, the original CSS with `background-attachment: fixed` (implicitly via Tailwind or custom)
-                // or a more complex JS parallax could be used. The current CSS setup should work fine for desktop.
-                console.log("Desktop device detected. Parallax background enabled.");
-            }
-
-            // --- Hero Canvas Animation ---
+            // Hero Canvas Animation
             const canvas = document.getElementById('hero-canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
@@ -666,8 +486,7 @@
                     this.size = Math.random() * 2 + 1;
                     this.speedX = Math.random() * 2 - 1;
                     this.speedY = Math.random() * 2 - 1;
-                    // Use CSS variable for color, defaulting to a value if not found
-                    this.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-glow').trim() || 'rgba(0, 255, 155, 0.5)';
+                    this.color = 'rgba(0, 255, 155, 0.5)';
                 }
                 update() {
                     this.x += this.speedX;
