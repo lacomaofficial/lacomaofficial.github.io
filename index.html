@@ -4,37 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YC HEDGE FUND - Quantitative Research & AI-Driven Investing</title>
+    <!-- Use Tailwind's dark mode variant -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind before it loads
+        tailwind.config = {
+            darkMode: 'class', // Enable dark mode with a 'class' strategy
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Base styles and CSS Variables for themes */
         :root {
-            --bg-dark: #050505;
+            /* Light Theme Colors */
+            --bg-light: #f8fafc;
+            --text-light-primary: #0f172a;
+            --text-light-secondary: #64748b;
+            --border-light-color: rgba(0, 0, 0, 0.1);
+            --card-bg-light: rgba(255, 255, 255, 0.7); /* Light glass */
             --primary-green: #00ff9b;
-            --secondary-glow: rgba(0, 255, 155, 0.2);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
+            --secondary-glow: rgba(0, 255, 155, 0.4);
         }
 
+        /* Dark Theme Colors (applied when .dark class is on <html>) */
+        .dark {
+            --bg-dark: #050505;
+            --text-dark-primary: #e2e8f0;
+            --text-dark-secondary: #94a3b8;
+            --border-dark-color: rgba(255, 255, 255, 0.1);
+            --card-bg-dark: rgba(10, 10, 10, 0.4); /* Dark glass */
+        }
+
+        /* Default to dark theme styles */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-primary);
+            color: var(--text-dark-primary);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme switch */
         }
 
+        .dark body {
+            background-color: var(--bg-dark);
+            color: var(--text-dark-primary);
+        }
+        body:not(.dark) {
+            background-color: var(--bg-light);
+            color: var(--text-light-primary);
+        }
+
+        /* Hero background handled by JS for mobile */
         .hero-bg {
             background-image: url('/pics/hf1.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* background-attachment: fixed; Removed for mobile compatibility */
+            position: relative; /* Needed for the pseudo-element overlay */
         }
 
+        /* Section backgrounds handled by JS for mobile */
         .section-bg {
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* background-attachment: fixed; Removed for mobile compatibility */
             position: relative;
         }
         .section-bg > .overlay {
@@ -59,12 +101,24 @@
             background-image: url('/pics/hf4.jpg');
         }
 
+        /* Glass card styles for both themes */
         .glass-card {
-            background: rgba(10, 10, 10, 0.4);
+            /* Use CSS variables for theme-specific colors */
+            background: var(--card-bg-dark);
+            border: 1px solid var(--border-dark-color);
+            transition: all 0.3s ease-in-out, background 0.3s ease, border 0.3s ease;
+        }
+        .dark .glass-card {
+            background: var(--card-bg-dark);
+            border: 1px solid var(--border-dark-color);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease-in-out;
+        }
+        body:not(.dark) .glass-card {
+            background: var(--card-bg-light);
+            border: 1px solid var(--border-light-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .glass-card:hover {
@@ -74,19 +128,58 @@
         }
 
         .btn-primary {
-            @apply font-mono bg-transparent text-center border-2 border-green-400 text-green-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 ease-in-out;
+            /* Apply styles directly for better control across themes */
+            font-family: 'Roboto Mono', monospace;
+            background-color: transparent;
+            color: var(--primary-green); /* Inherits theme color */
+            text-align: center;
+            border: 2px solid var(--primary-green);
+            font-weight: 700;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in-out;
         }
 
         .btn-primary:hover {
-            @apply bg-green-400 text-black shadow-lg shadow-green-500/20;
+            background-color: var(--primary-green);
+            color: #000; /* Explicitly set for contrast */
+            box-shadow: 0 10px 15px -3px var(--secondary-glow), 0 4px 6px -4px var(--secondary-glow);
+            transform: translateY(-0.125rem);
         }
 
         .section-title {
-            @apply text-4xl md:text-5xl font-bold text-center mb-4 tracking-tighter;
+            font-size: 2.25rem; /* text-4xl */
+            line-height: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em; /* tracking-tighter */
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem; /* md:text-5xl */
+                line-height: 1;
+            }
         }
 
         .section-subtitle {
-            @apply text-center text-slate-400 max-w-2xl mx-auto mb-12 font-light;
+            text-align: center;
+            color: var(--text-dark-secondary); /* Default to dark subtitle color */
+            max-width: 42rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem; /* mb-12 */
+            font-weight: 300; /* font-light */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+        .dark .section-subtitle {
+            color: var(--text-dark-secondary);
+        }
+        body:not(.dark) .section-subtitle {
+            color: var(--text-light-secondary);
         }
 
         .fade-in {
@@ -101,7 +194,14 @@
         }
 
         .navbar {
-            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, border-color 0.3s ease;
+            border-color: transparent; /* Default border */
+        }
+        .dark .navbar {
+            border-color: var(--border-dark-color);
+        }
+        body:not(.dark) .navbar {
+            border-color: var(--border-light-color);
         }
 
         .navbar-scrolled {
@@ -109,15 +209,25 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+        body:not(.dark) .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
 
         .ticker-wrap {
             width: 100%;
             overflow: hidden;
             background-color: #000;
             padding: 15px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-dark-color);
+            border-bottom: 1px solid var(--border-dark-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
+        body:not(.dark) .ticker-wrap {
+             background-color: #f1f5f9; /* slate-100 */
+             border-top: 1px solid var(--border-light-color);
+             border-bottom: 1px solid var(--border-light-color);
+        }
+
         .ticker-move {
             display: inline-block;
             white-space: nowrap;
@@ -131,8 +241,8 @@
         .ticker-item span {
             margin-left: 10px;
         }
-        .text-gain { color: #22c55e; }
-        .text-loss { color: #ef4444; }
+        .text-gain { color: #22c55e; } /* text-green-500 */
+        .text-loss { color: #ef4444; } /* text-red-500 */
 
         @keyframes ticker {
             0% { transform: translateX(0); }
@@ -147,25 +257,131 @@
             height: 100%;
             z-index: 1;
         }
+
+        /* Toggle Switch Styles */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-green);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--bg-dark); /* Default dark */
+            border: 1px solid var(--border-dark-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .dark .mobile-menu {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-dark-color);
+        }
+        body:not(.dark) .mobile-menu {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-light-color);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50">
+    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 border-b">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#" class="text-2xl font-black tracking-tighter">YC.HF</a>
                 </div>
+                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mission</a>
-                        <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Research</a>
-                        <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Philosophy</a>
-                        <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Mission</a>
+                        <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
+                        <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Philosophy</a>
+                        <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
+                <!-- Theme Toggle & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <div class="theme-toggle-container">
+                        <label class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-slate-400 hover:text-white focus:outline-none">
+                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="flex flex-col space-y-2">
+                <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mission</a>
+                <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Philosophy</a>
+                <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
             </div>
         </div>
     </nav>
@@ -216,7 +432,7 @@
     <main>
         <section id="mission" class="py-20 md:py-32 px-4 fade-in">
             <div class="container mx-auto text-center">
-                <h2 class="section-title text-white">Mission</h2>
+                <h2 class="section-title">Mission</h2>
                 <p class="section-subtitle">
                     YC Hedge Fund is an independent research firm developing AI-powered systems for quantitative finance. We build, test, and deploy open-source, reproducible models designed for a real-world edge.
                 </p>
@@ -227,7 +443,6 @@
                 <!-- Simplified Live Signals Section (No Title) -->
                 <section class="py-6 px-2 fade-in">
                   <div class="container mx-auto">
-                    <!-- Removed the <h2> title here -->
                     <div class="overflow-x-auto max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
                       <table class="w-full min-w-max" id="signals-table">
                         <thead>
@@ -238,7 +453,7 @@
                             <th class="text-right py-2 px-1">Prec</th>
                             <th class="text-right py-2 px-1">Rec</th>
                             <th class="text-right py-2 px-1">AUC</th>
-                            <th class="text-right py-2 px-1">Probability</th> <!-- Moved to the end -->
+                            <th class="text-right py-2 px-1">Probability</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -246,6 +461,7 @@
                         </tbody>
                       </table>
                       <div class="text-xs text-gray-500 mt-2 text-right">
+                          <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" class="text-green-400 hover:underline">Model: Trader Lite</a>
                       </div>
                     </div>
                   </div>
@@ -328,7 +544,7 @@
         <!-- Spotify Playlist -->
         <section class="py-20 px-4 fade-in">
             <div class="container mx-auto">
-                <h2 class="section-title text-white mb-12 text-center">Research Soundtrack</h2>
+                <h2 class="section-title mb-12 text-center">Research Soundtrack</h2>
                 <div class="max-w-3xl mx-auto glass-card rounded-xl p-6">
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0EJ5EjLn4bM9Nxfy7VzEsp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
@@ -337,12 +553,12 @@
 
         <section id="contact" class="py-20 md:py-32 px-4 fade-in">
             <div class="container mx-auto text-center max-w-2xl">
-                <h2 class="section-title text-white">Contact</h2>
+                <h2 class="section-title">Contact</h2>
                 <p class="section-subtitle">
                     For research collaboration, due diligence, or institutional inquiry.
                 </p>
                 <div class="glass-card rounded-xl p-10">
-                    <p class="text-xl font-semibold text-white">j.lacoma, Founder</p>
+                    <p class="text-xl font-semibold">j.lacoma, Founder</p>
                     <a href="mailto:lacomaofficial@gmail.com" class="block my-6 text-green-400 hover:text-green-300 text-2xl transition-colors font-mono">
                         lacomaofficial@gmail.com
                     </a>
@@ -352,7 +568,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 px-4">
+    <footer class="py-12 px-4 border-t" style="border-color: var(--border-dark-color);">
         <div class="container mx-auto text-center text-slate-500 text-sm">
             <p>&copy; 2025 YC HEDGE FUND • A RESEARCH-FIRST INVESTMENT ENTITY</p>
             <p class="mt-2">
@@ -383,23 +599,18 @@
             tbody.innerHTML = ''; // Clear existing rows
 
             rows.forEach(line => {
-                // Simple split by comma.
                 const cols = line.split(',');
-                // Updated check: Ensure we have the 7 columns we need for the new format
                 if (cols.length >= 7) {
                     const tr = document.createElement('tr');
                     tr.className = 'border-b border-gray-800 hover:bg-gray-800';
-                    // Sanitize content and assign based on new column order (Probability is last)
                     const ticker = cols[0].trim();
                     const hype = cols[1].trim();
                     const acc = cols[2].trim();
                     const prec = cols[3].trim();
                     const rec = cols[4].trim();
                     const auc = cols[5].trim();
-                    // Probability is now the 7th column (index 6)
                     const probability = cols[6].trim();
 
-                    // Determine text color for probability
                     let probColorClass = "text-white";
                     const probValue = parseFloat(probability);
                     if (!isNaN(probValue)) {
@@ -410,7 +621,6 @@
                       }
                     }
 
-                    // Build the row HTML with the new column order
                     tr.innerHTML = `
                       <td class="py-2 px-1">${ticker}</td>
                       <td class="text-right py-2 px-1">${hype}</td>
@@ -418,34 +628,81 @@
                       <td class="text-right py-2 px-1">${prec}</td>
                       <td class="text-right py-2 px-1">${rec}</td>
                       <td class="text-right py-2 px-1">${auc}</td>
-                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td> <!-- Moved to the end -->
+                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td>
                     `;
                     tbody.appendChild(tr);
                 } else if (cols.length > 1) {
-                     // Handle rows that don't match the expected format but aren't empty
                      console.warn('Skipping malformed row (check column count):', line);
                 }
             });
           })
           .catch(error => {
             console.warn('Could not load live signals:', error);
-            // Display an error message in the table area
             const tbody = document.querySelector('#signals-table tbody');
-            // Update colspan to 7 to match the new number of columns
             tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-gray-500">Signals data unavailable.</td></tr>`;
           });
       }
 
       // Call the function when the page loads
       document.addEventListener('DOMContentLoaded', loadSignals);
-
-      // Optional: Reload the signals every 60 seconds
-      // setInterval(loadSignals, 60000);
     </script>
 
     <script>
+        // --- Theme Switching Logic ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar scroll effect
+            const toggleButton = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+
+            // Check for saved theme preference or respect system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // Determine initial theme
+            let initialTheme = 'dark'; // Default to dark
+            if (savedTheme) {
+                initialTheme = savedTheme;
+            } else if (prefersDarkScheme.matches) {
+                initialTheme = 'dark';
+            } else {
+                initialTheme = 'light';
+            }
+
+            // Apply initial theme
+            htmlElement.classList.toggle('dark', initialTheme === 'dark');
+            toggleButton.checked = initialTheme === 'dark'; // Update toggle switch
+
+            // Listen for toggle changes
+            toggleButton.addEventListener('change', function() {
+                if (this.checked) {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                }
+                // Force a repaint to ensure styles are applied correctly after theme switch
+                document.body.style.transition = 'none';
+                document.body.offsetHeight; // Trigger reflow
+                document.body.style.transition = '';
+            });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+
+            // --- Navbar scroll effect ---
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -455,7 +712,7 @@
                 }
             });
 
-            // Fade-in animation on scroll
+            // --- Fade-in animation on scroll ---
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -470,7 +727,24 @@
                 observer.observe(el);
             });
 
-            // Hero Canvas Animation
+            // --- Parallax Background Handling for Mobile ---
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            const heroBg = document.querySelector('.hero-bg');
+            const sectionBgElements = document.querySelectorAll('.section-bg');
+
+            if (isMobile) {
+                // On mobile, remove the fixed background attachment and use a simpler approach
+                // The background will scroll normally, which is more performant and less buggy.
+                console.log("Mobile device detected. Parallax background disabled for performance.");
+                 // We can add a slight dark overlay by default for mobile if needed, or rely on the existing one.
+                 // The key fix is not using `background-attachment: fixed`.
+            } else {
+                // On desktop, the original CSS with `background-attachment: fixed` (implicitly via Tailwind or custom)
+                // or a more complex JS parallax could be used. The current CSS setup should work fine for desktop.
+                console.log("Desktop device detected. Parallax background enabled.");
+            }
+
+            // --- Hero Canvas Animation ---
             const canvas = document.getElementById('hero-canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
@@ -486,7 +760,8 @@
                     this.size = Math.random() * 2 + 1;
                     this.speedX = Math.random() * 2 - 1;
                     this.speedY = Math.random() * 2 - 1;
-                    this.color = 'rgba(0, 255, 155, 0.5)';
+                    // Use CSS variable for color, defaulting to a value if not found
+                    this.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-glow').trim() || 'rgba(0, 255, 155, 0.5)';
                 }
                 update() {
                     this.x += this.speedX;
@@ -504,6 +779,7 @@
             }
 
             function initParticles() {
+                particles = []; // Clear array
                 for (let i = 0; i < particleCount; i++) {
                     particles.push(new Particle());
                 }
@@ -524,8 +800,7 @@
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                particles = [];
-                initParticles();
+                initParticles(); // Re-initialize particles on resize
             });
         });
     </script>
