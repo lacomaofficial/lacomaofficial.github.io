@@ -1,66 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YC HEDGE FUND - Quantitative Research & AI-Driven Investing</title>
-    <!-- Use Tailwind's dark mode variant -->
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Configure Tailwind before it loads
-        tailwind.config = {
-            darkMode: 'class', // Enable dark mode with a 'class' strategy
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'mono': ['Roboto Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Base styles and CSS Variables for themes */
+        /* Base styles and CSS Variables - ONLY DARK THEME */
         :root {
-            /* Light Theme Colors */
-            --bg-light: #f8fafc;
-            --text-light-primary: #0f172a;
-            --text-light-secondary: #64748b;
-            --border-light-color: rgba(0, 0, 0, 0.1);
-            --card-bg-light: rgba(255, 255, 255, 0.7); /* Light glass */
-            --primary-green: #00ff9b;
-            --secondary-glow: rgba(0, 255, 155, 0.4);
-        }
-
-        /* Dark Theme Colors (applied when .dark class is on <html>) */
-        .dark {
+            /* Enforce Dark Theme Colors */
             --bg-dark: #050505;
             --text-dark-primary: #e2e8f0;
             --text-dark-secondary: #94a3b8;
             --border-dark-color: rgba(255, 255, 255, 0.1);
             --card-bg-dark: rgba(10, 10, 10, 0.4); /* Dark glass */
+            --primary-green: #00ff9b;
+            --secondary-glow: rgba(0, 255, 155, 0.4);
         }
 
-        /* Default to dark theme styles */
+        /* Apply dark theme styles globally */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-dark-primary);
-            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme switch */
-        }
-
-        .dark body {
-            background-color: var(--bg-dark);
-            color: var(--text-dark-primary);
-        }
-        body:not(.dark) {
-            background-color: var(--bg-light);
-            color: var(--text-light-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Hero background handled by JS for mobile */
@@ -68,7 +36,6 @@
             background-image: url('/pics/hf1.jpg');
             background-size: cover;
             background-position: center;
-            /* background-attachment: fixed; Removed for mobile compatibility */
             position: relative; /* Needed for the pseudo-element overlay */
         }
 
@@ -76,7 +43,6 @@
         .section-bg {
             background-size: cover;
             background-position: center;
-            /* background-attachment: fixed; Removed for mobile compatibility */
             position: relative;
         }
         .section-bg > .overlay {
@@ -101,22 +67,11 @@
             background-image: url('/pics/hf4.jpg');
         }
 
-        /* Glass card styles for both themes */
+        /* Glass card styles for dark theme */
         .glass-card {
-            /* Use CSS variables for theme-specific colors */
             background: var(--card-bg-dark);
             border: 1px solid var(--border-dark-color);
-            transition: all 0.3s ease-in-out, background 0.3s ease, border 0.3s ease;
-        }
-        .dark .glass-card {
-            background: var(--card-bg-dark);
-            border: 1px solid var(--border-dark-color);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        body:not(.dark) .glass-card {
-            background: var(--card-bg-light);
-            border: 1px solid var(--border-light-color);
+            transition: all 0.3s ease-in-out;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
@@ -128,10 +83,9 @@
         }
 
         .btn-primary {
-            /* Apply styles directly for better control across themes */
             font-family: 'Roboto Mono', monospace;
             background-color: transparent;
-            color: var(--primary-green); /* Inherits theme color */
+            color: var(--primary-green);
             text-align: center;
             border: 2px solid var(--primary-green);
             font-weight: 700;
@@ -145,7 +99,7 @@
 
         .btn-primary:hover {
             background-color: var(--primary-green);
-            color: #000; /* Explicitly set for contrast */
+            color: #000;
             box-shadow: 0 10px 15px -3px var(--secondary-glow), 0 4px 6px -4px var(--secondary-glow);
             transform: translateY(-0.125rem);
         }
@@ -167,19 +121,12 @@
 
         .section-subtitle {
             text-align: center;
-            color: var(--text-dark-secondary); /* Default to dark subtitle color */
+            color: var(--text-dark-secondary);
             max-width: 42rem; /* max-w-2xl */
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 3rem; /* mb-12 */
             font-weight: 300; /* font-light */
-            transition: color 0.3s ease; /* Smooth color transition */
-        }
-        .dark .section-subtitle {
-            color: var(--text-dark-secondary);
-        }
-        body:not(.dark) .section-subtitle {
-            color: var(--text-light-secondary);
         }
 
         .fade-in {
@@ -194,23 +141,14 @@
         }
 
         .navbar {
-            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, border-color 0.3s ease;
-            border-color: transparent; /* Default border */
-        }
-        .dark .navbar {
+            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
             border-color: var(--border-dark-color);
-        }
-        body:not(.dark) .navbar {
-            border-color: var(--border-light-color);
         }
 
         .navbar-scrolled {
             background-color: rgba(5, 5, 5, 0.8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-        }
-        body:not(.dark) .navbar-scrolled {
-            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .ticker-wrap {
@@ -220,12 +158,6 @@
             padding: 15px 0;
             border-top: 1px solid var(--border-dark-color);
             border-bottom: 1px solid var(--border-dark-color);
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-        body:not(.dark) .ticker-wrap {
-             background-color: #f1f5f9; /* slate-100 */
-             border-top: 1px solid var(--border-light-color);
-             border-bottom: 1px solid var(--border-light-color);
         }
 
         .ticker-move {
@@ -258,7 +190,7 @@
             z-index: 1;
         }
 
-        /* Toggle Switch Styles */
+        /* Purely Visual Toggle Switch Styles (Always shows dark mode) */
         .theme-toggle-container {
             display: flex;
             align-items: center;
@@ -285,7 +217,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ccc;
+            /* Always show dark mode slider (green) */
+            background-color: var(--primary-green);
             transition: .4s;
             border-radius: 34px;
         }
@@ -295,6 +228,7 @@
             content: "";
             height: 26px;
             width: 26px;
+            /* Moon icon position (initial) */
             left: 4px;
             bottom: 4px;
             background-color: white;
@@ -302,35 +236,25 @@
             border-radius: 50%;
         }
 
-        input:checked + .slider {
-            background-color: var(--primary-green);
-        }
-
+        /* Checked state: Sun icon equivalent (visually "on") */
         input:checked + .slider:before {
             transform: translateX(26px);
+            /* Optional: Add a sun emoji here if desired */
+            /* content: "☀️"; */
         }
 
-        /* Mobile menu styles */
+        /* Mobile menu styles - ONLY DARK THEME */
         .mobile-menu {
             display: none;
             position: absolute;
             top: 100%;
             right: 0;
-            background-color: var(--bg-dark); /* Default dark */
+            background-color: var(--bg-dark);
             border: 1px solid var(--border-dark-color);
             border-radius: 0.5rem;
             padding: 1rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
             z-index: 100;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .dark .mobile-menu {
-            background-color: var(--bg-dark);
-            border: 1px solid var(--border-dark-color);
-        }
-        body:not(.dark) .mobile-menu {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-light-color);
         }
 
         .mobile-menu.active {
@@ -360,7 +284,7 @@
                 <div class="flex items-center space-x-4">
                     <div class="theme-toggle-container">
                         <label class="theme-toggle">
-                            <input type="checkbox" id="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" checked disabled> <!-- Checked and disabled for always dark -->
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -440,11 +364,11 @@
                     "From chaos to order"
                 </blockquote>
 
-                <!-- Simplified Live Signals Section (No Title) -->
+                <!-- Simplified Live Signals Section (As Requested) -->
                 <section class="py-6 px-2 fade-in">
                   <div class="container mx-auto">
-                    <div class="overflow-x-auto max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
-                      <table class="w-full min-w-max" id="signals-table">
+                    <div class="max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
+                      <table class="w-full" id="signals-table">
                         <thead>
                           <tr class="text-green-400 border-b border-gray-700">
                             <th class="text-left py-2 px-1">Ticker</th>
@@ -460,9 +384,6 @@
                           <!-- Rows will be inserted here by JS -->
                         </tbody>
                       </table>
-                      <div class="text-xs text-gray-500 mt-2 text-right">
-                          <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" class="text-green-400 hover:underline">Model: Trader Lite</a>
-                      </div>
                     </div>
                   </div>
                 </section>
@@ -544,7 +465,7 @@
         <!-- Spotify Playlist -->
         <section class="py-20 px-4 fade-in">
             <div class="container mx-auto">
-                <h2 class="section-title mb-12 text-center">Research Soundtrack</h2>
+                <h2 class="section-title text-white mb-12 text-center">Research Soundtrack</h2>
                 <div class="max-w-3xl mx-auto glass-card rounded-xl p-6">
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0EJ5EjLn4bM9Nxfy7VzEsp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
@@ -553,12 +474,12 @@
 
         <section id="contact" class="py-20 md:py-32 px-4 fade-in">
             <div class="container mx-auto text-center max-w-2xl">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title text-white">Contact</h2>
                 <p class="section-subtitle">
                     For research collaboration, due diligence, or institutional inquiry.
                 </p>
                 <div class="glass-card rounded-xl p-10">
-                    <p class="text-xl font-semibold">j.lacoma, Founder</p>
+                    <p class="text-xl font-semibold text-white">j.lacoma, Founder</p>
                     <a href="mailto:lacomaofficial@gmail.com" class="block my-6 text-green-400 hover:text-green-300 text-2xl transition-colors font-mono">
                         lacomaofficial@gmail.com
                     </a>
@@ -599,18 +520,23 @@
             tbody.innerHTML = ''; // Clear existing rows
 
             rows.forEach(line => {
+                // Simple split by comma.
                 const cols = line.split(',');
+                // Updated check: Ensure we have the 7 columns we need for the new format
                 if (cols.length >= 7) {
                     const tr = document.createElement('tr');
                     tr.className = 'border-b border-gray-800 hover:bg-gray-800';
+                    // Sanitize content and assign based on new column order (Probability is last)
                     const ticker = cols[0].trim();
                     const hype = cols[1].trim();
                     const acc = cols[2].trim();
                     const prec = cols[3].trim();
                     const rec = cols[4].trim();
                     const auc = cols[5].trim();
+                    // Probability is now the 7th column (index 6)
                     const probability = cols[6].trim();
 
+                    // Determine text color for probability
                     let probColorClass = "text-white";
                     const probValue = parseFloat(probability);
                     if (!isNaN(probValue)) {
@@ -621,6 +547,7 @@
                       }
                     }
 
+                    // Build the row HTML with the new column order
                     tr.innerHTML = `
                       <td class="py-2 px-1">${ticker}</td>
                       <td class="text-right py-2 px-1">${hype}</td>
@@ -628,17 +555,20 @@
                       <td class="text-right py-2 px-1">${prec}</td>
                       <td class="text-right py-2 px-1">${rec}</td>
                       <td class="text-right py-2 px-1">${auc}</td>
-                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td>
+                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td> <!-- Moved to the end -->
                     `;
                     tbody.appendChild(tr);
                 } else if (cols.length > 1) {
+                     // Handle rows that don't match the expected format but aren't empty
                      console.warn('Skipping malformed row (check column count):', line);
                 }
             });
           })
           .catch(error => {
             console.warn('Could not load live signals:', error);
+            // Display an error message in the table area
             const tbody = document.querySelector('#signals-table tbody');
+            // Update colspan to 7 to match the new number of columns
             tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-gray-500">Signals data unavailable.</td></tr>`;
           });
       }
@@ -648,43 +578,20 @@
     </script>
 
     <script>
-        // --- Theme Switching Logic ---
+        // --- Theme Switching Logic (Simplified for Always Dark) ---
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('theme-toggle');
             const htmlElement = document.documentElement;
 
-            // Check for saved theme preference or respect system preference
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            // Force dark mode class on html element
+            htmlElement.classList.add('dark');
 
-            // Determine initial theme
-            let initialTheme = 'dark'; // Default to dark
-            if (savedTheme) {
-                initialTheme = savedTheme;
-            } else if (prefersDarkScheme.matches) {
-                initialTheme = 'dark';
-            } else {
-                initialTheme = 'light';
+            // Set toggle to "checked" visually (moon icon)
+            if (toggleButton) {
+                toggleButton.checked = true;
+                // Disable the toggle functionality to prevent switching
+                toggleButton.disabled = true;
             }
-
-            // Apply initial theme
-            htmlElement.classList.toggle('dark', initialTheme === 'dark');
-            toggleButton.checked = initialTheme === 'dark'; // Update toggle switch
-
-            // Listen for toggle changes
-            toggleButton.addEventListener('change', function() {
-                if (this.checked) {
-                    htmlElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    htmlElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                }
-                // Force a repaint to ensure styles are applied correctly after theme switch
-                document.body.style.transition = 'none';
-                document.body.offsetHeight; // Trigger reflow
-                document.body.style.transition = '';
-            });
 
             // --- Mobile Menu Logic ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -700,7 +607,6 @@
                     mobileMenu.classList.remove('active');
                 });
             });
-
 
             // --- Navbar scroll effect ---
             const navbar = document.getElementById('navbar');
@@ -779,7 +685,6 @@
             }
 
             function initParticles() {
-                particles = []; // Clear array
                 for (let i = 0; i < particleCount; i++) {
                     particles.push(new Particle());
                 }
@@ -800,7 +705,8 @@
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                initParticles(); // Re-initialize particles on resize
+                particles = [];
+                initParticles();
             });
         });
     </script>
