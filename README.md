@@ -9,6 +9,8 @@ An independent quantitative research entity focused on AI-driven financial analy
 
 &nbsp;
 
+![hf4](https://github.com/user-attachments/assets/f9e1ae43-c8ef-4a90-8c0d-7aa042ee1840)
+
 ---
 &nbsp;
 
