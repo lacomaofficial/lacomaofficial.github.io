@@ -9,6 +9,7 @@ An independent quantitative research entity focused on AI-driven financial analy
 
 &nbsp;
 **[https://lacomaofficial.github.io](https://lacomaofficial.github.io)**
+---
 &nbsp;
 
 
