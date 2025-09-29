@@ -1,12 +1,14 @@
-## YC HEDGE FUND
-
+## **YC HEDGE FUND**
 An independent quantitative research entity focused on AI-driven financial analysis and investing.
 
-
-**[https://lacomaofficial.github.io](https://lacomaofficial.github.io)**
+1. **Theoretical Rigor** (cycle theory)
+2. **Reality Testing** (market confirmation)  
+3. **Predictive Power** (deep learning)
+4. **Fundamental Safety** (quality companies)
+5. **Synthesis Intelligence** (discussions)
 
 &nbsp;
-
+**[https://lacomaofficial.github.io](https://lacomaofficial.github.io)**
 &nbsp;
 
 
@@ -166,12 +168,6 @@ INTEGRATION:
 ---
 
 
-### **YC HF:**
-1. **Theoretical Rigor** (cycle theory)
-2. **Reality Testing** (market confirmation)  
-3. **Predictive Power** (neural network)
-4. **Fundamental Safety** (quality companies)
-5. **Synthesis Intelligence** (our discussions)
 
 
 
