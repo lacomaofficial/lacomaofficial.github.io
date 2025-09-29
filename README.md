@@ -6,7 +6,7 @@ An independent quantitative research entity focused on AI-driven financial analy
 **[https://lacomaofficial.github.io](https://lacomaofficial.github.io)**
 
 &nbsp;
----
+
 &nbsp;
 
 ## **Protocol System**
