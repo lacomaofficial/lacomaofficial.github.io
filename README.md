@@ -9,7 +9,6 @@ An independent quantitative research entity focused on AI-driven financial analy
 
 &nbsp;
 
-## **Protocol System**
 
 ### **PHASE 1: Macro & Geopolitical Analysis**
 **Objective:** Establish the "should be" narrative based on economic theory and geopolitical reality
