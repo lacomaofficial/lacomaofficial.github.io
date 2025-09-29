@@ -1,15 +1,10 @@
 ## **YC HEDGE FUND**
 An independent quantitative research entity focused on AI-driven financial analysis and investing.
 
-1. **Theoretical Rigor** (cycle theory)
-2. **Reality Testing** (market confirmation)  
-3. **Predictive Power** (deep learning)
-4. **Fundamental Safety** (quality companies)
-5. **Synthesis Intelligence** (discussions)
-
 &nbsp;
 
-![hf4](https://github.com/user-attachments/assets/f9e1ae43-c8ef-4a90-8c0d-7aa042ee1840)
+![hf1](https://github.com/user-attachments/assets/914e9235-50ff-41b2-a5f2-d74a56d778ea)
+
 
 ---
 &nbsp;
