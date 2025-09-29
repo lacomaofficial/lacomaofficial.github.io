@@ -8,7 +8,7 @@ An independent quantitative research entity focused on AI-driven financial analy
 5. **Synthesis Intelligence** (discussions)
 
 &nbsp;
-**[https://lacomaofficial.github.io](https://lacomaofficial.github.io)**
+
 ---
 &nbsp;
 
