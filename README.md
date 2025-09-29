@@ -32,6 +32,7 @@ An independent quantitative research entity focused on AI-driven financial analy
 ```
 
 **Output:** `Macro Narrative: [Cycle Phase], [Theoretical Winners], [Theoretical Losers]`
+
 &nbsp;
 ---
 
@@ -59,6 +60,7 @@ An independent quantitative research entity focused on AI-driven financial analy
 **Critical Question:** **"Is the market confirming or contradicting our macro view?"**
 
 **Output:** `Market Reality: [Confirmed Theories], [Contradictions], [Anomalies]`
+
 &nbsp;
 ---
 
@@ -81,6 +83,7 @@ OUR ADJUSTMENT: Understand WHY theory failed, adjust sector selection
 ```
 
 **Output:** `Approved Sectors: [Sector] (High/Moderate Conviction)`
+
 &nbsp;
 ---
 
@@ -94,6 +97,7 @@ OUR ADJUSTMENT: Understand WHY theory failed, adjust sector selection
 - Liquidity > $50M daily
 
 **Output:** `Screening Universe: [Sector] → [8 companies]`
+
 &nbsp;
 ---
 
@@ -117,6 +121,7 @@ OUR ADJUSTMENT: Understand WHY theory failed, adjust sector selection
 - 52-week gain > 300% → CAUTION FLAG
 
 **Output:** `NN Approved: [Ticker] @ [Probability]%`
+
 &nbsp;
 ---
 
@@ -135,6 +140,7 @@ OUR ADJUSTMENT: Understand WHY theory failed, adjust sector selection
 ```
 
 **Output:** `Fundamentally Sound: [Final Candidates]`
+
 &nbsp;
 ---
 
@@ -155,6 +161,7 @@ INTEGRATION:
 ```
 
 **Output:** `Final Portfolio: [Positions], [Sizes], [Rationale]`
+
 &nbsp;
 ---
 
