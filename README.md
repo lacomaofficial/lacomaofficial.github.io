@@ -50,7 +50,6 @@ History shows non-linear convergences birthing reckonings—debt overloads meet 
 
 ## The Present: Stagflation's Chaotic Convergence (October 2025)
 
-We're in a perfect storm—stagflation (stagnant growth + inflation ~2.9%) where linear sector cycles fail. Big tech thrives on liquidity (monopolies hoard cash), while working-class income lags. Dalio's forces converge modernly: debt (~$37T US) meets AI turbulence; geopolitics (tariffs ~27%) distorts trade.
 
 - **Macro Example: Debt Cycle + Inventiveness**  
   Yields rise after Fed cuts (~4.13% 10Y), defying linear easing logic due to deficits and AI-driven capex.
