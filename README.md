@@ -9,6 +9,7 @@ This isn't abstract philosophy; it's our edge. Drawing from Ray Dalio's "Big Cyc
 
 In this inaugural article, I summarize the theory with real examples across macroeconomics (big-picture flows), geopolitics (power clashes), fundamentals (structural truths), and technicals (market signals). We explore the past's lessons, present's convergences, and future's bifurcations.
 
+<br>
 
 ## The Theory: A Stochastic Chaos Engine
 
@@ -28,6 +29,7 @@ Financial markets aren't clocks; they're weather systems—stochastic (random, p
 
 **Feedback Rule:** Inequality prolongs debt cycles (upward capital flows), monopolies capture tech gains amid stagflation, and Gundlach's "reckonings" (yield anomalies) signal paradigm breaks.
 
+<br>
 
 ## The Past: Recurring Chaos and Resets
 
@@ -47,6 +49,7 @@ History shows non-linear convergences birthing reckonings—debt overloads meet 
 
 **Lesson:** Chaos resets linearly; survivors build monopolies on blind spots.
 
+<br>
 
 ## The Present: Stagflation's Chaotic Convergence (October 2025)
 
@@ -65,6 +68,7 @@ History shows non-linear convergences birthing reckonings—debt overloads meet 
 
 **Inference:** Stagflation is harsh for consumers but opportunity-rich for monopolies.
 
+<br>
 
 ## The Future: Bifurcation in the Storm
 
@@ -84,6 +88,7 @@ Non-linearity points to divergent paths: abundance (tech-led productivity) or cr
 
 **Paths:** Crisis-driven resets or reform-driven expansion.
 
+<br>
 
 ## Why YC Hedge Fund Thrives in Chaos
 
