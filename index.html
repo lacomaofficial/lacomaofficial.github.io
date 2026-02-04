@@ -237,7 +237,7 @@
                             <th class="text-right py-2 px-1">Acc</th>
                             <th class="text-right py-2 px-1">Prec</th>
                             <th class="text-right py-2 px-1">Rec</th>
-                            <th class="text-right py-2 px-1">AUC</th>
+                            <th class="text-right py-2 px-1">F1</th>
                             <th class="text-right py-2 px-1">Probability</th> <!-- Moved to the end -->
                           </tr>
                         </thead>
@@ -395,7 +395,7 @@
                     const acc = cols[2].trim();
                     const prec = cols[3].trim();
                     const rec = cols[4].trim();
-                    const auc = cols[5].trim();
+                    const F1 = cols[5].trim();
                     // Probability is now the 7th column (index 6)
                     const probability = cols[6].trim();
 
@@ -417,7 +417,7 @@
                       <td class="text-right py-2 px-1">${acc}</td>
                       <td class="text-right py-2 px-1">${prec}</td>
                       <td class="text-right py-2 px-1">${rec}</td>
-                      <td class="text-right py-2 px-1">${auc}</td>
+                      <td class="text-right py-2 px-1">${F1}</td>
                       <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td> <!-- Moved to the end -->
                     `;
                     tbody.appendChild(tr);
