@@ -1,4 +1,4 @@
-Ticker,Hype,Acc,Prec,Rec,AUC,Probability
+Ticker,Hype,Acc,Prec,Rec,F1,Probability
 CR,UP,0.86,0.711,0.889,0.79,79.31%
 RKLB,HOLD,0.765,0.785,0.904,0.84,61.82%
 PLTR,HOLD,0.765,0.716,0.95,0.817,57.21%
