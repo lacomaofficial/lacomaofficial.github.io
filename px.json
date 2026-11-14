@@ -1,0 +1,6 @@
+{
+  "corsfix_error": "invalid_url",
+  "message": "The target URL is invalid or malformed",
+  "if_you_are_admin": "Check the URL format - it must be a valid HTTP/HTTPS URL",
+  "if_you_are_user": "Please contact the website owner about this issue"
+}

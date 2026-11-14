@@ -1,5 +1,4 @@
-<img width="2560" height="1440" alt="Primary logo – dark" src="https://github.com/user-attachments/assets/6c847f8e-1e0d-4ac4-b557-248c84e1ddee" />
-
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/e112cb8a-361e-4552-b535-859333394fc5" />
 
 # Chaos in the Markets: Why Linear Thinking Fails in a Stochastic System  
 

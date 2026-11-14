@@ -1,8 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YC Hedge Fund is an independent quantitative research firm building open, reproducible AI systems for financial markets.">
+    <meta name="theme-color" id="theme-color-meta" content="#050505">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='34' font-weight='900' fill='%2300ff9b' text-anchor='middle'%3EYC%3C/text%3E%3C/svg%3E">
+    <meta property="og:title" content="YC Hedge Fund - Quantitative Research & AI-Driven Investing">
+    <meta property="og:description" content="Independent quantitative research and open AI systems for financial markets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lacomaofficial.github.io/">
+    <meta property="og:image" content="https://lacomaofficial.github.io/pics/hf1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('yc-theme');
+                var preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                document.documentElement.dataset.theme = stored === 'light' || stored === 'dark' ? stored : preferred;
+            } catch (e) {
+                document.documentElement.dataset.theme = 'dark';
+            }
+        })();
+    </script>
     <title>YC HEDGE FUND - Quantitative Research & AI-Driven Investing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,25 +30,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #050505;
-            --primary-green: #00ff9b;
-            --secondary-glow: rgba(0, 255, 155, 0.2);
-            --border-color: rgba(255, 255, 255, 0.1);
+            --bg: #050505;
+            --bg-soft: #0a0a0a;
+            --surface: rgba(10, 10, 10, 0.42);
+            --surface-strong: rgba(15, 23, 42, 0.82);
             --text-primary: #e2e8f0;
             --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --overlay: rgba(5, 5, 5, 0.86);
+            --hero-overlay: rgba(0, 0, 0, 0.68);
+            --nav-bg: rgba(5, 5, 5, 0.78);
+            --accent: #00ff9b;
+            --accent-strong: #00ff9b;
+            --accent-contrast: #03130c;
+            --accent-glow: rgba(0, 255, 155, 0.22);
+            --app-bg: #0b1220;
+            --signal-up: #22c55e;
+            --signal-down: #ef4444;
+            --signal-hold: #f59e0b;
+        }
+
+        :root[data-theme='light'] {
+            --bg: #f5f7fb;
+            --bg-soft: #ffffff;
+            --surface: rgba(255, 255, 255, 0.78);
+            --surface-strong: rgba(255, 255, 255, 0.92);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: rgba(15, 23, 42, 0.12);
+            --overlay: rgba(248, 250, 252, 0.88);
+            --hero-overlay: rgba(248, 250, 252, 0.74);
+            --nav-bg: rgba(255, 255, 255, 0.82);
+            --accent: #059669;
+            --accent-strong: #047857;
+            --accent-contrast: #ffffff;
+            --accent-glow: rgba(5, 150, 105, 0.18);
+            --app-bg: #eef2f7;
+            --signal-up: #15803d;
+            --signal-down: #b91c1c;
+            --signal-hold: #b45309;
+        }
+
+        html {
+            scroll-padding-top: 96px;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
+            background-color: var(--bg);
             color: var(--text-primary);
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        ::selection {
+            background: var(--accent-glow);
         }
 
         .hero-bg {
-            background-image: url('/pics/hf1.jpg');
+            background-image: url('pics/hf1.jpg');
+            background-color: var(--bg-soft);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            background-color: var(--hero-overlay);
         }
 
         .section-bg {
@@ -43,7 +112,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(5, 5, 5, 0.85);
+            background-color: var(--overlay);
             z-index: 1;
         }
         .section-bg > .content-wrapper {
@@ -52,15 +121,24 @@
         }
 
         .research-bg {
-            background-image: url('/pics/hf5.jpg');
+            background-image: url('pics/hf5.jpg');
+        }
+
+        .app-bg {
+            background-image: url('pics/hf2.jpg');
         }
 
         .philosophy-bg {
-            background-image: url('/pics/hf4.jpg');
+            background-image: url('pics/hf4.jpg');
+        }
+
+        .contact-bg {
+            background-image: url('pics/hf3.jpg');
         }
 
         .glass-card {
-            background: rgba(10, 10, 10, 0.4);
+            background: var(--surface);
+            color: var(--text-primary);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
@@ -68,25 +146,58 @@
         }
 
         .glass-card:hover {
-            border-color: var(--primary-green);
+            border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 0 25px var(--secondary-glow);
+            box-shadow: 0 24px 50px -24px var(--accent-glow);
         }
 
         .btn-primary {
-            @apply font-mono bg-transparent text-center border-2 border-green-400 text-green-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 ease-in-out;
+            display: inline-block;
+            font-family: 'Roboto Mono', monospace;
+            text-align: center;
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
         }
 
         .btn-primary:hover {
-            @apply bg-green-400 text-black shadow-lg shadow-green-500/20;
+            background: var(--accent);
+            color: var(--accent-contrast);
+            box-shadow: 0 0 28px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .section-kicker {
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 0.75rem;
+            color: var(--accent-strong);
+            text-align: center;
+            margin-bottom: 0.75rem;
         }
 
         .section-title {
-            @apply text-4xl md:text-5xl font-bold text-center mb-4 tracking-tighter;
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
         }
 
         .section-subtitle {
-            @apply text-center text-slate-400 max-w-2xl mx-auto mb-12 font-light;
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 42rem;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
         .fade-in {
@@ -105,38 +216,414 @@
         }
 
         .navbar-scrolled {
-            background-color: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .theme-toggle,
+        .mobile-menu-button {
+            position: relative;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .theme-toggle:hover,
+        .mobile-menu-button:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 18px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        .theme-icon,
+        .menu-icon {
+            width: 1.15rem;
+            height: 1.15rem;
+        }
+
+        .theme-icon {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            transition: opacity 0.25s ease, transform 0.35s ease;
+        }
+
+        :root[data-theme='dark'] .icon-moon {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+        }
+
+        :root[data-theme='light'] .icon-sun {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.6);
+        }
+
+        .mobile-menu {
+            display: none;
+            border-top: 1px solid var(--border-color);
+            background: var(--nav-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 0.9rem 1rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-link:last-child {
+            border-bottom: 0;
+        }
+
+        .mobile-link:hover {
+            color: var(--text-primary);
+            background: var(--surface);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu {
+                display: none !important;
+            }
         }
 
         .ticker-wrap {
+            display: flex;
+            align-items: center;
             width: 100%;
             overflow: hidden;
-            background-color: #000;
-            padding: 15px 0;
+            background-color: var(--bg-soft);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
-        .ticker-move {
-            display: inline-block;
-            white-space: nowrap;
-            animation: ticker 40s linear infinite;
-        }
-        .ticker-item {
-            display: inline-block;
-            padding: 0 2rem;
+
+        .ticker-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.25rem;
             font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-right: 1px solid var(--border-color);
+            vertical-align: middle;
         }
-        .ticker-item span {
-            margin-left: 10px;
+
+        .ticker-live-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 9999px;
+            background: var(--signal-up);
+            box-shadow: 0 0 12px var(--signal-up);
         }
-        .text-gain { color: #22c55e; }
-        .text-loss { color: #ef4444; }
+
+        .ticker-viewport {
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        .ticker-move {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: ticker 48s linear infinite;
+            will-change: transform;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.9rem 1.5rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .ticker-symbol {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .ticker-signal {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .ticker-probability {
+            color: var(--text-muted);
+        }
+
+        .signal-up { color: var(--signal-up); }
+        .signal-down { color: var(--signal-down); }
+        .signal-hold { color: var(--signal-hold); }
 
         @keyframes ticker {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+        }
+
+        @keyframes text-focus-in {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+                filter: blur(8px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .animate-text-focus-in {
+            animation: text-focus-in 1s ease-out both;
+        }
+
+        .signals-panel {
+            background: var(--surface-strong);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.55);
+        }
+
+        .signals-head {
+            color: var(--accent-strong);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .signal-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        .signal-row:hover {
+            background: var(--surface);
+        }
+
+        .signal-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 3.25rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            border: 1px solid currentColor;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .signals-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+
+        .signals-refresh {
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.35rem 0.8rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .signals-refresh:hover {
+            border-color: var(--accent);
+            color: var(--accent-strong);
+        }
+
+        .app-shell {
+            overflow: hidden;
+            background: var(--surface-strong);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            box-shadow: 0 35px 90px -45px rgba(0, 0, 0, 0.65);
+        }
+
+        .app-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--surface);
+        }
+
+        .app-tab {
+            flex: 0 0 auto;
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.65rem 1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .app-tab:hover {
+            color: var(--text-primary);
+            border-color: var(--accent);
+        }
+
+        .app-tab.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--accent-contrast);
+        }
+
+        .app-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .app-header h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .app-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            max-width: 44rem;
+        }
+
+        .app-open-link {
+            flex: 0 0 auto;
+            color: var(--accent-strong);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.78rem;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .app-open-link:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .app-frame-wrap {
+            height: clamp(560px, 78vh, 780px);
+            background: var(--app-bg);
+        }
+
+        .app-frame {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: var(--app-bg);
+        }
+
+        @media (max-width: 767px) {
+            .hero-bg,
+            .section-bg {
+                background-attachment: scroll;
+            }
+
+            .ticker-label {
+                padding: 0.85rem 0.75rem;
+                font-size: 0.62rem;
+            }
+        }
+
+        :root[data-theme='light'] .text-white {
+            color: var(--text-primary) !important;
+        }
+
+        :root[data-theme='light'] .text-slate-300 {
+            color: #334155 !important;
+        }
+
+        :root[data-theme='light'] .text-slate-400 {
+            color: #64748b !important;
+        }
+
+        :root[data-theme='light'] .text-slate-500 {
+            color: #64748b !important;
+        }
+
+        :root[data-theme='light'] .text-green-400 {
+            color: var(--accent-strong) !important;
+        }
+
+        :root[data-theme='light'] .text-green-300 {
+            color: var(--accent-strong) !important;
+        }
+
+        :root[data-theme='light'] .text-red-400 {
+            color: var(--signal-down) !important;
+        }
+
+        :root[data-theme='light'] .hover\:text-white:hover {
+            color: var(--text-primary) !important;
+        }
+
+        :root[data-theme='light'] .hover\:text-green-300:hover {
+            color: var(--accent-strong) !important;
+        }
+
+        :root[data-theme='light'] .bg-gray-900 {
+            background-color: var(--surface-strong) !important;
+        }
+
+        :root[data-theme='light'] .border-gray-700 {
+            border-color: var(--border-color) !important;
+        }
+
+        :root[data-theme='light'] .border-gray-800 {
+            border-color: var(--border-color) !important;
+        }
+
+        :root[data-theme='light'] .hover\:bg-gray-800:hover {
+            background-color: var(--surface) !important;
         }
 
         #hero-canvas {
@@ -147,117 +634,467 @@
             height: 100%;
             z-index: 1;
         }
+
+        header.min-h-screen {
+            min-height: 100vh;
+            min-height: 100svh;
+        }
+
+        .btn-ghost {
+            display: inline-block;
+            font-family: 'Roboto Mono', monospace;
+            text-align: center;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent-strong);
+            transform: translateY(-2px);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 100;
+            padding: 0.75rem 1.25rem;
+            background: var(--accent);
+            color: var(--accent-contrast);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 0 0 0.5rem 0;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .ticker-price {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .signals-panel:focus-visible {
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html.scroll-smooth {
+                scroll-behavior: auto;
+            }
+
+            .ticker-move {
+                animation: none;
+            }
+
+            .ticker-viewport {
+                overflow-x: auto;
+            }
+
+            .fade-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        .page-tabs {
+            position: sticky;
+            top: 5rem;
+            z-index: 40;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-tabs-inner {
+            display: flex;
+            gap: 0.25rem;
+            overflow-x: auto;
+            padding: 0 1rem;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .page-tab {
+            flex: 0 0 auto;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 0.9rem 0.9rem 0.8rem;
+            cursor: pointer;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .page-tab:hover {
+            color: var(--text-primary);
+        }
+
+        .page-tab.active {
+            color: var(--accent-strong);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: panel-in 0.35s ease-out;
+        }
+
+        @keyframes panel-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screener-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.78rem;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 0.6rem 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .data-table td {
+            padding: 0.55rem 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .data-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .data-table tbody tr:hover {
+            background: var(--surface);
+        }
+
+        .data-table .num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .data-table .sym {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .data-table .name {
+            max-width: 16rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ticker-status {
+            color: var(--text-muted);
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            margin-left: 0.35rem;
+        }
+
+        .macro-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .macro-item {
+            display: grid;
+            grid-template-columns: 4.5rem 1fr auto;
+            gap: 0.75rem;
+            align-items: baseline;
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .macro-item:last-child {
+            border-bottom: 0;
+        }
+
+        .macro-item:hover {
+            background: var(--surface);
+        }
+
+        .macro-time {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .macro-title {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.45;
+        }
+
+        .macro-item:hover .macro-title {
+            color: var(--text-primary);
+        }
+
+        .macro-source {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 639px) {
+            .macro-item {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+        }
     </style>
 </head>
-<body class="antialiased">
+<body id="top" class="antialiased">
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Navigation -->
     <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-black tracking-tighter">YC.HF</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#mission" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mission</a>
-                        <a href="#research" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Research</a>
-                        <a href="#philosophy" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Philosophy</a>
-                        <a href="#contact" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
+                <a href="#top" class="text-2xl font-black tracking-tighter text-white">YC.HF</a>
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+                        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"></path>
+                        </svg>
+                        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Section Tabs -->
+    <nav class="page-tabs" aria-label="Site sections">
+        <div class="page-tabs-inner" role="tablist">
+            <button class="page-tab active" type="button" role="tab" id="tab-intro" aria-selected="true" aria-controls="intro" data-tab="intro">Intro</button>
+            <button class="page-tab" type="button" role="tab" id="tab-markets" aria-selected="false" aria-controls="markets" data-tab="markets">Markets</button>
+            <button class="page-tab" type="button" role="tab" id="tab-news" aria-selected="false" aria-controls="news" data-tab="news">News</button>
+            <button class="page-tab" type="button" role="tab" id="tab-signals" aria-selected="false" aria-controls="signals" data-tab="signals">Signals</button>
+            <button class="page-tab" type="button" role="tab" id="tab-apps" aria-selected="false" aria-controls="apps" data-tab="apps">Apps</button>
+            <button class="page-tab" type="button" role="tab" id="tab-playlist" aria-selected="false" aria-controls="playlist" data-tab="playlist">Playlist</button>
+            <button class="page-tab" type="button" role="tab" id="tab-research" aria-selected="false" aria-controls="research" data-tab="research">Research</button>
+            <button class="page-tab" type="button" role="tab" id="tab-contact" aria-selected="false" aria-controls="contact" data-tab="contact">Contact</button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section id="intro" class="tab-panel active" role="tabpanel" aria-labelledby="tab-intro">
+
     <!-- Header & Hero Section -->
     <header class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
-        <canvas id="hero-canvas"></canvas>
-        <div class="absolute inset-0 bg-black/70 z-10"></div>
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-overlay absolute inset-0 z-10"></div>
         <div class="relative z-20 text-center px-4">
-            <h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-4 animate-text-focus-in">YC HEDGE FUND</h1>
-            <p class="text-lg md:text-xl text-slate-300 font-light mb-8">INDEPENDENT QUANTITATIVE RESEARCH & AI-DRIVEN INVESTING</p>
-            <div class="flex justify-center items-center space-x-6 mt-12">
-                <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="Hugging Face">
+            <p class="section-kicker" style="margin-bottom:1.25rem;">Independent Quantitative Research</p>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white mb-6 animate-text-focus-in">YC HEDGE FUND</h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light mb-3 max-w-2xl mx-auto">Open, reproducible AI systems for financial markets — built in public, deployed with discipline.</p>
+            <p class="text-xs md:text-sm text-slate-400 font-mono tracking-[0.2em] uppercase mb-10">AI-Driven Investing · Systematic Research · Open Source</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                <a href="#research" class="btn-primary">Explore Research</a>
+                <a href="#apps" class="btn-ghost">Try Live Apps</a>
+            </div>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300" title="Hugging Face">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM8.25 15.375C8.25 15.8284 7.87842 16.2001 7.425 16.2001C6.97157 16.2001 6.6 15.8284 6.6 15.375C6.6 14.9216 6.97157 14.55 7.425 14.55C7.87842 14.55 8.25 14.9216 8.25 15.375ZM17.4 15.375C17.4 15.8284 17.0284 16.2001 16.575 16.2001C16.1216 16.2001 15.75 15.8284 15.75 15.375C15.75 14.9216 16.1216 14.55 16.575 14.55C17.0284 14.55 17.4 14.9216 17.4 15.375ZM8.25 9.375C8.25 8.92157 7.87842 8.55 7.425 8.55C6.97157 8.55 6.6 8.92157 6.6 9.375C6.6 9.82843 6.97157 10.2 7.425 10.2C7.87842 10.2 8.25 9.82843 8.25 9.375ZM17.4 9.375C17.4 8.92157 17.0284 8.55 16.575 8.55C16.1216 8.55 15.75 8.92157 15.75 9.375C15.75 9.82843 16.1216 10.2 16.575 10.2C17.0284 10.2 17.4 9.82843 17.4 9.375ZM13.875 12.375C13.875 13.4105 13.0355 14.25 12 14.25C10.9645 14.25 10.125 13.4105 10.125 12.375C10.125 11.3395 10.9645 10.5 12 10.5C13.0355 10.5 13.875 11.3395 13.875 12.375Z"/></svg>
                 </a>
-                <a href="https://github.com/lacomaofficial" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="GitHub">
+                <a href="https://github.com/lacomaofficial" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300" title="GitHub">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300" title="LinkedIn">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Stock Ticker -->
-    <div class="ticker-wrap">
-        <div class="ticker-move">
-            <div class="ticker-item">NIO <span class="text-gain">+1.25 (+8.15%)</span></div>
-            <div class="ticker-item">TSLA <span class="text-gain">+10.42 (+4.50%)</span></div>
-            <div class="ticker-item">AMC <span class="text-loss">-0.50 (-3.20%)</span></div>
-            <div class="ticker-item">GME <span class="text-gain">+5.18 (+6.80%)</span></div>
-            <div class="ticker-item">NVDA <span class="text-gain">+12.33 (+2.15%)</span></div>
-            <div class="ticker-item">AAPL <span class="text-loss">-1.10 (-0.75%)</span></div>
-            <div class="ticker-item">MSFT <span class="text-gain">+3.45 (+1.23%)</span></div>
-            <div class="ticker-item">SPY <span class="text-gain">+2.11 (+0.45%)</span></div>
-            <div class="ticker-item">NIO <span class="text-gain">+1.25 (+8.15%)</span></div>
-            <div class="ticker-item">TSLA <span class="text-gain">+10.42 (+4.50%)</span></div>
-            <div class="ticker-item">AMC <span class="text-loss">-0.50 (-3.20%)</span></div>
-            <div class="ticker-item">GME <span class="text-gain">+5.18 (+6.80%)</span></div>
-            <div class="ticker-item">NVDA <span class="text-gain">+12.33 (+2.15%)</span></div>
-            <div class="ticker-item">AAPL <span class="text-loss">-1.10 (-0.75%)</span></div>
-            <div class="ticker-item">MSFT <span class="text-gain">+3.45 (+1.23%)</span></div>
-            <div class="ticker-item">SPY <span class="text-gain">+2.11 (+0.45%)</span></div>
+    <!-- Market Tape -->
+    <div class="ticker-wrap" aria-label="Live market data">
+        <div class="ticker-label"><span class="ticker-live-dot" aria-hidden="true"></span>Markets<span id="market-status" class="ticker-status"></span></div>
+        <div class="ticker-viewport">
+            <div class="ticker-move" id="market-tape" aria-hidden="true">
+                <div class="ticker-item"><span class="ticker-symbol">MARKETS</span><span class="ticker-signal signal-hold">LOADING…</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">MARKETS</span><span class="ticker-signal signal-hold">LOADING…</span></div>
+            </div>
         </div>
     </div>
 
-    <main>
-        <section id="mission" class="py-20 md:py-32 px-4 fade-in">
-            <div class="container mx-auto text-center">
-                <h2 class="section-title text-white">Mission</h2>
+        </section>
+
+        <section id="markets" class="tab-panel py-16 md:py-24 px-4" role="tabpanel" aria-labelledby="tab-markets">
+            <div class="container mx-auto max-w-6xl">
+                <p class="section-kicker">Live Data</p>
+                <h2 class="section-title text-white">Market Screener</h2>
                 <p class="section-subtitle">
-                    YC Hedge Fund is an independent research firm developing AI-powered systems for quantitative finance. We build, test, and deploy open-source, reproducible models designed for a real-world edge.
+                    Live index and commodity quotes plus daily gainers, losers, and most active US equities. Data may be delayed and is for research purposes only.
                 </p>
-                <blockquote class="mt-16 text-3xl font-semibold italic text-slate-300 font-mono">
-                    "From chaos to order"
-                </blockquote>
-
-                <!-- Simplified Live Signals Section (No Title) -->
-                <section class="py-6 px-2 fade-in">
-                  <div class="container mx-auto">
-                    <!-- Removed the <h2> title here -->
-                    <div class="overflow-x-auto max-w-4xl mx-auto rounded-xl p-3 bg-gray-900 border border-gray-700 font-mono text-sm">
-                      <table class="w-full min-w-max" id="signals-table">
-                        <thead>
-                          <tr class="text-green-400 border-b border-gray-700">
-                            <th class="text-left py-2 px-1">Ticker</th>
-                            <th class="text-right py-2 px-1">Hype</th>
-                            <th class="text-right py-2 px-1">Acc</th>
-                            <th class="text-right py-2 px-1">Prec</th>
-                            <th class="text-right py-2 px-1">Rec</th>
-                            <th class="text-right py-2 px-1">F1</th>
-                            <th class="text-right py-2 px-1">Probability</th> <!-- Moved to the end -->
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!-- Rows will be inserted here by JS -->
-                        </tbody>
-                      </table>
-                      <div class="text-xs text-gray-500 mt-2 text-right">
-                      </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <div class="screener-tabs" role="tablist" aria-label="Market data categories">
+                        <button class="app-tab screener-tab active" type="button" role="tab" aria-selected="true" data-screener="indices">Indices</button>
+                        <button class="app-tab screener-tab" type="button" role="tab" aria-selected="false" data-screener="gainers">Top Gainers</button>
+                        <button class="app-tab screener-tab" type="button" role="tab" aria-selected="false" data-screener="losers">Top Losers</button>
+                        <button class="app-tab screener-tab" type="button" role="tab" aria-selected="false" data-screener="active">Most Active</button>
                     </div>
-                  </div>
-                </section>
-                <!-- End Simplified Live Signals Section -->
-
+                    <div id="indices-wrap">
+                        <div class="signals-meta" style="padding: 0.9rem 1.25rem 0;">
+                            <span id="indices-meta" aria-live="polite">Loading market data…</span>
+                            <button id="indices-refresh" class="signals-refresh" type="button">Refresh</button>
+                        </div>
+                        <div class="overflow-x-auto" style="padding: 0.75rem 1.25rem 1.25rem;" tabindex="0" role="region" aria-label="Index and commodity quotes">
+                            <table class="data-table" id="indices-table">
+                                <thead>
+                                    <tr>
+                                        <th>Market</th>
+                                        <th class="num">Price</th>
+                                        <th class="num">Change</th>
+                                        <th class="num">Change %</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="screener-wrap" hidden>
+                    <div class="signals-meta" style="padding: 0.9rem 1.25rem 0;">
+                        <span id="screener-meta" aria-live="polite">Loading screener data…</span>
+                        <button id="screener-refresh" class="signals-refresh" type="button">Refresh</button>
+                    </div>
+                    <div class="overflow-x-auto" style="padding: 0.75rem 1.25rem 1.25rem;" tabindex="0" role="region" aria-label="Screener results">
+                        <table class="data-table" id="screener-table">
+                            <thead>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Name</th>
+                                    <th class="num">Price</th>
+                                    <th class="num">Change</th>
+                                    <th class="num">Change %</th>
+                                    <th class="num">Volume</th>
+                                    <th class="num">Market Cap</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-xs text-slate-500 font-mono">Indices via CNBC. Screener data via Yahoo Finance. Quotes may be delayed.</p>
             </div>
         </section>
 
-        <section id="research" class="py-20 md:py-32 px-4 fade-in section-bg research-bg">
+        <section id="news" class="tab-panel py-16 md:py-24 px-4" role="tabpanel" aria-labelledby="tab-news">
+            <div class="container mx-auto max-w-4xl">
+                <p class="section-kicker">Macro & Geopolitics</p>
+                <h2 class="section-title text-white">Market Intelligence</h2>
+                <p class="section-subtitle">
+                    Live headlines on macroeconomic conditions, policy, and geopolitical developments shaping market regimes.
+                </p>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <div class="signals-meta" style="padding: 0.9rem 1.25rem 0;">
+                        <span id="news-meta" aria-live="polite">Loading headlines…</span>
+                        <button id="news-refresh" class="signals-refresh" type="button">Refresh</button>
+                    </div>
+                    <div class="macro-list" id="news-list" role="list" aria-label="Macro and geopolitics headlines"></div>
+                </div>
+                <p class="mt-6 text-center text-xs text-slate-500 font-mono">Headlines via CNBC Economy. Links open the full article.</p>
+            </div>
+        </section>
+
+        <section id="signals" class="tab-panel py-16 md:py-24 px-4" role="tabpanel" aria-labelledby="tab-signals">
+            <div class="container mx-auto">
+                <p class="section-kicker">Deep Learning</p>
+                <h2 class="section-title text-white">Model Signals</h2>
+                <p class="section-subtitle">
+                    Live outputs from our multivariate transformer classifier across the equity universe.
+                </p>
+                <div class="signals-panel overflow-x-auto max-w-5xl mx-auto rounded-xl p-3 font-mono text-sm" role="region" aria-label="Model performance signals" tabindex="0">
+                    <table class="w-full min-w-max" id="signals-table">
+                        <thead>
+                            <tr class="signals-head">
+                                <th class="text-left py-2 px-2">Ticker</th>
+                                <th class="text-right py-2 px-2">Signal</th>
+                                <th class="text-right py-2 px-2">Acc</th>
+                                <th class="text-right py-2 px-2">Prec</th>
+                                <th class="text-right py-2 px-2">Rec</th>
+                                <th class="text-right py-2 px-2">F1</th>
+                                <th class="text-right py-2 px-2">Probability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be inserted here by JS -->
+                        </tbody>
+                    </table>
+                    <div class="signals-meta">
+                        <span id="signals-meta" aria-live="polite">Loading model signals…</span>
+                        <button id="signals-refresh" class="signals-refresh" type="button">Refresh</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="tab-panel py-16 md:py-24 px-4 section-bg research-bg" role="tabpanel" aria-labelledby="tab-research">
             <div class="overlay"></div>
             <div class="content-wrapper container mx-auto">
+                <p class="section-kicker">Systems</p>
                 <h2 class="section-title text-white">Core Research Systems</h2>
                 <p class="section-subtitle">
                     Explore our suite of proprietary AI models. Each system is open-source, reproducible, and designed for a specific financial domain.
@@ -265,87 +1102,129 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="glass-card rounded-xl overflow-hidden flex flex-col">
                         <div class="p-8 flex-grow">
-                            <h3 class="font-bold text-2xl text-white mb-2">💼 Trader Lite</h3>
-                            <p class="text-slate-400 text-sm mb-4 font-mono">FORECASTING & INDICATORS</p>
+                            <p class="text-slate-400 text-sm mb-4 font-mono">01 / FORECASTING & INDICATORS</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Trader Lite</h3>
                             <p class="text-slate-300 font-light">ML models for short-to-medium horizon price prediction.</p>
                         </div>
                         <div class="p-6 mt-auto">
-                            <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" class="btn-primary w-full block">Run Model</a>
+                            <a href="https://huggingface.co/spaces/JayLacoma/Trader_Technical_Indicators" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">Run Model</a>
                         </div>
                     </div>
                     <div class="glass-card rounded-xl overflow-hidden flex flex-col">
                         <div class="p-8 flex-grow">
-                            <h3 class="font-bold text-2xl text-white mb-2">🏦 Fundamental Analysis</h3>
-                            <p class="text-slate-400 text-sm mb-4 font-mono">VALUATION ENGINE</p>
+                            <p class="text-slate-400 text-sm mb-4 font-mono">02 / VALUATION ENGINE</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Fundamental Analysis</h3>
                             <p class="text-slate-300 font-light">P/E, ROE, debt/equity, and free cash flow screening with anomaly detection.</p>
                         </div>
                         <div class="p-6 mt-auto">
-                            <a href="https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis" target="_blank" class="btn-primary w-full block">Run Model</a>
+                            <a href="https://huggingface.co/spaces/JayLacoma/Fundamental_Financial_Analysis" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">Run Model</a>
                         </div>
                     </div>
                     <div class="glass-card rounded-xl overflow-hidden flex flex-col">
                         <div class="p-8 flex-grow">
-                            <h3 class="font-bold text-2xl text-white mb-2">🌐 Global Market Analysis</h3>
-                            <p class="text-slate-400 text-sm mb-4 font-mono">CORRELATION ENGINE</p>
+                            <p class="text-slate-400 text-sm mb-4 font-mono">03 / CORRELATION ENGINE</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Global Market Analysis</h3>
                             <p class="text-slate-300 font-light">S&P 500 vs. DAX, Nikkei, FTSE, and emerging markets correlation engine.</p>
                         </div>
                         <div class="p-6 mt-auto">
-                            <a href="https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis" target="_blank" class="btn-primary w-full block">Run Model</a>
+                            <a href="https://huggingface.co/spaces/JayLacoma/Global_Market_Analysis" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">Run Model</a>
                         </div>
                     </div>
                 </div>
+                <div class="glass-card mt-12 max-w-4xl mx-auto rounded-xl p-6 md:p-8 text-left">
+                    <p class="section-kicker" style="text-align:left; margin-bottom:0.5rem;">Latest research note</p>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Chaos in the Markets: Why Linear Thinking Fails in a Stochastic System</h3>
+                    <p class="text-slate-400 font-light mb-5">A working paper connecting macro cycles, geopolitical stress, structural distortions, and technical signals into one framework.</p>
+                    <a href="https://github.com/lacomaofficial/lacomaofficial.github.io" target="_blank" rel="noopener noreferrer" class="btn-primary">Read the essay</a>
+                </div>
             </div>
         </section>
 
-        <section id="philosophy" class="py-20 md:py-32 px-4 fade-in section-bg philosophy-bg">
+        <section id="apps" class="tab-panel py-16 md:py-24 px-4 section-bg app-bg" role="tabpanel" aria-labelledby="tab-apps">
             <div class="overlay"></div>
-            <div class="content-wrapper container mx-auto text-center">
-                <h2 class="section-title text-white">Investment Philosophy</h2>
-                <blockquote class="mt-4 mb-16 text-3xl font-semibold italic text-green-400 font-mono">
-                    "Transparency is the new hype"
-                </blockquote>
-                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-lg text-white mb-2">Auditable</h4>
-                        <p class="text-slate-400 text-sm">All logic is open and inspectable. No black boxes.</p>
+            <div class="content-wrapper container mx-auto">
+                <p class="section-kicker">Interactive demos</p>
+                <h2 class="section-title text-white">Research Apps</h2>
+                <p class="section-subtitle">
+                    Run the models directly in the browser. Each app is hosted on Hugging Face Spaces and stays open for inspection.
+                </p>
+                <div class="app-shell max-w-6xl mx-auto">
+                    <div class="app-tabs" role="tablist" aria-label="Research apps">
+                        <button class="app-tab active" type="button" role="tab" aria-selected="true" aria-controls="app-panel" data-app="trader">Trader Lite</button>
+                        <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="app-panel" data-app="fundamental">Fundamental Analysis</button>
+                        <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="app-panel" data-app="global">Global Markets</button>
                     </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-lg text-white mb-2">Reproducible</h4>
-                        <p class="text-slate-400 text-sm">Results can be independently verified and reproduced.</p>
+                    <div class="app-header">
+                        <div>
+                            <h3 id="app-title">Trader Lite</h3>
+                            <p id="app-description">ML models for short-to-medium horizon price prediction and technical indicator analysis.</p>
+                        </div>
+                        <a id="app-open-link" class="app-open-link" href="https://jaylacoma-trader-technical-indicators.hf.space" target="_blank" rel="noopener noreferrer">Open full app ↗</a>
                     </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-lg text-white mb-2">Explainable</h4>
-                        <p class="text-slate-400 text-sm">Every position must be algorithmically justifiable.</p>
-                    </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-lg text-white mb-2">Open</h4>
-                        <p class="text-slate-400 text-sm">Progress comes from shared knowledge and collaboration.</p>
+                    <div class="app-frame-wrap" id="app-panel" role="tabpanel">
+                        <iframe id="app-frame" class="app-frame" src="https://jaylacoma-trader-technical-indicators.hf.space" title="Trader Lite Hugging Face Space" loading="lazy" allow="fullscreen; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
+                <p class="mt-6 text-center text-xs text-slate-500 font-mono">Hosted on Hugging Face Spaces. Cold starts can take a moment.</p>
             </div>
         </section>
 
-        <!-- Spotify Playlist -->
-        <section class="py-20 px-4 fade-in">
-            <div class="container mx-auto">
-                <h2 class="section-title text-white mb-12 text-center">Research Soundtrack</h2>
-                <div class="max-w-3xl mx-auto glass-card rounded-xl p-6">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0EJ5EjLn4bM9Nxfy7VzEsp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <section id="playlist" class="tab-panel py-16 md:py-24 px-4 section-bg philosophy-bg" role="tabpanel" aria-labelledby="tab-playlist">
+            <div class="overlay"></div>
+            <div class="content-wrapper container mx-auto max-w-3xl text-center">
+                <p class="section-kicker">Music</p>
+                <h2 class="section-title text-white">Playlist</h2>
+                <p class="section-subtitle">
+                    The sounds behind the research — tracks from Jay Lacoma.
+                </p>
+                <div class="glass-card rounded-xl p-4">
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Jay Lacoma — Playlist" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2329289850&color=%232e5152&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" style="border: none;"></iframe>
+                    <div class="mt-3 text-center" style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif; font-weight: 100;">
+                        <a href="https://soundcloud.com/jaylacoma" title="ジェイ・ラコマ" target="_blank" rel="noopener noreferrer" style="color: #cccccc; text-decoration: none;">ジェイ・ラコマ</a> · <a href="https://soundcloud.com/jaylacoma/sets/wvzbhhe7n1lk" title="ジェイ・ラコマ" target="_blank" rel="noopener noreferrer" style="color: #cccccc; text-decoration: none;">ジェイ・ラコマ</a>
+                    </div>
                 </div>
+                <a href="https://soundcloud.com/jaylacoma/sets/wvzbhhe7n1lk" target="_blank" rel="noopener noreferrer" class="app-open-link mt-6 inline-block">Open on SoundCloud ↗</a>
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-32 px-4 fade-in">
-            <div class="container mx-auto text-center max-w-2xl">
+        <section id="contact" class="tab-panel py-16 md:py-24 px-4 section-bg contact-bg" role="tabpanel" aria-labelledby="tab-contact">
+            <div class="overlay"></div>
+            <div class="content-wrapper container mx-auto max-w-5xl">
+                <p class="section-kicker">Get in Touch</p>
                 <h2 class="section-title text-white">Contact</h2>
                 <p class="section-subtitle">
                     For research collaboration, due diligence, or institutional inquiry.
                 </p>
-                <div class="glass-card rounded-xl p-10">
-                    <p class="text-xl font-semibold text-white">j.lacoma, Founder</p>
-                    <a href="mailto:lacomaofficial@gmail.com" class="block my-2 text-green-400 hover:text-green-300 text-xs transition-colors font-mono">
-                        lacomaofficial@gmail.com
-                    </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mt-4">
+                    <div class="glass-card rounded-xl p-8">
+                        <div class="flex items-center gap-5 mb-5">
+                            <img src="pics/about_me.png" alt="Portrait of Jay Lacoma" width="112" height="112" loading="lazy" class="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover border border-white/10 flex-shrink-0">
+                            <div>
+                                <p class="text-xl font-semibold text-white">Jay Lacoma</p>
+                                <p class="text-green-400 text-xs font-mono mt-1">FOUNDER, YC HEDGE FUND</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 font-light leading-relaxed mb-3 text-sm">
+                            Computational neuroscience and deep learning researcher. My work lies at the intersection of neuroscience, data science, and machine learning — driven by the potential of these fields to unlock new insights into complex nonlinear stochastic systems.
+                        </p>
+                    </div>
+                    <div class="glass-card rounded-xl p-8 flex flex-col justify-center">
+                        <p class="text-slate-400 text-sm font-light mb-4">Reach out directly:</p>
+                        <a href="mailto:lacomaofficial@gmail.com" class="text-green-400 hover:text-green-300 text-sm transition-colors font-mono break-all">
+                            lacomaofficial@gmail.com
+                        </a>
+                        <div class="flex items-center gap-5 mt-8">
+                            <a href="https://huggingface.co/spaces/JayLacoma" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="Hugging Face">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM8.25 15.375C8.25 15.8284 7.87842 16.2001 7.425 16.2001C6.97157 16.2001 6.6 15.8284 6.6 15.375C6.6 14.9216 6.97157 14.55 7.425 14.55C7.87842 14.55 8.25 14.9216 8.25 15.375ZM17.4 15.375C17.4 15.8284 17.0284 16.2001 16.575 16.2001C16.1216 16.2001 15.75 15.8284 15.75 15.375C15.75 14.9216 16.1216 14.55 16.575 14.55C17.0284 14.55 17.4 14.9216 17.4 15.375ZM8.25 9.375C8.25 8.92157 7.87842 8.55 7.425 8.55C6.97157 8.55 6.6 8.92157 6.6 9.375C6.6 9.82843 6.97157 10.2 7.425 10.2C7.87842 10.2 8.25 9.82843 8.25 9.375ZM17.4 9.375C17.4 8.92157 17.0284 8.55 16.575 8.55C16.1216 8.55 15.75 8.92157 15.75 9.375C15.75 9.82843 16.1216 10.2 16.575 10.2C17.0284 10.2 17.4 9.82843 17.4 9.375ZM13.875 12.375C13.875 13.4105 13.0355 14.25 12 14.25C10.9645 14.25 10.125 13.4105 10.125 12.375C10.125 11.3395 10.9645 10.5 12 10.5C13.0355 10.5 13.875 11.3395 13.875 12.375Z"/></svg>
+                            </a>
+                            <a href="https://github.com/lacomaofficial" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="GitHub">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jlacoma/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="LinkedIn">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -354,18 +1233,217 @@
     <!-- Footer -->
     <footer class="py-12 px-4">
         <div class="container mx-auto text-center text-slate-500 text-sm">
-            <p>&copy; 2025 YC HEDGE FUND • A RESEARCH-FIRST INVESTMENT ENTITY</p>
+            <p>&copy; <span id="current-year">2026</span> YC HEDGE FUND • A RESEARCH-FIRST INVESTMENT ENTITY</p>
             <p class="mt-2">
-                <a href="https://github.com/lacomaofficial/lacomaofficial.github.io" target="_blank" class="hover:text-green-400 transition-colors">OPEN SOURCE INFRASTRUCTURE</a>
+                <a href="https://github.com/lacomaofficial/lacomaofficial.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">OPEN SOURCE INFRASTRUCTURE</a>
             </p>
         </div>
     </footer>
 
     <!-- Script to Load Signals from CSV -->
     <script>
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function parseSignalLine(line) {
+        const cols = line.split(',').map(col => col.trim());
+        if (cols.length < 7) return null;
+        return {
+          ticker: cols[0],
+          signal: cols[1].toUpperCase(),
+          accuracy: cols[2],
+          precision: cols[3],
+          recall: cols[4],
+          f1: cols[5],
+          probability: cols[6]
+        };
+      }
+
+      function signalClass(signal) {
+        if (signal === 'UP') return 'signal-up';
+        if (signal === 'DOWN') return 'signal-down';
+        return 'signal-hold';
+      }
+
+      function probabilityClass(probability) {
+        const value = parseFloat(probability);
+        if (value > 50) return 'signal-up';
+        if (value < 50) return 'signal-down';
+        return 'signal-hold';
+      }
+
+      let marketQuotesCache = [];
+
+      const MARKET_FEEDS = [
+        { symbol: '.SPX', label: 'S&P 500' },
+        { symbol: '.DJI', label: 'DOW 30' },
+        { symbol: '.IXIC', label: 'NASDAQ' },
+        { symbol: '.RUT', label: 'RUSSELL 2000' },
+        { symbol: 'US10Y', label: 'US 10Y' },
+        { symbol: '.VIX', label: 'VIX' },
+        { symbol: '@GC.1', label: 'GOLD' },
+        { symbol: 'BTC=', label: 'BTC/USD' },
+        { symbol: '@CL.1', label: 'WTI OIL' }
+      ];
+
+      function cnbcQuoteUrl(symbol) {
+        return 'https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=' +
+          encodeURIComponent(symbol) +
+          '&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json';
+      }
+
+      function marketChangeClass(quote) {
+        const type = String(quote.changetype || '').toUpperCase();
+        if (type === 'UP') return 'signal-up';
+        if (type === 'DOWN') return 'signal-down';
+        const pct = parseFloat(quote.pct);
+        if (!Number.isNaN(pct)) {
+          if (pct > 0) return 'signal-up';
+          if (pct < 0) return 'signal-down';
+        }
+        return 'signal-hold';
+      }
+
+      function marketOffline() {
+        marketQuotesCache = null;
+        renderIndicesTable(null);
+        const tape = document.getElementById('market-tape');
+        if (!tape) return;
+        tape.innerHTML =
+          '<div class="ticker-item"><span class="ticker-symbol">MARKET DATA OFFLINE</span></div>' +
+          '<div class="ticker-item"><span class="ticker-symbol">MARKET DATA OFFLINE</span></div>';
+      }
+
+      function renderIndicesTable(quotes) {
+        const tbody = document.querySelector('#indices-table tbody');
+        const meta = document.getElementById('indices-meta');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        if (quotes === null) {
+          tbody.innerHTML = '<tr><td colspan="4" class="text-center py-6 text-slate-500">Market data offline.</td></tr>';
+          if (meta) meta.textContent = 'Feed offline';
+          return;
+        }
+        if (!quotes.length) {
+          tbody.innerHTML = '<tr><td colspan="4" class="text-center py-6 text-slate-500">Loading market data…</td></tr>';
+          if (meta) meta.textContent = 'Loading…';
+          return;
+        }
+
+        quotes.forEach(q => {
+          const tr = document.createElement('tr');
+          const cls = marketChangeClass(q);
+          tr.innerHTML = `
+            <td class="sym">${escapeHtml(q.label)}</td>
+            <td class="num">${escapeHtml(q.last)}</td>
+            <td class="num ${cls}">${escapeHtml(q.change != null ? q.change : '—')}</td>
+            <td class="num ${cls}">${escapeHtml(q.pct)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        if (meta) {
+          const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          meta.textContent = `${quotes.length} instruments · CNBC · Updated ${time}`;
+        }
+      }
+
+      function renderMarketTape(quotes) {
+        const tape = document.getElementById('market-tape');
+        if (!tape) return;
+        tape.innerHTML = '';
+        if (!quotes.length) {
+          marketOffline();
+          return;
+        }
+
+        [...quotes, ...quotes].forEach(quote => {
+          const item = document.createElement('div');
+          item.className = 'ticker-item';
+          item.innerHTML = `
+            <span class="ticker-symbol">${escapeHtml(quote.label)}</span>
+            <span class="ticker-price">${escapeHtml(quote.last)}</span>
+            <span class="ticker-signal ${marketChangeClass(quote)}">${escapeHtml(quote.pct)}</span>
+          `;
+          tape.appendChild(item);
+        });
+      }
+
+      function updateMarketStatus(quotes) {
+        const statusEl = document.getElementById('market-status');
+        if (!statusEl) return;
+        const status = quotes.find(q => q.status && q.status !== 'UNKNOWN')?.status;
+        const labels = {
+          REG_MKT: '· OPEN',
+          PRE_MKT: '· PRE-MARKET',
+          POST_MKT: '· AFTER-HOURS',
+          CLOSED: '· CLOSED'
+        };
+        statusEl.textContent = labels[status] || '';
+      }
+
+      function loadMarkets() {
+        Promise.allSettled(
+          MARKET_FEEDS.map(feed =>
+            fetch(cnbcQuoteUrl(feed.symbol))
+              .then(response => {
+                if (!response.ok) throw new Error('quote request failed');
+                return response.json();
+              })
+              .then(data => {
+                const result = data && data.FormattedQuoteResult && data.FormattedQuoteResult.FormattedQuote;
+                const quote = Array.isArray(result) ? result[0] : null;
+                if (!quote || quote.code !== 0 || quote.last == null) return null;
+                return {
+                  label: feed.label,
+                  last: quote.last,
+                  change: quote.change,
+                  pct: quote.change_pct || '—',
+                  changetype: quote.changetype,
+                  status: quote.curmktstatus
+                };
+              })
+          )
+        ).then(results => {
+          const quotes = results
+            .filter(result => result.status === 'fulfilled')
+            .map(result => result.value)
+            .filter(Boolean);
+          if (quotes.length) {
+            marketQuotesCache = quotes;
+            renderMarketTape(quotes);
+            updateMarketStatus(quotes);
+            renderIndicesTable(quotes);
+          } else {
+            marketOffline();
+          }
+        }).catch(() => marketOffline());
+      }
+
+      function updateSignalsMeta(rows) {
+        const meta = document.getElementById('signals-meta');
+        if (!meta) return;
+        const counts = rows.reduce((acc, row) => {
+          acc[row.signal] = (acc[row.signal] || 0) + 1;
+          return acc;
+        }, {});
+        const up = counts.UP || 0;
+        const hold = counts.HOLD || 0;
+        const down = counts.DOWN || 0;
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        meta.textContent = `${rows.length} signals • ${up} up / ${hold} hold / ${down} down • Updated ${time}`;
+      }
+
       // Function to load and display the CSV data
       function loadSignals() {
-        fetch('/signals.csv')
+        fetch('signals.csv')
           .then(response => {
             if (!response.ok) {
               throw new Error('signals.csv not found or network error');
@@ -375,91 +1453,496 @@
           .then(data => {
             const lines = data.trim().split('\n');
             if (lines.length < 2) {
-                throw new Error('CSV file is empty or missing header');
+              throw new Error('CSV file is empty or missing header');
             }
-            const rows = lines.slice(1); // Get all rows except the header
+
+            const rows = lines
+              .slice(1)
+              .map(parseSignalLine)
+              .filter(Boolean);
 
             const tbody = document.querySelector('#signals-table tbody');
-            tbody.innerHTML = ''; // Clear existing rows
+            tbody.innerHTML = '';
 
-            rows.forEach(line => {
-                // Simple split by comma.
-                const cols = line.split(',');
-                // Updated check: Ensure we have the 7 columns we need for the new format
-                if (cols.length >= 7) {
-                    const tr = document.createElement('tr');
-                    tr.className = 'border-b border-gray-800 hover:bg-gray-800';
-                    // Sanitize content and assign based on new column order (Probability is last)
-                    const ticker = cols[0].trim();
-                    const hype = cols[1].trim();
-                    const acc = cols[2].trim();
-                    const prec = cols[3].trim();
-                    const rec = cols[4].trim();
-                    const F1 = cols[5].trim();
-                    // Probability is now the 7th column (index 6)
-                    const probability = cols[6].trim();
-
-                    // Determine text color for probability
-                    let probColorClass = "text-white";
-                    const probValue = parseFloat(probability);
-                    if (!isNaN(probValue)) {
-                      if (probValue > 50) {
-                        probColorClass = "text-green-400";
-                      } else if (probValue < 50) {
-                        probColorClass = "text-red-400";
-                      }
-                    }
-
-                    // Build the row HTML with the new column order
-                    tr.innerHTML = `
-                      <td class="py-2 px-1">${ticker}</td>
-                      <td class="text-right py-2 px-1">${hype}</td>
-                      <td class="text-right py-2 px-1">${acc}</td>
-                      <td class="text-right py-2 px-1">${prec}</td>
-                      <td class="text-right py-2 px-1">${rec}</td>
-                      <td class="text-right py-2 px-1">${F1}</td>
-                      <td class="text-right py-2 px-1 ${probColorClass}">${probability}</td> <!-- Moved to the end -->
-                    `;
-                    tbody.appendChild(tr);
-                } else if (cols.length > 1) {
-                     // Handle rows that don't match the expected format but aren't empty
-                     console.warn('Skipping malformed row (check column count):', line);
-                }
+            rows.forEach(row => {
+              const tr = document.createElement('tr');
+              tr.className = 'signal-row';
+              tr.innerHTML = `
+                <td class="py-2 px-2 text-left">${escapeHtml(row.ticker)}</td>
+                <td class="py-2 px-2 text-right"><span class="signal-badge ${signalClass(row.signal)}">${escapeHtml(row.signal)}</span></td>
+                <td class="py-2 px-2 text-right">${escapeHtml(row.accuracy)}</td>
+                <td class="py-2 px-2 text-right">${escapeHtml(row.precision)}</td>
+                <td class="py-2 px-2 text-right">${escapeHtml(row.recall)}</td>
+                <td class="py-2 px-2 text-right">${escapeHtml(row.f1)}</td>
+                <td class="py-2 px-2 text-right ${probabilityClass(row.probability)}">${escapeHtml(row.probability)}</td>
+              `;
+              tbody.appendChild(tr);
             });
+
+            updateSignalsMeta(rows);
           })
           .catch(error => {
             console.warn('Could not load live signals:', error);
-            // Display an error message in the table area
             const tbody = document.querySelector('#signals-table tbody');
-            // Update colspan to 7 to match the new number of columns
-            tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-gray-500">Signals data unavailable.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-slate-500">Signals data unavailable.</td></tr>`;
+            const meta = document.getElementById('signals-meta');
+            if (meta) meta.textContent = 'Signals unavailable';
           });
       }
 
       // Call the function when the page loads
-      document.addEventListener('DOMContentLoaded', loadSignals);
+      document.addEventListener('DOMContentLoaded', () => {
+        loadSignals();
+        loadMarkets();
+        setInterval(loadMarkets, 60000);
+        const refreshButton = document.getElementById('signals-refresh');
+        if (refreshButton) refreshButton.addEventListener('click', loadSignals);
+      });
 
-      // Optional: Reload the signals every 60 seconds
-      // setInterval(loadSignals, 60000);
+      // --- Market Screener (Yahoo Finance via CORS proxy) ---
+      const SCREENER_FEEDS = {
+        gainers: { ids: ['DAY_GAINERS', 'day_gainers'], title: 'Top Gainers' },
+        losers: { ids: ['DAY_LOSERS', 'day_losers'], title: 'Top Losers' },
+        active: { ids: ['MOST_ACTIVES', 'most_actives'], title: 'Most Active' }
+      };
+      const SCREENER_COUNT = 50;
+      const screenerCache = {};
+      let activeScreener = 'indices';
+      let screenerRequested = false;
+
+      const priceFmt = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const compactFmt = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
+
+      function screenerYahooUrl(scrId) {
+        return 'https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=' +
+          encodeURIComponent(scrId) +
+          '&count=' + SCREENER_COUNT +
+          '&fmt=json&lang=en-US&region=US';
+      }
+
+      async function fetchScreenerQuotes(ids) {
+        for (const id of ids) {
+          const inner = screenerYahooUrl(id);
+          const urls = [
+            inner,
+            'https://proxy.corsfix.com/?' + inner,
+            'https://api.allorigins.win/raw?url=' + encodeURIComponent(inner),
+            'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(inner)
+          ];
+          for (const url of urls) {
+            try {
+              const response = await fetch(url);
+              if (!response.ok) continue;
+              const data = await response.json();
+              const result = data && data.finance && data.finance.result;
+              const quotes = Array.isArray(result) && result[0] ? result[0].quotes : null;
+              if (Array.isArray(quotes) && quotes.length) return quotes;
+            } catch (error) {
+              console.warn('Screener fetch failed for', url, error);
+            }
+          }
+        }
+        return null;
+      }
+
+      function changeClass(value) {
+        const num = parseFloat(value);
+        if (Number.isNaN(num) || num === 0) return 'signal-hold';
+        return num > 0 ? 'signal-up' : 'signal-down';
+      }
+
+      function formatSigned(value, suffix) {
+        const num = parseFloat(value);
+        if (Number.isNaN(num)) return '—';
+        const sign = num > 0 ? '+' : '';
+        return sign + num.toFixed(2) + (suffix || '');
+      }
+
+      function renderScreener(key, quotes) {
+        const tbody = document.querySelector('#screener-table tbody');
+        const meta = document.getElementById('screener-meta');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        if (!quotes || !quotes.length) {
+          tbody.innerHTML = '<tr><td colspan="7" class="text-center py-6 text-slate-500">Screener data unavailable.</td></tr>';
+          if (meta) meta.textContent = 'Screener offline';
+          return;
+        }
+
+        quotes.forEach(q => {
+          const tr = document.createElement('tr');
+          const pct = q.regularMarketChangePercent;
+          const cls = changeClass(pct);
+          const price = typeof q.regularMarketPrice === 'number' ? '$' + priceFmt.format(q.regularMarketPrice) : '—';
+          const change = typeof q.regularMarketChange === 'number'
+            ? (q.regularMarketChange >= 0 ? '+$' : '-$') + priceFmt.format(Math.abs(q.regularMarketChange))
+            : '—';
+          const volume = typeof q.regularMarketVolume === 'number' ? compactFmt.format(q.regularMarketVolume) : '—';
+          const mcap = typeof q.marketCap === 'number' ? '$' + compactFmt.format(q.marketCap) : '—';
+          tr.innerHTML = `
+            <td class="sym">${escapeHtml(q.symbol || '—')}</td>
+            <td class="name" title="${escapeHtml(q.shortName || '')}">${escapeHtml(q.shortName || '—')}</td>
+            <td class="num">${price}</td>
+            <td class="num ${cls}">${change}</td>
+            <td class="num ${cls}">${formatSigned(pct, '%')}</td>
+            <td class="num">${volume}</td>
+            <td class="num">${mcap}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        if (meta) {
+          const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          meta.textContent = `${quotes.length} symbols · ${SCREENER_FEEDS[key].title} · Updated ${time}`;
+        }
+      }
+
+      async function loadScreener(key, forceRefresh) {
+        if (!SCREENER_FEEDS[key]) return;
+        if (forceRefresh) delete screenerCache[key];
+        if (screenerCache[key]) {
+          renderScreener(key, screenerCache[key]);
+          return;
+        }
+        const meta = document.getElementById('screener-meta');
+        if (meta) meta.textContent = 'Loading screener data…';
+        const quotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
+        if (quotes) screenerCache[key] = quotes;
+        renderScreener(key, quotes);
+      }
+
+      function ensureScreener() {
+        if (screenerRequested) return;
+        screenerRequested = true;
+        loadScreener(activeScreener, false);
+      }
+
+      function activateScreener(key) {
+        if (key !== 'indices' && !SCREENER_FEEDS[key]) return;
+        activeScreener = key;
+        document.querySelectorAll('.screener-tab').forEach(tab => {
+          const active = tab.dataset.screener === key;
+          tab.classList.toggle('active', active);
+          tab.setAttribute('aria-selected', String(active));
+        });
+        const indicesWrap = document.getElementById('indices-wrap');
+        const screenerWrap = document.getElementById('screener-wrap');
+        if (indicesWrap) indicesWrap.hidden = key !== 'indices';
+        if (screenerWrap) screenerWrap.hidden = key === 'indices';
+        if (key === 'indices') {
+          renderIndicesTable(marketQuotesCache);
+          return;
+        }
+        loadScreener(key, false);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.screener-tab').forEach(tab => {
+          tab.addEventListener('click', () => activateScreener(tab.dataset.screener));
+        });
+        const refreshBtn = document.getElementById('screener-refresh');
+        if (refreshBtn) refreshBtn.addEventListener('click', () => loadScreener(activeScreener, true));
+        const indicesRefreshBtn = document.getElementById('indices-refresh');
+        if (indicesRefreshBtn) indicesRefreshBtn.addEventListener('click', () => loadMarkets());
+        setInterval(() => {
+          const marketsPanel = document.getElementById('markets');
+          if (marketsPanel && marketsPanel.classList.contains('active')) {
+            loadScreener(activeScreener, true);
+          }
+        }, 300000);
+      });
+
+      // --- Macro & Geopolitics News (CNBC Economy RSS) ---
+      const NEWS_FEED_URL = 'https://www.cnbc.com/id/20910258/device/rss/rss.html';
+      let newsRequested = false;
+
+      function proxiedUrls(target) {
+        return [
+          target,
+          'https://proxy.corsfix.com/?' + target,
+          'https://api.allorigins.win/raw?url=' + encodeURIComponent(target)
+        ];
+      }
+
+      async function fetchNews() {
+        for (const url of proxiedUrls(NEWS_FEED_URL)) {
+          try {
+            const response = await fetch(url);
+            if (!response.ok) continue;
+            const xml = await response.text();
+            const doc = new DOMParser().parseFromString(xml, 'text/xml');
+            if (doc.querySelector('parsererror')) continue;
+            const items = Array.from(doc.querySelectorAll('item')).slice(0, 20).map(item => ({
+              title: (item.querySelector('title') || {}).textContent || '',
+              link: (item.querySelector('link') || {}).textContent || '#',
+              pubDate: (item.querySelector('pubDate') || {}).textContent || ''
+            })).filter(item => item.title.trim());
+            if (items.length) return items;
+          } catch (error) {
+            console.warn('Macro feed fetch failed for', url, error);
+          }
+        }
+        return null;
+      }
+
+      function timeAgo(dateString) {
+        const then = new Date(dateString);
+        if (Number.isNaN(then.getTime())) return '';
+        const seconds = Math.max(0, Math.floor((Date.now() - then.getTime()) / 1000));
+        if (seconds < 3600) return Math.max(1, Math.floor(seconds / 60)) + 'm ago';
+        if (seconds < 86400) return Math.floor(seconds / 3600) + 'h ago';
+        return Math.floor(seconds / 86400) + 'd ago';
+      }
+
+      function renderNews(items) {
+        const list = document.getElementById('news-list');
+        const meta = document.getElementById('news-meta');
+        if (!list) return;
+        list.innerHTML = '';
+
+        if (!items || !items.length) {
+          const empty = document.createElement('div');
+          empty.className = 'macro-item';
+          empty.innerHTML = '<span class="macro-title" style="grid-column: 1 / -1;">Macro feed unavailable.</span>';
+          list.appendChild(empty);
+          if (meta) meta.textContent = 'Feed offline';
+          return;
+        }
+
+        items.forEach(item => {
+          const anchor = document.createElement('a');
+          anchor.className = 'macro-item';
+          anchor.href = item.link;
+          anchor.target = '_blank';
+          anchor.rel = 'noopener noreferrer';
+          anchor.innerHTML = `
+            <span class="macro-time">${escapeHtml(timeAgo(item.pubDate))}</span>
+            <span class="macro-title">${escapeHtml(item.title)}</span>
+            <span class="macro-source">CNBC</span>
+          `;
+          list.appendChild(anchor);
+        });
+
+        if (meta) {
+          const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          meta.textContent = `${items.length} headlines · Updated ${time}`;
+        }
+      }
+
+      async function loadNews(force) {
+        if (!force && newsRequested) return;
+        const meta = document.getElementById('news-meta');
+        if (meta) meta.textContent = 'Loading headlines…';
+        const items = await fetchNews();
+        if (items && items.length) newsRequested = true;
+        renderNews(items);
+      }
+
+      function ensureNews() {
+        loadNews(false);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const refreshBtn = document.getElementById('news-refresh');
+        if (refreshBtn) refreshBtn.addEventListener('click', () => loadNews(true));
+        setInterval(() => {
+          const newsPanel = document.getElementById('news');
+          if (newsPanel && newsPanel.classList.contains('active')) {
+            loadNews(true);
+          }
+        }, 600000);
+      });
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeColorMeta = document.getElementById('theme-color-meta');
+
+            function applyTheme(theme) {
+                document.documentElement.dataset.theme = theme;
+                try {
+                    localStorage.setItem('yc-theme', theme);
+                } catch (e) {}
+                if (themeColorMeta) {
+                    themeColorMeta.content = theme === 'light' ? '#f5f7fb' : '#050505';
                 }
+            }
+
+            if (themeToggle) {
+                applyTheme(document.documentElement.dataset.theme || 'dark');
+                themeToggle.addEventListener('click', () => {
+                    applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+                });
+            }
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function setMobileMenu(open) {
+                if (!mobileMenu || !mobileMenuButton) return;
+                mobileMenu.classList.toggle('open', open);
+                mobileMenuButton.setAttribute('aria-expanded', String(open));
+                mobileMenuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            }
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    setMobileMenu(!mobileMenu.classList.contains('open'));
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => setMobileMenu(false));
+                });
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 1024) setMobileMenu(false);
+                });
+            }
+
+            const apps = {
+                trader: {
+                    title: 'Trader Lite',
+                    description: 'ML models for short-to-medium horizon price prediction and technical indicator analysis.',
+                    url: 'https://jaylacoma-trader-technical-indicators.hf.space',
+                    frameTitle: 'Trader Lite Hugging Face Space'
+                },
+                fundamental: {
+                    title: 'Fundamental Analysis',
+                    description: 'Valuation engine for P/E, ROE, debt/equity, free cash flow, and anomaly screening.',
+                    url: 'https://jaylacoma-fundamental-financial-analysis.hf.space',
+                    frameTitle: 'Fundamental Analysis Hugging Face Space'
+                },
+                global: {
+                    title: 'Global Market Analysis',
+                    description: 'Correlation engine across S&P 500, DAX, Nikkei, FTSE, and emerging markets.',
+                    url: 'https://jaylacoma-global-market-analysis.hf.space',
+                    frameTitle: 'Global Market Analysis Hugging Face Space'
+                }
+            };
+
+            const appTabs = document.querySelectorAll('.app-shell .app-tab');
+            const appFrame = document.getElementById('app-frame');
+            const appTitle = document.getElementById('app-title');
+            const appDescription = document.getElementById('app-description');
+            const appOpenLink = document.getElementById('app-open-link');
+            let activeAppKey = 'trader';
+
+            function activateApp(key) {
+                const app = apps[key];
+                if (!app || key === activeAppKey) return;
+                activeAppKey = key;
+
+                appTabs.forEach(tab => {
+                    const active = tab.dataset.app === key;
+                    tab.classList.toggle('active', active);
+                    tab.setAttribute('aria-selected', String(active));
+                });
+
+                if (appTitle) appTitle.textContent = app.title;
+                if (appDescription) appDescription.textContent = app.description;
+                if (appOpenLink) appOpenLink.href = app.url;
+                if (appFrame) {
+                    appFrame.src = app.url;
+                    appFrame.title = app.frameTitle;
+                }
+            }
+
+            appTabs.forEach(tab => {
+                tab.addEventListener('click', () => activateApp(tab.dataset.app));
             });
 
-            // Fade-in animation on scroll
+            const appTabsList = document.querySelector('.app-tabs');
+            if (appTabsList) {
+                appTabsList.addEventListener('keydown', (event) => {
+                    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+                    const tabs = Array.from(appTabs);
+                    const index = tabs.indexOf(document.activeElement);
+                    if (index === -1) return;
+                    event.preventDefault();
+                    const offset = event.key === 'ArrowRight' ? 1 : -1;
+                    const next = tabs[(index + offset + tabs.length) % tabs.length];
+                    next.focus();
+                    activateApp(next.dataset.app);
+                });
+            }
+
+            // Page-level section tabs
+            const pageTabs = document.querySelectorAll('.page-tab');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            function activateTab(key, updateHash) {
+                if (updateHash === undefined) updateHash = true;
+                const valid = Array.from(tabPanels).some(panel => panel.id === key);
+                if (!valid) return;
+
+                pageTabs.forEach(tab => {
+                    const active = tab.dataset.tab === key;
+                    tab.classList.toggle('active', active);
+                    tab.setAttribute('aria-selected', String(active));
+                });
+                tabPanels.forEach(panel => panel.classList.toggle('active', panel.id === key));
+
+                if (updateHash && window.history && history.replaceState) {
+                    history.replaceState(null, '', '#' + key);
+                }
+                if (key === 'markets' && typeof ensureScreener === 'function') {
+                    ensureScreener();
+                }
+                if (key === 'news' && typeof ensureNews === 'function') {
+                    ensureNews();
+                }
+                window.scrollTo(0, 0);
+            }
+
+            pageTabs.forEach(tab => {
+                tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+            });
+
+            const pageTabsList = document.querySelector('.page-tabs-inner');
+            if (pageTabsList) {
+                pageTabsList.addEventListener('keydown', (event) => {
+                    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+                    const tabs = Array.from(pageTabs);
+                    const index = tabs.indexOf(document.activeElement);
+                    if (index === -1) return;
+                    event.preventDefault();
+                    const offset = event.key === 'ArrowRight' ? 1 : -1;
+                    const next = tabs[(index + offset + tabs.length) % tabs.length];
+                    next.focus();
+                    next.click();
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    const key = link.getAttribute('href').slice(1);
+                    if (Array.from(tabPanels).some(panel => panel.id === key)) {
+                        event.preventDefault();
+                        activateTab(key);
+                    }
+                });
+            });
+
+            const initialTab = window.location.hash.slice(1);
+            if (initialTab && Array.from(tabPanels).some(panel => panel.id === initialTab)) {
+                activateTab(initialTab, false);
+            }
+
+            const currentYear = document.getElementById('current-year');
+            if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+            const navbar = document.getElementById('navbar');
+            const updateNavbar = () => {
+                navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+            };
+            window.addEventListener('scroll', updateNavbar, { passive: true });
+            updateNavbar();
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
@@ -470,63 +1953,114 @@
                 observer.observe(el);
             });
 
-            // Hero Canvas Animation
             const canvas = document.getElementById('hero-canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                let particles = [];
+                let resizeTimeout = null;
 
-            let particles = [];
-            const particleCount = 100;
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 2 + 1;
-                    this.speedX = Math.random() * 2 - 1;
-                    this.speedY = Math.random() * 2 - 1;
-                    this.color = 'rgba(0, 255, 155, 0.5)';
+                function resizeCanvas() {
+                    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                    canvas.width = window.innerWidth * dpr;
+                    canvas.height = window.innerHeight * dpr;
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
                 }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.size > 0.2) this.size -= 0.01;
-                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-                }
-                draw() {
-                    ctx.fillStyle = this.color;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
 
-            function initParticles() {
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Particle());
+                function particleCount() {
+                    return window.innerWidth < 768 ? 55 : 100;
                 }
-            }
 
-            function animateParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
+                class Particle {
+                    constructor() {
+                        this.radius = Math.random() * 1.7 + 0.6;
+                        this.phase = Math.random() * Math.PI * 2;
+                        this.reset();
+                    }
+
+                    reset() {
+                        this.x = Math.random() * window.innerWidth;
+                        this.y = Math.random() * window.innerHeight;
+                        this.vx = (Math.random() * 2 - 1) * 0.45;
+                        this.vy = (Math.random() * 2 - 1) * 0.45;
+                        this.alpha = Math.random() * 0.42 + 0.24;
+                    }
+
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        this.phase += 0.02;
+
+                        if (this.x < -24) this.x = window.innerWidth + 24;
+                        if (this.x > window.innerWidth + 24) this.x = -24;
+                        if (this.y < -24) this.y = window.innerHeight + 24;
+                        if (this.y > window.innerHeight + 24) this.y = -24;
+                    }
+
+                    draw() {
+                        const alpha = this.alpha * (0.65 + 0.35 * Math.sin(this.phase));
+                        ctx.fillStyle = `rgba(0, 255, 155, ${alpha})`;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
                 }
-                requestAnimationFrame(animateParticles);
-            }
 
-            initParticles();
-            animateParticles();
+                function initParticles() {
+                    particles = Array.from({ length: particleCount() }, () => new Particle());
+                }
 
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                particles = [];
+                function drawConnections() {
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const distance = Math.hypot(dx, dy);
+                            if (distance < 120) {
+                                const opacity = (1 - distance / 120) * 0.12;
+                                ctx.strokeStyle = `rgba(0, 255, 155, ${opacity})`;
+                                ctx.lineWidth = 1;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                function animateParticles() {
+                    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+                    particles.forEach(particle => particle.update());
+                    drawConnections();
+                    particles.forEach(particle => particle.draw());
+                    requestAnimationFrame(animateParticles);
+                }
+
+                resizeCanvas();
                 initParticles();
-            });
+
+                if (prefersReducedMotion) {
+                    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+                    drawConnections();
+                    particles.forEach(particle => particle.draw());
+                } else {
+                    animateParticles();
+                }
+
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        resizeCanvas();
+                        initParticles();
+                        if (prefersReducedMotion) {
+                            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+                            drawConnections();
+                            particles.forEach(particle => particle.draw());
+                        }
+                    }, 150);
+                });
+            }
         });
     </script>
 </body>
