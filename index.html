@@ -562,6 +562,18 @@
             background: var(--app-bg);
         }
 
+        .app-mobile-cta {
+            display: none;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .app-mobile-cta p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
         @media (max-width: 767px) {
             .hero-bg,
             .section-bg {
@@ -571,6 +583,14 @@
             .ticker-label {
                 padding: 0.85rem 0.75rem;
                 font-size: 0.62rem;
+            }
+
+            .app-frame-wrap {
+                display: none;
+            }
+
+            .app-mobile-cta {
+                display: block;
             }
         }
 
@@ -1044,7 +1064,7 @@
         <section id="news" class="tab-panel py-16 md:py-24 px-4" role="tabpanel" aria-labelledby="tab-news">
             <div class="container mx-auto max-w-4xl">
                 <p class="section-kicker">Macro & Geopolitics</p>
-                <h2 class="section-title text-white">Market Intelligence</h2>
+                <h2 class="section-title text-white">Headlines</h2>
                 <p class="section-subtitle">
                     Live headlines on macroeconomic conditions, policy, and geopolitical developments shaping market regimes.
                 </p>
@@ -1095,10 +1115,118 @@
             <div class="overlay"></div>
             <div class="content-wrapper container mx-auto">
                 <p class="section-kicker">Systems</p>
-                <h2 class="section-title text-white">Core Research Systems</h2>
+                <h2 class="section-title text-white">Research Portfolio</h2>
                 <p class="section-subtitle">
-                    Explore our suite of proprietary AI models. Each system is open-source, reproducible, and designed for a specific financial domain.
+                    Open, reproducible AI systems across quantitative finance and computational neuroscience — built for researchers, deployed with discipline.
                 </p>
+                <div>
+                <h3 class="text-lg font-bold text-green-400 mb-2 text-center">NeuroAI</h3>
+                <p class="text-slate-400 text-sm font-mono mb-8 text-center">COMPUTATIONAL NEUROSCIENCE & MACHINE LEARNING</p>
+                <div class="flex justify-center gap-4 mb-14 flex-wrap">
+                    <a href="https://orcid.org/0009-0009-6278-4609" target="_blank" rel="noopener noreferrer" class="btn-ghost">ORCID</a>
+                    <a href="https://github.com/cimt-unia" target="_blank" rel="noopener noreferrer" class="btn-ghost">Academia</a>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-2">Packages & Libraries</h3>
+                <p class="text-slate-400 text-sm font-mono mb-8">OPEN-SOURCE TOOLING FOR THE NEUROIMAGING COMMUNITY</p>
+
+                <h4 class="text-base font-semibold text-slate-300 mb-4">Electrophysiology <span class="text-slate-500 font-normal">(EEG/iEEG)</span></h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">01 / PREPROCESSING</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">xeeg_kit</h3>
+                            <p class="text-slate-300 font-light">Multi-stage artifact removal for 280-channel EEG. Integrates MEEGKit (ASR + STAR + SNS) with ICLabel deep-learning classification. Parallel batch processing with per-subject logging.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/cimt-unia/xeeg_kit" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">02 / SOURCE RECONSTRUCTION</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">lcmv_xtra</h3>
+                            <p class="text-slate-300 font-light">LCMV beamforming on fsaverage space with automated BEL 280 coregistration. Time courses from DiFuMo (512), Glasser+Tian (414), and CIMT Unified (448) atlases. Debiased WPLI connectivity across eight frequency bands.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/cimt-unia/lcmv_xtra" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">03 / STATISTICAL INFERENCE</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">lcmv_stats</h3>
+                            <p class="text-slate-300 font-light">Group-level permutation tests, GPDC directional connectivity, cluster-based time-frequency correction, and automated reporting — optimized for the CIMT Unified Atlas (448 ROIs).</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/cimt-unia/lcmv_stats" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="text-base font-semibold text-slate-300 mb-4">Brain Imaging <span class="text-slate-500 font-normal">(fMRI)</span></h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">04 / PARCELLATION</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">gt_map</h3>
+                            <p class="text-slate-300 font-light">TR-flexible Glasser+Tian parcellator — 360 cortical and 54 subcortical regions. Resamples before standardizing; no temporal filtering. Built for multi-site studies (ABIDE, UK Biobank, ADHD-200).</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/cimt-unia/gt_map" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">05 / VISUALIZATION</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">cimt_atlas</h3>
+                            <p class="text-slate-300 font-light">Interactive 3D visualization of the CIMT 448-ROI Atlas. Hierarchical cascade filter (System, Hemisphere, Sub-system) with interactive 3D mesh rendering in the browser.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://cimt-atlas-app.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">Open App</a>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">06 / TEACHING & REPRODUCIBILITY</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">neuro_ai</h3>
+                            <p class="text-slate-300 font-light">Graduate-level teaching materials for reproducible computational neuroscience. Covers DWI, EEG, fMRI, LFP, and BCI.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/cimt-unia/neuro_ai" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-6">Ongoing Research</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">07 / FOUNDATION MODEL</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">BBT</h3>
+                            <p class="text-slate-300 font-light">Multivariate time series transformer for fMRI-based biomarker discovery, trained on Glasser+Tian (414 ROI) parcellated time series. Rotary embeddings and grouped-query attention for diagnostic classification across ADHD, ASD, and UK Biobank cohorts. Transfer learning, permutation-based interpretability, single-subject diagnosis.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/lacomaofficial/BBT" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">08 / CLINICAL NEUROSCIENCE</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Parkinson's Disease EEG</h3>
+                            <p class="text-slate-300 font-light">Three complementary experiments (bimanual motor task, resting-state, intracranial LFP) validating LCMV source-localized EEG against gold-standard LFP STN recordings. Frequency-specific connectivity changes across theta through high-gamma bands in motor-basal-executive networks.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <span class="btn-ghost w-full block text-center opacity-60 cursor-default">In Preparation</span>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="mt-16 pt-12" style="border-top: 1px solid var(--border-color);">
+                <h3 class="text-lg font-bold text-green-400 mb-2 text-center">Quantitative Finance</h3>
+                <p class="text-slate-400 text-sm font-mono mb-8 text-center">PROPRIETARY MODELS & MARKET INTELLIGENCE</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="glass-card rounded-xl overflow-hidden flex flex-col">
                         <div class="p-8 flex-grow">
@@ -1137,6 +1265,44 @@
                     <p class="text-slate-400 font-light mb-5">A working paper connecting macro cycles, geopolitical stress, structural distortions, and technical signals into one framework.</p>
                     <a href="https://github.com/lacomaofficial/lacomaofficial.github.io" target="_blank" rel="noopener noreferrer" class="btn-primary">Read the essay</a>
                 </div>
+                </div>
+
+                <div class="mt-16 pt-12" style="border-top: 1px solid var(--border-color);">
+                <h3 class="text-lg font-bold text-green-400 mb-2 text-center">Time Series Models</h3>
+                <p class="text-slate-400 text-sm font-mono mb-8 text-center">PROPRIETARY MODELS (PRIVATE) & OPEN SOURCE</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">01 / CLASSIFICATION</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Multivariate Time Series Classifier</h3>
+                            <p class="text-slate-300 font-light">Binary classification of asset price movements using cross-asset relative value metrics and macro regime detectors. Paired with a structured analyst agent protocol for regime-aware signal interpretation.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <span class="btn-ghost w-full block text-center opacity-60 cursor-default">Private</span>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">02 / REGRESSION</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Multivariate Time Series Regressor</h3>
+                            <p class="text-slate-300 font-light">Probabilistic forecasting engine with quantile outputs and integrated geo/macro-economic regime detection.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <span class="btn-ghost w-full block text-center opacity-60 cursor-default">Private</span>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <p class="text-slate-400 text-sm mb-4 font-mono">03 / OPEN SOURCE</p>
+                            <h3 class="font-bold text-2xl text-white mb-2">Transformer-Time-Series-Model</h3>
+                            <p class="text-slate-300 font-light">Multivariate and univariate deep learning for time series forecasting.</p>
+                        </div>
+                        <div class="p-6 mt-auto">
+                            <a href="https://github.com/lacomaofficial/Transformer-Time-Series-Model" target="_blank" rel="noopener noreferrer" class="btn-primary w-full block">View Repo</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </section>
 
@@ -1163,6 +1329,10 @@
                     </div>
                     <div class="app-frame-wrap" id="app-panel" role="tabpanel">
                         <iframe id="app-frame" class="app-frame" src="https://jaylacoma-trader-technical-indicators.hf.space" title="Trader Lite Hugging Face Space" loading="lazy" allow="fullscreen; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <div class="app-mobile-cta">
+                        <p>This app is best experienced on a larger screen.</p>
+                        <a id="app-mobile-open-link" class="btn-primary inline-block" href="https://jaylacoma-trader-technical-indicators.hf.space" target="_blank" rel="noopener noreferrer">Open full app ↗</a>
                     </div>
                 </div>
                 <p class="mt-6 text-center text-xs text-slate-500 font-mono">Hosted on Hugging Face Spaces. Cold starts can take a moment.</p>
@@ -1501,9 +1671,9 @@
 
       // --- Market Screener (Yahoo Finance via CORS proxy) ---
       const SCREENER_FEEDS = {
-        gainers: { ids: ['DAY_GAINERS', 'day_gainers'], title: 'Top Gainers' },
-        losers: { ids: ['DAY_LOSERS', 'day_losers'], title: 'Top Losers' },
-        active: { ids: ['MOST_ACTIVES', 'most_actives'], title: 'Most Active' }
+        gainers: { ids: ['DAY_GAINERS', 'day_gainers'], title: 'Top Gainers', file: 'data/screener-gainers.json' },
+        losers: { ids: ['DAY_LOSERS', 'day_losers'], title: 'Top Losers', file: 'data/screener-losers.json' },
+        active: { ids: ['MOST_ACTIVES', 'most_actives'], title: 'Most Active', file: 'data/screener-active.json' }
       };
       const SCREENER_COUNT = 50;
       const screenerCache = {};
@@ -1518,6 +1688,21 @@
           encodeURIComponent(scrId) +
           '&count=' + SCREENER_COUNT +
           '&fmt=json&lang=en-US&region=US';
+      }
+
+      async function fetchLocalScreener(key) {
+        const feed = SCREENER_FEEDS[key];
+        if (!feed || !feed.file) return null;
+        try {
+          const response = await fetch(feed.file + '?v=' + Date.now());
+          if (!response.ok) return null;
+          const data = await response.json();
+          const quotes = data && data.quotes;
+          if (!Array.isArray(quotes) || !quotes.length) return null;
+          return { quotes, updated: data.updated || null };
+        } catch (error) {
+          return null;
+        }
       }
 
       async function fetchScreenerQuotes(ids) {
@@ -1558,7 +1743,7 @@
         return sign + num.toFixed(2) + (suffix || '');
       }
 
-      function renderScreener(key, quotes) {
+      function renderScreener(key, quotes, updated) {
         const tbody = document.querySelector('#screener-table tbody');
         const meta = document.getElementById('screener-meta');
         if (!tbody) return;
@@ -1593,8 +1778,16 @@
         });
 
         if (meta) {
-          const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-          meta.textContent = `${quotes.length} symbols · ${SCREENER_FEEDS[key].title} · Updated ${time}`;
+          let stamp;
+          if (updated) {
+            const d = new Date(updated);
+            stamp = Number.isNaN(d.getTime())
+              ? updated
+              : d.toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+          } else {
+            stamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          }
+          meta.textContent = `${quotes.length} symbols · ${SCREENER_FEEDS[key].title} · Updated ${stamp}`;
         }
       }
 
@@ -1602,14 +1795,20 @@
         if (!SCREENER_FEEDS[key]) return;
         if (forceRefresh) delete screenerCache[key];
         if (screenerCache[key]) {
-          renderScreener(key, screenerCache[key]);
+          renderScreener(key, screenerCache[key].quotes, screenerCache[key].updated);
           return;
         }
         const meta = document.getElementById('screener-meta');
         if (meta) meta.textContent = 'Loading screener data…';
-        const quotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
-        if (quotes) screenerCache[key] = quotes;
-        renderScreener(key, quotes);
+        let payload = null;
+        if (!forceRefresh) payload = await fetchLocalScreener(key);
+        if (!payload) {
+          const quotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
+          if (quotes) payload = { quotes, updated: null };
+        }
+        if (!payload) payload = await fetchLocalScreener(key);
+        if (payload) screenerCache[key] = payload;
+        renderScreener(key, payload ? payload.quotes : null, payload ? payload.updated : null);
       }
 
       function ensureScreener() {
@@ -1825,6 +2024,7 @@
             const appTitle = document.getElementById('app-title');
             const appDescription = document.getElementById('app-description');
             const appOpenLink = document.getElementById('app-open-link');
+            const appMobileOpenLink = document.getElementById('app-mobile-open-link');
             let activeAppKey = 'trader';
 
             function activateApp(key) {
@@ -1841,6 +2041,7 @@
                 if (appTitle) appTitle.textContent = app.title;
                 if (appDescription) appDescription.textContent = app.description;
                 if (appOpenLink) appOpenLink.href = app.url;
+                if (appMobileOpenLink) appMobileOpenLink.href = app.url;
                 if (appFrame) {
                     appFrame.src = app.url;
                     appFrame.title = app.frameTitle;
