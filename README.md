@@ -3,7 +3,7 @@
 
 <br>
 
-At YC Hedge Fund, we don't chase trends or bet on straight-line forecasts. We're an independent quantitative research entity leveraging AI to uncover the true nature of the financial world: a stochastic, chaotic system. Traditional economists cling to linear models—predictable sector cycles, steady growth paths—that crumble in reality. We reject them. Our Interconnected Chaos Theory integrates macro forces, geopolitical tensions, fundamental distortions, and technical signals into a dynamic framework for understanding, not just surviving, this turbulence.
+At YC Hedge Fund, we don't chase trends or bet on straight-line forecasts. We're an independent quantitative research entity that leverages AI to uncover the financial world's true nature: a stochastic, chaotic system. Traditional economists cling to linear models—predictable sector cycles, steady growth paths—that crumble in reality. We reject them. Our Interconnected Chaos Theory integrates macro forces, geopolitical tensions, fundamental distortions, and technical signals into a dynamic framework for understanding, not just surviving, this turbulence.
 
 This isn't abstract philosophy; it's our edge. Drawing from Ray Dalio's "Big Cycle" forces, Gary Stevenson's micro-level inequality insights, Peter Thiel's monopoly distortions, and Jeffrey Gundlach's reckoning warnings, we see markets as emergent from non-linear interactions. Linear views fail because they ignore feedback loops: stagflation grips the economy, yet big tech swims in liquidity, fueling investment in data centers and new energy industries.
 
@@ -19,7 +19,7 @@ Financial markets aren't clocks; they're weather systems—stochastic (random, p
    Five interconnected cycles drive the "Big Cycle," updated for today—debt now intersects with AI-driven productivity, conflicts with supply chains, and nature with climate migration.
 
 2. **Geopolitical Layer**  
-   Power shifts create distortions, amplifying cycles via tariffs or sanctions.
+   Power shifts distort flows, amplifying cycles through tariffs or sanctions.
 
 3. **Distortions Layer**  
    Inequality/populism (Stevenson) and monopolies (Thiel) warp flows—micro factors like wage stagnation sustain macro bubbles.
@@ -94,7 +94,7 @@ Non-linearity points to divergent paths: abundance (tech-led productivity) or cr
 
 Linear models breed complacency; our framework demands agility. AI captures feedback dynamics that traditional economists ignore. In stagflation, we prioritize tech monopoly proxies over consumer cyclicals. This integrates macro, geopolitical, distortion-based, and technical signals into coherent strategy.
 
-Chaos is an opportunity—for those who can see it.
+*Chaos is an opportunity—for those who can see it.*
 
 **J is Founder of YC Hedge Fund.**
 
