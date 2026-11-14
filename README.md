@@ -1,6 +1,8 @@
-# Chaos in the Markets: Why Linear Thinking Fails in a Stochastic System  
+# Chaos in the Markets
+**Why Linear Thinking Fails in a Stochastic System**  
 
-<img width="824" height="824" alt="hf1" src="https://github.com/user-attachments/assets/9f8bcda2-b7cd-4432-bc4d-5e2b015f5e3a" />
+<img width="1152" height="709" alt="hf5d" src="https://github.com/user-attachments/assets/f18e3dbe-90bc-4c93-b2f3-4f0c8a307969" />
+
 
 At YC Hedge Fund, we don't chase trends or bet on straight-line forecasts. We're an independent quantitative research entity leveraging AI to uncover the true nature of the financial world: a stochastic, chaotic system. Traditional economists cling to linear models—predictable sector cycles, steady growth paths—that crumble in reality. We reject them. Our Interconnected Chaos Theory integrates macro forces, geopolitical tensions, fundamental distortions, and technical signals into a dynamic framework for understanding, not just surviving, this turbulence.
 
