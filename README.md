@@ -1,3 +1,4 @@
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/e112cb8a-361e-4552-b535-859333394fc5" />
 
 # Chaos in the Markets: Why Linear Thinking Fails in a Stochastic System  
 
