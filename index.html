@@ -1699,7 +1699,7 @@
           const data = await response.json();
           const quotes = data && data.quotes;
           if (!Array.isArray(quotes) || !quotes.length) return null;
-          return { quotes, updated: data.updated || null };
+          return { quotes, updated: data.updated || null, source: 'static' };
         } catch (error) {
           return null;
         }
@@ -1710,7 +1710,8 @@
           const inner = screenerYahooUrl(id);
           const urls = [
             inner,
-            'https://proxy.corsfix.com/?' + inner,
+            'https://proxy.corsfix.com/?' + encodeURIComponent(inner),
+            'https://corsproxy.io/?url=' + encodeURIComponent(inner),
             'https://api.allorigins.win/raw?url=' + encodeURIComponent(inner),
             'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(inner)
           ];
@@ -1743,7 +1744,7 @@
         return sign + num.toFixed(2) + (suffix || '');
       }
 
-      function renderScreener(key, quotes, updated) {
+      function renderScreener(key, quotes, updated, source) {
         const tbody = document.querySelector('#screener-table tbody');
         const meta = document.getElementById('screener-meta');
         if (!tbody) return;
@@ -1787,7 +1788,8 @@
           } else {
             stamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
           }
-          meta.textContent = `${quotes.length} symbols · ${SCREENER_FEEDS[key].title} · Updated ${stamp}`;
+          const sourceLabel = source === 'live' ? 'Yahoo live' : 'Static snapshot';
+          meta.textContent = `${quotes.length} symbols · ${SCREENER_FEEDS[key].title} · ${sourceLabel} · Updated ${stamp}`;
         }
       }
 
@@ -1795,20 +1797,31 @@
         if (!SCREENER_FEEDS[key]) return;
         if (forceRefresh) delete screenerCache[key];
         if (screenerCache[key]) {
-          renderScreener(key, screenerCache[key].quotes, screenerCache[key].updated);
+          renderScreener(key, screenerCache[key].quotes, screenerCache[key].updated, screenerCache[key].source);
           return;
         }
         const meta = document.getElementById('screener-meta');
         if (meta) meta.textContent = 'Loading screener data…';
+
         let payload = null;
         if (!forceRefresh) payload = await fetchLocalScreener(key);
-        if (!payload) {
-          const quotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
-          if (quotes) payload = { quotes, updated: null };
+        if (payload) {
+          screenerCache[key] = payload;
+          renderScreener(key, payload.quotes, payload.updated, payload.source);
+          const liveQuotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
+          if (liveQuotes) {
+            const live = { quotes: liveQuotes, updated: null, source: 'live' };
+            screenerCache[key] = live;
+            if (activeScreener === key) renderScreener(key, live.quotes, live.updated, live.source);
+          }
+          return;
         }
+
+        const quotes = await fetchScreenerQuotes(SCREENER_FEEDS[key].ids);
+        if (quotes) payload = { quotes, updated: null, source: 'live' };
         if (!payload) payload = await fetchLocalScreener(key);
         if (payload) screenerCache[key] = payload;
-        renderScreener(key, payload ? payload.quotes : null, payload ? payload.updated : null);
+        renderScreener(key, payload ? payload.quotes : null, payload ? payload.updated : null, payload ? payload.source : null);
       }
 
       function ensureScreener() {
@@ -1859,8 +1872,10 @@
       function proxiedUrls(target) {
         return [
           target,
-          'https://proxy.corsfix.com/?' + target,
-          'https://api.allorigins.win/raw?url=' + encodeURIComponent(target)
+          'https://proxy.corsfix.com/?' + encodeURIComponent(target),
+          'https://corsproxy.io/?url=' + encodeURIComponent(target),
+          'https://api.allorigins.win/raw?url=' + encodeURIComponent(target),
+          'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(target)
         ];
       }
 
@@ -1924,8 +1939,13 @@
         });
 
         if (meta) {
-          const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-          meta.textContent = `${items.length} headlines · Updated ${time}`;
+          const latest = items[0] && items[0].pubDate ? timeAgo(items[0].pubDate) : '';
+          if (latest) {
+            meta.textContent = `${items.length} headlines · Latest ${latest}`;
+          } else {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            meta.textContent = `${items.length} headlines · Updated ${time}`;
+          }
         }
       }
 

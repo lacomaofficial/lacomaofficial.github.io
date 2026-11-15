@@ -7,6 +7,7 @@ files instead of hitting CORS-blocked Yahoo endpoints through flaky proxies.
 
 import json
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,6 +20,7 @@ FEEDS = {
 
 COUNT = 50
 OUT_DIR = Path(__file__).resolve().parent.parent / "data"
+YAHOO_HOSTS = ("query1.finance.yahoo.com", "query2.finance.yahoo.com")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -28,16 +30,27 @@ HEADERS = {
 
 
 def fetch_quotes(scr_id: str):
-    url = (
-        "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved"
-        f"?scrIds={scr_id}&count={COUNT}&fmt=json&lang=en-US&region=US"
-    )
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    result = data.get("finance", {}).get("result") or []
-    if result and result[0].get("quotes"):
-        return result[0]["quotes"]
+    last_error = None
+    for host in YAHOO_HOSTS:
+        url = (
+            f"https://{host}/v1/finance/screener/predefined/saved"
+            f"?scrIds={scr_id}&count={COUNT}&fmt=json&lang=en-US&region=US"
+        )
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                result = data.get("finance", {}).get("result") or []
+                if result and result[0].get("quotes"):
+                    return result[0]["quotes"]
+                break
+            except Exception as exc:  # noqa: BLE001 - retry next host/attempt
+                last_error = exc
+                if attempt < 2:
+                    time.sleep(1.5 * (attempt + 1))
+    if last_error:
+        raise last_error
     return None
 
 
