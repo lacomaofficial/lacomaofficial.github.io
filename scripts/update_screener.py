@@ -78,9 +78,11 @@ def main() -> int:
         )
         print(f"[{key}] wrote {len(quotes)} quotes -> {out.name}")
 
-    if failures:
-        print(f"Failed feeds: {', '.join(failures)}", file=sys.stderr)
+    if len(failures) == len(FEEDS):
+        print(f"All feeds failed: {', '.join(failures)}", file=sys.stderr)
         return 1
+    if failures:
+        print(f"Partial failures (kept stale data): {', '.join(failures)}", file=sys.stderr)
     return 0
 
 
